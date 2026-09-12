@@ -1,0 +1,21 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Data & heavy artifacts
+data/
+experiments/**/checkpoints/
+*.pt
+*.pth
+*.weights
+
+# Env
+.venv/
+venv/
+.env
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/

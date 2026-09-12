@@ -1,0 +1,11 @@
+# Baseline experiment: Faster R-CNN R50-FPN, standard supervised training.
+_base_: base.yaml
+
+model:
+  name: faster_rcnn
+  num_classes: 33
+
+train:
+  batch_size: 4
+  epochs: 12
+  output_dir: experiments/faster_rcnn_baseline

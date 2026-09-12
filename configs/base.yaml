@@ -1,0 +1,31 @@
+# Shared settings; experiment configs override these.
+data:
+  # On Kaggle: /kaggle/input/competitions/fathomnet-2026/ ; locally: data/annotations/
+  ann_dir: data/annotations
+  image_dir: data/images
+  train_json: data/annotations/train_dataset.json
+  test_json: data/annotations/test_dataset.json
+  sample_submission: data/sample_submission.csv
+
+model:
+  name: faster_rcnn
+  num_classes: 33  # 32 categories + background
+
+train:
+  batch_size: 4
+  epochs: 12
+  lr: 0.005
+  weight_decay: 0.0005
+  lr_milestones: [8, 11]
+  num_workers: 4
+  save_every: 2
+  output_dir: experiments/faster_rcnn_baseline
+
+pu:
+  keep_prob: 1.0   # <1.0 simulates positive-unlabeled label masking
+
+eval:
+  batch_size: 4
+  score_threshold: 0.05
+
+seed: 42

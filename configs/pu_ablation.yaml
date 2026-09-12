@@ -1,0 +1,12 @@
+# Ablation: Faster R-CNN with PU label masking (drop 40% of GT boxes).
+_base_: base.yaml
+
+model:
+  name: faster_rcnn
+  num_classes: 33
+
+pu:
+  keep_prob: 0.6
+
+train:
+  output_dir: experiments/faster_rcnn_pu06
