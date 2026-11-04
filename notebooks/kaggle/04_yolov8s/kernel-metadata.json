@@ -1,0 +1,14 @@
+{
+  "id": "eternalsorcerer/fathomnet-04-yolov8s",
+  "title": "fathomnet-04-yolov8s",
+  "code_file": "04_yolov8s.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "kernel_sources": ["rscharan/00-setup-data-download-fathomnetclef2026", "eternalsorcerer/fathomnet-02-split"],
+  "dataset_data": {},
+  "competition_sources": [],
+  "model_sources": []
+}
