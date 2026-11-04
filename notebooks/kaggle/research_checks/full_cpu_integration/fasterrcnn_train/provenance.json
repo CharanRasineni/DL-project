@@ -1,0 +1,47 @@
+{
+  "config": {
+    "mode": "train",
+    "family": "fasterrcnn",
+    "epochs": 1,
+    "batch": 1,
+    "imgsz": 64,
+    "seed": 42,
+    "score_thr": 0.001,
+    "bootstrap": 2,
+    "max_train_hours": 1,
+    "split_sha256": "368bf7f866204fe5ecd610a33ceffbb6b1480e354602dcb268a7479ac4789072"
+  },
+  "system": {
+    "timestamp": "2026-09-17T22:32:59",
+    "python": "3.10.4",
+    "torch": "2.2.2+cpu",
+    "numpy": "1.26.4",
+    "pandas": "1.4.2",
+    "cuda_available": false,
+    "torchvision": "0.17.2+cpu",
+    "ultralytics": "8.3.40",
+    "pycocotools": null,
+    "cv2": "4.11.0"
+  },
+  "checks": {
+    "train_images": 2,
+    "val_images": 2,
+    "categories": 1
+  },
+  "annotation_sha256": "1f011e537c7f8764f53d2c9b220472bbb53e7671d89124555d302d5c5a1b4f3e",
+  "full_split_sha256": "368bf7f866204fe5ecd610a33ceffbb6b1480e354602dcb268a7479ac4789072",
+  "runner_sha256": "5376bcd42e43b7744e46cbd8c3962d781c9ef02b71a5bcf046a7dece4e400ac5",
+  "data_sha256": "24f8f26b2758d30e6e8333490b1a2f1d7ab1b0ae8a7e99c535d8af69f0ec020e",
+  "task": "positive-unlabeled marine object detection",
+  "scientific_result": true,
+  "limitations": [
+    "single training seed",
+    "partial validation annotations",
+    "same 30 epochs and nominal 640px setting is NOT equal compute",
+    "framework resizing, optimizers and checkpoint selection differ"
+  ],
+  "checkpoint": {
+    "path": "c:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\research_checks\\full_cpu_integration\\fasterrcnn_train\\best.pt",
+    "sha256": "c26da8eedf7e9090e9e825955f4dec52854fc4d58852693a5499255ff2807081"
+  }
+}

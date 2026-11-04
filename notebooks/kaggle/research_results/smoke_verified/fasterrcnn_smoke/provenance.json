@@ -1,0 +1,50 @@
+{
+  "config": {
+    "mode": "smoke",
+    "family": "fasterrcnn",
+    "epochs": 1,
+    "batch": 2,
+    "imgsz": 640,
+    "seed": 42,
+    "score_thr": 0.001,
+    "bootstrap": 0,
+    "max_train_hours": 1,
+    "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+  },
+  "system": {
+    "timestamp": "2026-09-17T17:37:05",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "cuda_available": true,
+    "torchvision": "0.25.0+cu128",
+    "ultralytics": "8.3.40",
+    "pycocotools": null,
+    "cv2": "4.13.0",
+    "gpu": "Tesla T4",
+    "gpu_memory_gb": 15.6,
+    "peak_gpu_memory_gb": 0.0
+  },
+  "checks": {
+    "train_images": 4,
+    "val_images": 4,
+    "categories": 32
+  },
+  "annotation_sha256": "ac2fba8e096346ae3d2a625548b5a713566e3d92ac2f997510ee65f67b251b7a",
+  "full_split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8",
+  "runner_sha256": "c8629d2ca4e9adb0d37d75f09289170c6c25d775c888e5c55379b84e988b0dfe",
+  "data_sha256": "382ed80b1bc5ce3800705497a8a6527c00ae4196efde0343739e0ab58cdfbcc0",
+  "task": "positive-unlabeled marine object detection",
+  "scientific_result": false,
+  "limitations": [
+    "single training seed",
+    "partial validation annotations",
+    "same 30 epochs and nominal 640px setting is NOT equal compute",
+    "framework resizing, optimizers and checkpoint selection differ"
+  ],
+  "checkpoint": {
+    "path": "/kaggle/working/fasterrcnn_smoke/best.pt",
+    "sha256": "9aec224712444260a487b5709a4be96405027fd783d6974fa28947bd5865dd85"
+  }
+}

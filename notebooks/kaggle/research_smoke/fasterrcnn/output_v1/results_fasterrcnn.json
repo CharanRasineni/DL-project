@@ -1,0 +1,376 @@
+{
+  "mAP50-95": 0.0,
+  "mAP50": 0.0,
+  "mAP75": 0.0,
+  "mAP_small": -1.0,
+  "mAP_medium": 0.0,
+  "mAP_large": 0.0,
+  "per_class_AP50-95": {
+    "amphipod": 0.0,
+    "anemone": 0.0,
+    "barnacle": 0.0,
+    "benthic worm": 0.0,
+    "bivalve": 0.0,
+    "black coral": 0.0,
+    "bony fish": 0.0,
+    "brittle star": 0.0,
+    "calycophoran siphonophore": 0.0,
+    "chiton": 0.0,
+    "crab": 0.0,
+    "feather star": 0.0,
+    "hydroid": 0.0,
+    "isopod": 0.0,
+    "jelly": 0.0,
+    "larvacean": 0.0,
+    "octopus": 0.0,
+    "physonect siphonophore": 0.0,
+    "pyrosome": 0.0,
+    "sea cucumber": 0.0,
+    "sea fan": 0.0,
+    "sea pen": 0.0,
+    "sea slug": 0.0,
+    "sea snail": 0.0,
+    "sea squirt": 0.0,
+    "sea star": 0.0,
+    "shrimp": 0.0,
+    "soft coral": 0.0,
+    "sponge": 0.0,
+    "squat lobster": 0.0,
+    "stony coral": 0.0,
+    "urchin": 0.0
+  },
+  "per_class_AP50": {
+    "amphipod": 0.0,
+    "anemone": 0.0,
+    "barnacle": 0.0,
+    "benthic worm": 0.0,
+    "bivalve": 0.0,
+    "black coral": 0.0,
+    "bony fish": 0.0,
+    "brittle star": 0.0,
+    "calycophoran siphonophore": 0.0,
+    "chiton": 0.0,
+    "crab": 0.0,
+    "feather star": 0.0,
+    "hydroid": 0.0,
+    "isopod": 0.0,
+    "jelly": 0.0,
+    "larvacean": 0.0,
+    "octopus": 0.0,
+    "physonect siphonophore": 0.0,
+    "pyrosome": 0.0,
+    "sea cucumber": 0.0,
+    "sea fan": 0.0,
+    "sea pen": 0.0,
+    "sea slug": 0.0,
+    "sea snail": 0.0,
+    "sea squirt": 0.0,
+    "sea star": 0.0,
+    "shrimp": 0.0,
+    "soft coral": 0.0,
+    "sponge": 0.0,
+    "squat lobster": 0.0,
+    "stony coral": 0.0,
+    "urchin": 0.0
+  },
+  "per_class_size_AP50-95": {
+    "amphipod": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "anemone": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "barnacle": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "benthic worm": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "bivalve": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "black coral": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "bony fish": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "brittle star": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "calycophoran siphonophore": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "chiton": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "crab": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "feather star": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "hydroid": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "isopod": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "jelly": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "larvacean": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "octopus": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "physonect siphonophore": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "pyrosome": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "sea cucumber": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "sea fan": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "sea pen": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "sea slug": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "sea snail": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "sea squirt": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "sea star": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "shrimp": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "soft coral": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "sponge": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "squat lobster": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "stony coral": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    },
+    "urchin": {
+      "small": 0.0,
+      "medium": 0.0,
+      "large": 0.0
+    }
+  },
+  "head_mid_tail_AP50-95": {
+    "head": 0.0,
+    "mid": 0.0,
+    "tail": 0.0
+  },
+  "head_mid_tail_AP50": {
+    "head": 0.0,
+    "mid": 0.0,
+    "tail": 0.0
+  },
+  "head_mid_tail_size_AP50-95": {
+    "small": {
+      "head": 0.0,
+      "mid": 0.0,
+      "tail": 0.0
+    },
+    "medium": {
+      "head": 0.0,
+      "mid": 0.0,
+      "tail": 0.0
+    },
+    "large": {
+      "head": 0.0,
+      "mid": 0.0,
+      "tail": 0.0
+    }
+  },
+  "groups": {
+    "head": [
+      "bony fish",
+      "brittle star",
+      "urchin"
+    ],
+    "mid": [
+      "anemone",
+      "sea fan",
+      "sponge",
+      "stony coral"
+    ],
+    "tail": [
+      "amphipod",
+      "barnacle",
+      "benthic worm",
+      "bivalve",
+      "black coral",
+      "calycophoran siphonophore",
+      "chiton",
+      "crab",
+      "feather star",
+      "hydroid",
+      "isopod",
+      "jelly",
+      "larvacean",
+      "octopus",
+      "physonect siphonophore",
+      "pyrosome",
+      "sea cucumber",
+      "sea pen",
+      "sea slug",
+      "sea snail",
+      "sea squirt",
+      "sea star",
+      "shrimp",
+      "soft coral",
+      "squat lobster"
+    ]
+  },
+  "n_dets": 600,
+  "protocol": {
+    "score_thr": 0.01,
+    "max_det": 300,
+    "n_val_images": 2,
+    "split_fingerprint": "49f701641ea5a447",
+    "coco_maxDets": [
+      1,
+      10,
+      100
+    ],
+    "prediction_cap_per_image": 300,
+    "seed": 42,
+    "val_split": 0.1,
+    "epochs": 1,
+    "input": "min800/max1333"
+  },
+  "preds_raw": {
+    "n_dets": 600,
+    "n_images_with_dets": 2,
+    "dets_per_image_mean": 300.0,
+    "dets_per_image_median": 300.0,
+    "dets_per_image_max": 300,
+    "score_mean": 0.0521
+  },
+  "preds_used": {
+    "n_dets": 600,
+    "n_images_with_dets": 2,
+    "dets_per_image_mean": 300.0,
+    "dets_per_image_median": 300.0,
+    "dets_per_image_max": 300,
+    "score_mean": 0.0521
+  },
+  "train_instance_counts": {
+    "urchin": 5212,
+    "sea fan": 2715,
+    "brittle star": 2761,
+    "amphipod": 54,
+    "bony fish": 2768,
+    "anemone": 1026,
+    "sponge": 1101,
+    "shrimp": 483,
+    "crab": 353,
+    "octopus": 111,
+    "stony coral": 646,
+    "sea cucumber": 346,
+    "calycophoran siphonophore": 45,
+    "black coral": 280,
+    "feather star": 628,
+    "sea star": 558,
+    "soft coral": 265,
+    "sea pen": 46,
+    "sea snail": 41,
+    "jelly": 104,
+    "physonect siphonophore": 91,
+    "benthic worm": 54,
+    "squat lobster": 171,
+    "larvacean": 43,
+    "chiton": 29,
+    "isopod": 23,
+    "barnacle": 29,
+    "bivalve": 49,
+    "hydroid": 39,
+    "pyrosome": 32,
+    "sea squirt": 14,
+    "sea slug": 6
+  },
+  "evaluation_note": "COCO bbox AP against available validation annotations; annotations are positive-unlabeled. Unmatched predictions are not necessarily biological false positives. Prediction cap=300/image; COCO maxDets=[1,10,100].",
+  "model": "faster_rcnn_r50_fpn",
+  "params_million": 41.29,
+  "latency_ms_per_image": 83.29
+}

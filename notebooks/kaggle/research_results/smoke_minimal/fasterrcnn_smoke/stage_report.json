@@ -1,0 +1,19 @@
+{
+  "core": "ok",
+  "mode": "smoke",
+  "stages": {
+    "latency": {
+      "status": "ok",
+      "seconds": 1.58
+    },
+    "training_curves": {
+      "status": "ok",
+      "seconds": 1.06
+    },
+    "figures": {
+      "status": "ok",
+      "seconds": 30.38
+    }
+  },
+  "cam_successes": 4
+}

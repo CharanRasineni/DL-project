@@ -1,0 +1,14 @@
+[
+  {
+    "kernel": "rscharan/fathomnet-research-fasterrcnn",
+    "sha256": "144a2c26ccba7d8189111503b3cae273d78ea9e96f795c9e3fcb6d785b7e1995",
+    "status": "SUBMITTED",
+    "response": "{\"ref\": \"/code/rscharan/fathomnet-research-fasterrcnn\", \"url\": \"https://www.kaggle.com/code/rscharan/fathomnet-research-fasterrcnn\", \"versionNumber\": 2, \"error\": \"\", \"invalidTags\": [], \"invalidDatasetSources\": [], \"invalidCompetitionSources\": [], \"invalidKernelSources\": [], \"invalidModelSources\": []}"
+  },
+  {
+    "kernel": "rscharan/fathomnet-research-yolov8s",
+    "sha256": "a1af60fe753758b13fa6934b97eab0b92a6a04c40c0ced07c653f39832f6c9f0",
+    "status": "SUBMITTED",
+    "response": "{\"ref\": \"/code/rscharan/fathomnet-research-yolov8s\", \"url\": \"https://www.kaggle.com/code/rscharan/fathomnet-research-yolov8s\", \"versionNumber\": 2, \"error\": \"\", \"invalidTags\": [], \"invalidDatasetSources\": [], \"invalidCompetitionSources\": [], \"invalidKernelSources\": [], \"invalidModelSources\": []}"
+  }
+]

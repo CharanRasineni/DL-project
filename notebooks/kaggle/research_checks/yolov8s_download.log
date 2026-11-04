@@ -1,0 +1,5 @@
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_download_yolov8s.py", line 3
+    b=Path(r'\\?\' + str(Path(r'c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle')))
+           ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+OK C:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\research_results\yolov8s_full

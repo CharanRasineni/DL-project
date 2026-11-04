@@ -1,0 +1,3 @@
+output dl error: 'charmap' codec can't encode characters in position 1132-1171: character maps to <undefined>
+log chars: 15200
+DONE

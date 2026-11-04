@@ -1,0 +1,332 @@
+{
+ "mAP50-95": 0.2308225176524654,
+ "mAP50": 0.3234928076591362,
+ "mAP75": 0.2523609945372501,
+ "mAP_small": 0.0,
+ "mAP_medium": 0.07539947802105773,
+ "mAP_large": 0.2544665730201214,
+ "per_class_AP50-95": {
+  "amphipod": 0.0,
+  "anemone": 0.3011482080119707,
+  "barnacle": 0.0,
+  "benthic worm": 0.00039917035181779046,
+  "bivalve": 0.0,
+  "black coral": 0.1564009040519364,
+  "bony fish": 0.4958172544875079,
+  "brittle star": 0.2752802174859799,
+  "calycophoran siphonophore": 0.0,
+  "chiton": 0.5054876075842878,
+  "crab": 0.5281674526289015,
+  "feather star": 0.25441321285841834,
+  "hydroid": 0.0,
+  "isopod": 0.0,
+  "jelly": 0.04347496336947806,
+  "larvacean": 0.5949944994499449,
+  "octopus": 0.06964621005711516,
+  "physonect siphonophore": 0.4130501695588848,
+  "pyrosome": 0.8876237623762376,
+  "sea cucumber": 0.2791825989347369,
+  "sea fan": 0.32687120905214007,
+  "sea pen": 0.0,
+  "sea slug": 0.0,
+  "sea snail": 0.0,
+  "sea squirt": 0.0,
+  "sea star": 0.2524414359196606,
+  "shrimp": 0.14818505027363887,
+  "soft coral": 0.542249684860808,
+  "sponge": 0.3232330505875992,
+  "squat lobster": 0.04350105531589024,
+  "stony coral": 0.42926283820615035,
+  "urchin": 0.5154900094557867
+ },
+ "per_class_AP50": {
+  "amphipod": 0.0,
+  "anemone": 0.41902150645732283,
+  "barnacle": 0.0,
+  "benthic worm": 0.0006652839196963175,
+  "bivalve": 0.0,
+  "black coral": 0.1894405377571689,
+  "bony fish": 0.7033530403726773,
+  "brittle star": 0.5302446695694547,
+  "calycophoran siphonophore": 0.0,
+  "chiton": 0.6017601760176018,
+  "crab": 0.6284002682928996,
+  "feather star": 0.4576350536224551,
+  "hydroid": 0.0,
+  "isopod": 0.0,
+  "jelly": 0.09571615686077602,
+  "larvacean": 0.6930693069306928,
+  "octopus": 0.15384904985483638,
+  "physonect siphonophore": 0.6319021325209444,
+  "pyrosome": 1.0,
+  "sea cucumber": 0.505881339977773,
+  "sea fan": 0.46722808244069713,
+  "sea pen": 0.0,
+  "sea slug": 0.0,
+  "sea snail": 0.0,
+  "sea squirt": 0.0,
+  "sea star": 0.4227143695619791,
+  "shrimp": 0.3155847402327912,
+  "soft coral": 0.7231688452101588,
+  "sponge": 0.394014227724606,
+  "squat lobster": 0.08224068233811006,
+  "stony coral": 0.5613801413969988,
+  "urchin": 0.7745002340327165
+ },
+ "per_class_size_AP50-95": {
+  "amphipod": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.0
+  },
+  "anemone": {
+   "small": 0.0,
+   "medium": 0.030468136332700905,
+   "large": 0.44577115797784245
+  },
+  "barnacle": {
+   "small": null,
+   "medium": null,
+   "large": 0.0
+  },
+  "benthic worm": {
+   "small": null,
+   "medium": null,
+   "large": 0.0005315268368942158
+  },
+  "bivalve": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.0
+  },
+  "black coral": {
+   "small": null,
+   "medium": 0.3,
+   "large": 0.15680976115341339
+  },
+  "bony fish": {
+   "small": 0.0,
+   "medium": 0.14859610083763009,
+   "large": 0.5609470873061353
+  },
+  "brittle star": {
+   "small": null,
+   "medium": 0.060324247539582855,
+   "large": 0.32049012840233015
+  },
+  "calycophoran siphonophore": {
+   "small": null,
+   "medium": null,
+   "large": 0.0
+  },
+  "chiton": {
+   "small": null,
+   "medium": 0.5607006854531608,
+   "large": 0.45445544554455436
+  },
+  "crab": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.5677854607627973
+  },
+  "feather star": {
+   "small": null,
+   "medium": 0.006693665061947064,
+   "large": 0.2809456006601711
+  },
+  "hydroid": {
+   "small": null,
+   "medium": null,
+   "large": 0.0
+  },
+  "isopod": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.0
+  },
+  "jelly": {
+   "small": 0.0,
+   "medium": 0.02538936820256867,
+   "large": 0.10041871959879958
+  },
+  "larvacean": {
+   "small": null,
+   "medium": null,
+   "large": 0.6027227722772277
+  },
+  "octopus": {
+   "small": null,
+   "medium": null,
+   "large": 0.06968777009195894
+  },
+  "physonect siphonophore": {
+   "small": null,
+   "medium": null,
+   "large": 0.413399239872513
+  },
+  "pyrosome": {
+   "small": null,
+   "medium": null,
+   "large": 0.8876237623762376
+  },
+  "sea cucumber": {
+   "small": null,
+   "medium": 0.12637405154084386,
+   "large": 0.48600481494410547
+  },
+  "sea fan": {
+   "small": null,
+   "medium": 0.0022564604966646973,
+   "large": 0.33315589587011735
+  },
+  "sea pen": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.0
+  },
+  "sea slug": {
+   "small": null,
+   "medium": null,
+   "large": 0.0
+  },
+  "sea snail": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.0
+  },
+  "sea squirt": {
+   "small": null,
+   "medium": null,
+   "large": 0.0
+  },
+  "sea star": {
+   "small": 0.0,
+   "medium": 0.1812702156411278,
+   "large": 0.34848881716453817
+  },
+  "shrimp": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.16467391825711802
+  },
+  "soft coral": {
+   "small": null,
+   "medium": null,
+   "large": 0.5425707562851387
+  },
+  "sponge": {
+   "small": 0.0,
+   "medium": 0.015374348932706398,
+   "large": 0.37263564237113017
+  },
+  "squat lobster": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.050381517081444095
+  },
+  "stony coral": {
+   "small": null,
+   "medium": 0.0,
+   "large": 0.433119460740076
+  },
+  "urchin": {
+   "small": null,
+   "medium": 0.1259417584032791,
+   "large": 0.5503110810693418
+  }
+ },
+ "head_mid_tail_AP50-95": {
+  "head": 0.4288624938097582,
+  "mid": 0.3451288264644651,
+  "tail": 0.1887687111036703
+ },
+ "groups": {
+  "head": [
+   "bony fish",
+   "brittle star",
+   "urchin"
+  ],
+  "mid": [
+   "anemone",
+   "sea fan",
+   "sponge",
+   "stony coral"
+  ],
+  "tail": [
+   "amphipod",
+   "barnacle",
+   "benthic worm",
+   "bivalve",
+   "black coral",
+   "calycophoran siphonophore",
+   "chiton",
+   "crab",
+   "feather star",
+   "hydroid",
+   "isopod",
+   "jelly",
+   "larvacean",
+   "octopus",
+   "physonect siphonophore",
+   "pyrosome",
+   "sea cucumber",
+   "sea pen",
+   "sea slug",
+   "sea snail",
+   "sea squirt",
+   "sea star",
+   "shrimp",
+   "soft coral",
+   "squat lobster"
+  ]
+ },
+ "COCO_maxDets": [
+  1,
+  10,
+  100
+ ],
+ "n_dets": 193800,
+ "protocol": {
+  "score_thr": 0.001,
+  "max_det": 300,
+  "n_val_images": 646,
+  "split_fingerprint": "d611d16e1c9c0562"
+ },
+ "preds_raw": {
+  "n_dets": 193800,
+  "n_images_with_dets": 646,
+  "dets_per_image_mean": 300.0,
+  "dets_per_image_median": 300.0,
+  "dets_per_image_max": 300,
+  "score_mean": 0.0609
+ },
+ "preds_used": {
+  "n_dets": 193800,
+  "n_images_with_dets": 646,
+  "dets_per_image_mean": 300.0,
+  "dets_per_image_median": 300.0,
+  "dets_per_image_max": 300,
+  "score_mean": 0.0609
+ },
+ "config": {
+  "mode": "train",
+  "family": "rtdetr",
+  "epochs": 30,
+  "imgsz": 640,
+  "batch": 4,
+  "seed": 42,
+  "score_thr": 0.001,
+  "bootstrap": 0,
+  "max_train_hours": 9,
+  "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+ },
+ "latency": {
+  "n": 30,
+  "median_ms": 62.19,
+  "mean_ms": 62.65,
+  "p90_ms": 63.62,
+  "min_ms": 61.26,
+  "std_ms": 1.52,
+  "boundary": "decoded RGB uint8 to CPU detections; batch1 fp32; excludes disk/decode"
+ }
+}

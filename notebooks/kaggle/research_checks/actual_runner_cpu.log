@@ -1,0 +1,11 @@
+EXIT 1
+=== STDOUT ===
+CUDA available: False
+Calling actual research_runner.run; existing smoke mode selects four images per split.
+
+=== STDERR ===
+Traceback (most recent call last):
+  File "<string>", line 8, in <module>
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\research_runner.py", line 464, in run
+    raise RuntimeError('GPU required for real-image run; no silent CPU training')
+RuntimeError: GPU required for real-image run; no silent CPU training

@@ -1,0 +1,2 @@
+class,train_instances,val_instances,AP50-95,AP50,small,medium,large
+synthetic,2,2,0.004677141627206198,0.04677141627206199,0.00482730831222657,,

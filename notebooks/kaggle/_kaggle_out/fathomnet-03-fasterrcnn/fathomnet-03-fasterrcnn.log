@@ -1,0 +1,37 @@
+[{"stream_name":"stderr","time":11.538182067,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.538247693,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.538252009,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.538254681,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.354887115,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.354918617,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.354923586,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.35492776,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":37.916987511,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":37.917037202,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":37.917045236999996,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":37.917095805,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":37.917177229,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":37.917364418,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":37.917453843,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":37.917468765,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":37.917474233,"data":"Exception encountered at \"In [1]\":\n"}
+,{"stream_name":"stderr","time":37.917479621,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":37.917484145,"data":"ModuleNotFoundError                       Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":37.917488613,"data":"/tmp/ipykernel_23/3621404242.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":37.917493482,"data":"     13 import sys\n"}
+,{"stream_name":"stderr","time":37.917497825,"data":"     14 sys.path.insert(0, str(Path('/kaggle/working')))\n"}
+,{"stream_name":"stderr","time":37.917502482,"data":"---\u003e 15 import data as D\n"}
+,{"stream_name":"stderr","time":37.917507007,"data":"     16 \n"}
+,{"stream_name":"stderr","time":37.917512077,"data":"     17 SEED = 42\n"}
+,{"stream_name":"stderr","time":37.917517097,"data":"\n"}
+,{"stream_name":"stderr","time":37.917521512,"data":"ModuleNotFoundError: No module named 'data'\n"}
+,{"stream_name":"stderr","time":37.917525815,"data":"\n"}
+,{"stream_name":"stderr","time":40.368744526,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":40.368774636,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":40.576460035,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":40.576486141,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":41.316279101,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":41.626465633,"data":"[NbConvertApp] Writing 14735 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":44.052881574,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":44.951616614,"data":"[NbConvertApp] Writing 328059 bytes to __results__.html\n"}
+]

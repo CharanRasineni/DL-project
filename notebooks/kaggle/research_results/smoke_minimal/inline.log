@@ -1,0 +1,341 @@
+[{"stream_name":"stderr","time":7.665739979,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.665805993,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.665810683,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.665813425,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.297419439,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.297453544,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.297463861,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.297466817,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.835681483,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 17.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.03788111,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 17.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.635896894,"data":"Writing /kaggle/working/data.py\n"}
+,{"stream_name":"stdout","time":15.671969614,"data":"Writing /kaggle/working/research_runner.py\n"}
+,{"stream_name":"stderr","time":21.794869084,"data":"INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok\n"}
+,{"stream_name":"stderr","time":21.79490785,"data":"\n"}
+,{"stream_name":"stderr","time":21.794915672,"data":"INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok\n"}
+,{"stream_name":"stderr","time":38.00781514,"data":"INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stderr","time":38.007851388,"data":"\n"}
+,{"stream_name":"stderr","time":38.007856991,"data":"INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stdout","time":45.280960606,"data":"Creating new Ultralytics Settings v0.0.6 file ✅ \n"}
+,{"stream_name":"stdout","time":45.280992414,"data":"View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'\n"}
+,{"stream_name":"stdout","time":45.281031471,"data":"Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n"}
+,{"stream_name":"stdout","time":46.082397904,"data":"Downloading: \"https://download.pytorch.org/models/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth\" to /root/.cache/torch/hub/checkpoints/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth\n"}
+,{"stream_name":"stderr","time":46.083364472,"data":"\r  0%|          | 0.00/160M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":46.180113118,"data":"\r  0%|          | 0.00/160M [00:00\u003c?, ?B/s]\r  5%|▌         | 8.25M/160M [00:00\u003c00:01, 86.1MB/s]\n"}
+,{"stream_name":"stderr","time":46.280133438,"data":"\r  5%|▌         | 8.25M/160M [00:00\u003c00:01, 86.1MB/s]\r 17%|█▋        | 26.8M/160M [00:00\u003c00:00, 149MB/s] \n"}
+,{"stream_name":"stderr","time":46.380061872,"data":"\r 17%|█▋        | 26.8M/160M [00:00\u003c00:00, 149MB/s] \r 27%|██▋       | 43.2M/160M [00:00\u003c00:00, 160MB/s]\n"}
+,{"stream_name":"stderr","time":46.480739542,"data":"\r 27%|██▋       | 43.2M/160M [00:00\u003c00:00, 160MB/s]\r 37%|███▋      | 59.8M/160M [00:00\u003c00:00, 165MB/s]\n"}
+,{"stream_name":"stderr","time":46.580658283,"data":"\r 37%|███▋      | 59.8M/160M [00:00\u003c00:00, 165MB/s]\r 48%|████▊     | 76.4M/160M [00:00\u003c00:00, 168MB/s]\n"}
+,{"stream_name":"stderr","time":46.684192877,"data":"\r 48%|████▊     | 76.4M/160M [00:00\u003c00:00, 168MB/s]\r 58%|█████▊    | 92.5M/160M [00:00\u003c00:00, 167MB/s]\n"}
+,{"stream_name":"stderr","time":46.784332266,"data":"\r 58%|█████▊    | 92.5M/160M [00:00\u003c00:00, 167MB/s]\r 68%|██████▊   | 109M/160M [00:00\u003c00:00, 168MB/s] \n"}
+,{"stream_name":"stderr","time":46.884791307,"data":"\r 68%|██████▊   | 109M/160M [00:00\u003c00:00, 168MB/s] \r 78%|███████▊  | 125M/160M [00:00\u003c00:00, 169MB/s]\n"}
+,{"stream_name":"stderr","time":46.985377773,"data":"\r 78%|███████▊  | 125M/160M [00:00\u003c00:00, 169MB/s]\r 89%|████████▉ | 142M/160M [00:00\u003c00:00, 170MB/s]\n"}
+,{"stream_name":"stderr","time":47.085542913,"data":"\r 89%|████████▉ | 142M/160M [00:00\u003c00:00, 170MB/s]\r 99%|█████████▉| 159M/160M [00:01\u003c00:00, 172MB/s]\n"}
+,{"stream_name":"stderr","time":47.091285465,"data":"\r 99%|█████████▉| 159M/160M [00:01\u003c00:00, 172MB/s]\r100%|██████████| 160M/160M [00:01\u003c00:00, 165MB/s]\n"}
+,{"stream_name":"stderr","time":47.215686454,"data":"\r100%|██████████| 160M/160M [00:01\u003c00:00, 165MB/s]\n"}
+,{"stream_name":"stderr","time":47.215726229,"data":"\n"}
+,{"stream_name":"stderr","time":47.215731471,"data":"\n"}
+,{"stream_name":"stderr","time":47.756152221,"data":"/kaggle/working/research_runner.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\n"}
+,{"stream_name":"stderr","time":47.756196772,"data":"  scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')\n"}
+,{"stream_name":"stderr","time":47.756202302,"data":"\n"}
+,{"stream_name":"stderr","time":47.756206649,"data":"/kaggle/working/research_runner.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\n"}
+,{"stream_name":"stderr","time":47.756212315,"data":"  scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')\n"}
+,{"stream_name":"stderr","time":51.586599435,"data":"/kaggle/working/research_runner.py:192: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stderr","time":51.58665512,"data":"  scheduler.step()\n"}
+,{"stream_name":"stderr","time":51.586667734,"data":"\n"}
+,{"stream_name":"stderr","time":51.586671101,"data":"/kaggle/working/research_runner.py:192: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stderr","time":51.58668568,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":53.677963484,"data":"{'epoch': 1, 'loss': 4.621152639389038, 'val_COCO_AP': 0.0004896489648964896, 'seconds': 5.847674656999999}\n"}
+,{"stream_name":"stderr","time":58.632052742,"data":"INFO stage latency                ok (1.7s)\n"}
+,{"stream_name":"stderr","time":58.632085606,"data":"\n"}
+,{"stream_name":"stderr","time":58.632090496000004,"data":"INFO stage latency                ok (1.7s)\n"}
+,{"stream_name":"stderr","time":59.812099242,"data":"INFO stage training_curves        ok (1.2s)\n"}
+,{"stream_name":"stderr","time":59.812142059,"data":"\n"}
+,{"stream_name":"stderr","time":59.812150582,"data":"INFO stage training_curves        ok (1.2s)\n"}
+,{"stream_name":"stderr","time":94.563980667,"data":"INFO stage figures                ok (34.7s)\n"}
+,{"stream_name":"stderr","time":94.564020062,"data":"\n"}
+,{"stream_name":"stderr","time":94.564027749,"data":"INFO stage figures                ok (34.7s)\n"}
+,{"stream_name":"stdout","time":95.328723564,"data":"COMPLETE /kaggle/working/fasterrcnn_smoke\n"}
+,{"stream_name":"stdout","time":95.329813007,"data":"fasterrcnn PASS 2 checkpoint files\n"}
+,{"stream_name":"stderr","time":98.515655447,"data":"INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stderr","time":98.515734581,"data":"\n"}
+,{"stream_name":"stderr","time":98.515743006,"data":"INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stdout","time":99.018699376,"data":"Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s.pt to 'yolov8s.pt'...\n"}
+,{"stream_name":"stderr","time":99.486876401,"data":"\r  0%|          | 0.00/21.5M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":99.59337415,"data":"\r  0%|          | 0.00/21.5M [00:00\u003c?, ?B/s]\r  3%|▎         | 640k/21.5M [00:00\u003c00:03, 6.22MB/s]\n"}
+,{"stream_name":"stderr","time":99.693519609,"data":"\r  3%|▎         | 640k/21.5M [00:00\u003c00:03, 6.22MB/s]\r 30%|██▉       | 6.38M/21.5M [00:00\u003c00:00, 37.2MB/s]\n"}
+,{"stream_name":"stderr","time":99.796388073,"data":"\r 30%|██▉       | 6.38M/21.5M [00:00\u003c00:00, 37.2MB/s]\r 57%|█████▋    | 12.2M/21.5M [00:00\u003c00:00, 47.7MB/s]\n"}
+,{"stream_name":"stderr","time":99.898369985,"data":"\r 57%|█████▋    | 12.2M/21.5M [00:00\u003c00:00, 47.7MB/s]\r 87%|████████▋ | 18.8M/21.5M [00:00\u003c00:00, 55.2MB/s]\n"}
+,{"stream_name":"stderr","time":99.942437749,"data":"\r 87%|████████▋ | 18.8M/21.5M [00:00\u003c00:00, 55.2MB/s]\r100%|██████████| 21.5M/21.5M [00:00\u003c00:00, 49.7MB/s]\n"}
+,{"stream_name":"stderr","time":99.996681573,"data":"\r100%|██████████| 21.5M/21.5M [00:00\u003c00:00, 49.7MB/s]\n"}
+,{"stream_name":"stderr","time":99.996716531,"data":"\n"}
+,{"stream_name":"stderr","time":99.996721745,"data":"\n"}
+,{"stream_name":"stdout","time":100.114953107,"data":"New https://pypi.org/project/ultralytics/8.4.155 available 😃 Update with 'pip install -U ultralytics'\n"}
+,{"stream_name":"stdout","time":100.115890068,"data":"Ultralytics 8.3.40 🚀 Python-3.12.13 torch-2.10.0+cu128 CUDA:0 (Tesla T4, 14912MiB)\n"}
+,{"stream_name":"stdout","time":100.159364008,"data":"\u001b[34m\u001b[1mengine/trainer: \u001b[0mtask=detect, mode=train, model=yolov8s.pt, data=/kaggle/working/yolov8s_smoke/dataset/dataset.yaml, epochs=1, time=None, patience=0, batch=2, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=0, project=/kaggle/working/yolov8s_smoke/runs, name=fit, exist_ok=False, pretrained=True, optimizer=AdamW, verbose=False, seed=42, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=0, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=False, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.0001, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.0, hsv_s=0.0, hsv_v=0.0, degrees=0.0, translate=0.0, scale=0.0, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=0.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/kaggle/working/yolov8s_smoke/runs/fit\n"}
+,{"stream_name":"stdout","time":100.459187447,"data":"Downloading https://ultralytics.com/assets/Arial.ttf to '/root/.config/Ultralytics/Arial.ttf'...\n"}
+,{"stream_name":"stderr","time":100.780872033,"data":"\r  0%|          | 0.00/755k [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":100.853922192,"data":"\r  0%|          | 0.00/755k [00:00\u003c?, ?B/s]\r100%|██████████| 755k/755k [00:00\u003c00:00, 10.7MB/s]\n"}
+,{"stream_name":"stderr","time":100.98172104,"data":"\r100%|██████████| 755k/755k [00:00\u003c00:00, 10.7MB/s]\n"}
+,{"stream_name":"stderr","time":100.981746121,"data":"\n"}
+,{"stream_name":"stderr","time":100.981752089,"data":"\n"}
+,{"stream_name":"stdout","time":117.615543148,"data":"Overriding model.yaml nc=80 with nc=32\n"}
+,{"stream_name":"stdout","time":117.617107422,"data":"\n"}
+,{"stream_name":"stdout","time":117.617125523,"data":"                   from  n    params  module                                       arguments                     \n"}
+,{"stream_name":"stdout","time":117.618323772,"data":"  0                  -1  1       928  ultralytics.nn.modules.conv.Conv             [3, 32, 3, 2]                 \n"}
+,{"stream_name":"stdout","time":117.619993629,"data":"  1                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]                \n"}
+,{"stream_name":"stdout","time":117.622838971,"data":"  2                  -1  1     29056  ultralytics.nn.modules.block.C2f             [64, 64, 1, True]             \n"}
+,{"stream_name":"stdout","time":117.624982239,"data":"  3                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               \n"}
+,{"stream_name":"stdout","time":117.628677391,"data":"  4                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]           \n"}
+,{"stream_name":"stdout","time":117.632418588,"data":"  5                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              \n"}
+,{"stream_name":"stdout","time":117.639983511,"data":"  6                  -1  2    788480  ultralytics.nn.modules.block.C2f             [256, 256, 2, True]           \n"}
+,{"stream_name":"stdout","time":117.648946096,"data":"  7                  -1  1   1180672  ultralytics.nn.modules.conv.Conv             [256, 512, 3, 2]              \n"}
+,{"stream_name":"stdout","time":117.661832702,"data":"  8                  -1  1   1838080  ultralytics.nn.modules.block.C2f             [512, 512, 1, True]           \n"}
+,{"stream_name":"stdout","time":117.667558157,"data":"  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]                 \n"}
+,{"stream_name":"stdout","time":117.668581116,"data":" 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          \n"}
+,{"stream_name":"stdout","time":117.669390223,"data":" 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           \n"}
+,{"stream_name":"stdout","time":117.675083246,"data":" 12                  -1  1    591360  ultralytics.nn.modules.block.C2f             [768, 256, 1]                 \n"}
+,{"stream_name":"stdout","time":117.675833733,"data":" 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          \n"}
+,{"stream_name":"stdout","time":117.67681573,"data":" 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           \n"}
+,{"stream_name":"stdout","time":117.67982282,"data":" 15                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]                 \n"}
+,{"stream_name":"stdout","time":117.682332558,"data":" 16                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              \n"}
+,{"stream_name":"stdout","time":117.683337117,"data":" 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           \n"}
+,{"stream_name":"stdout","time":117.688160669,"data":" 18                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]                 \n"}
+,{"stream_name":"stdout","time":117.693839842,"data":" 19                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              \n"}
+,{"stream_name":"stdout","time":117.694702077,"data":" 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           \n"}
+,{"stream_name":"stdout","time":117.707762979,"data":" 21                  -1  1   1969152  ultralytics.nn.modules.block.C2f             [768, 512, 1]                 \n"}
+,{"stream_name":"stdout","time":117.727380403,"data":" 22        [15, 18, 21]  1   2128432  ultralytics.nn.modules.head.Detect           [32, [128, 256, 512]]         \n"}
+,{"stream_name":"stdout","time":118.021430635,"data":"Model summary: 225 layers, 11,147,984 parameters, 11,147,968 gradients, 28.7 GFLOPs\n"}
+,{"stream_name":"stdout","time":118.022463483,"data":"\n"}
+,{"stream_name":"stdout","time":118.042107176,"data":"Transferred 349/355 items from pretrained weights\n"}
+,{"stream_name":"stdout","time":118.081788833,"data":"Freezing layer 'model.22.dfl.conv.weight'\n"}
+,{"stream_name":"stdout","time":118.083106289,"data":"\u001b[34m\u001b[1mAMP: \u001b[0mrunning Automatic Mixed Precision (AMP) checks...\n"}
+,{"stream_name":"stdout","time":118.084096043,"data":"Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt to 'yolo11n.pt'...\n"}
+,{"stream_name":"stderr","time":118.570426587,"data":"\r  0%|          | 0.00/5.35M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":118.647614437,"data":"\r  0%|          | 0.00/5.35M [00:00\u003c?, ?B/s]\r100%|██████████| 5.35M/5.35M [00:00\u003c00:00, 73.4MB/s]\n"}
+,{"stream_name":"stderr","time":118.770768552,"data":"\r100%|██████████| 5.35M/5.35M [00:00\u003c00:00, 73.4MB/s]\n"}
+,{"stream_name":"stderr","time":118.770796382,"data":"\n"}
+,{"stream_name":"stderr","time":118.77080064,"data":"\n"}
+,{"stream_name":"stdout","time":121.639824585,"data":"\u001b[34m\u001b[1mAMP: \u001b[0mchecks passed ✅\n"}
+,{"stream_name":"stderr","time":121.644209931,"data":"\r\u001b[34m\u001b[1mtrain: \u001b[0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/train...:   0%|          | 0/4 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":121.650937475,"data":"\r\u001b[34m\u001b[1mtrain: \u001b[0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/train...:   0%|          | 0/4 [00:00\u003c?, ?it/s]\r\u001b[34m\u001b[1mtrain: \u001b[0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/train... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00\u003c00:00, 668.87it/s]\n"}
+,{"stream_name":"stdout","time":121.653046437,"data":"\u001b[34m\u001b[1mtrain: \u001b[0mNew cache created: /kaggle/working/yolov8s_smoke/dataset/labels/train.cache\n"}
+,{"stream_name":"stderr","time":121.847664242,"data":"\r\u001b[34m\u001b[1mtrain: \u001b[0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/train... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00\u003c00:00, 668.87it/s]\n"}
+,{"stream_name":"stderr","time":121.847724337,"data":"\n"}
+,{"stream_name":"stderr","time":121.847729468,"data":"\n"}
+,{"stream_name":"stdout","time":123.148985649,"data":"\u001b[34m\u001b[1malbumentations: \u001b[0mBlur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))\n"}
+,{"stream_name":"stderr","time":123.153589411,"data":"/usr/local/lib/python3.12/dist-packages/ultralytics/data/augment.py:1850: UserWarning: Argument(s) 'quality_lower' are not valid for transform ImageCompression\n"}
+,{"stream_name":"stderr","time":123.153613392,"data":"  A.ImageCompression(quality_lower=75, p=0.0),\n"}
+,{"stream_name":"stderr","time":123.153637448,"data":"\n"}
+,{"stream_name":"stderr","time":123.153644758,"data":"/usr/local/lib/python3.12/dist-packages/ultralytics/data/augment.py:1850: UserWarning: Argument(s) 'quality_lower' are not valid for transform ImageCompression\n"}
+,{"stream_name":"stderr","time":123.153650606,"data":"  A.ImageCompression(quality_lower=75, p=0.0),\n"}
+,{"stream_name":"stderr","time":123.155291452,"data":"\r\u001b[34m\u001b[1mval: \u001b[0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/val...:   0%|          | 0/4 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":123.161662215,"data":"\r\u001b[34m\u001b[1mval: \u001b[0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/val...:   0%|          | 0/4 [00:00\u003c?, ?it/s]\r\u001b[34m\u001b[1mval: \u001b[0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/val... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00\u003c00:00, 807.61it/s]\n"}
+,{"stream_name":"stdout","time":123.163720146,"data":"\u001b[34m\u001b[1mval: \u001b[0mNew cache created: /kaggle/working/yolov8s_smoke/dataset/labels/val.cache\n"}
+,{"stream_name":"stdout","time":123.220723581,"data":"\u001b[34m\u001b[1moptimizer:\u001b[0m AdamW(lr=0.0001, momentum=0.937) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.0005), 63 bias(decay=0.0)\n"}
+,{"stream_name":"stdout","time":123.221314031,"data":"Image sizes 640 train, 640 val\n"}
+,{"stream_name":"stdout","time":123.221331104,"data":"Using 0 dataloader workers\n"}
+,{"stream_name":"stdout","time":123.221336401,"data":"Logging results to \u001b[1m/kaggle/working/yolov8s_smoke/runs/fit\u001b[0m\n"}
+,{"stream_name":"stdout","time":123.221341649,"data":"Starting training for 1 epochs...\n"}
+,{"stream_name":"stdout","time":123.224001448,"data":"\n"}
+,{"stream_name":"stdout","time":123.224025289,"data":"      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size\n"}
+,{"stream_name":"stderr","time":123.225125521,"data":"\r\u001b[34m\u001b[1mval: \u001b[0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/val... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00\u003c00:00, 807.61it/s]\n"}
+,{"stream_name":"stderr","time":123.22515002,"data":"\n"}
+,{"stream_name":"stderr","time":123.225156016,"data":"\n"}
+,{"stream_name":"stderr","time":123.226744477,"data":"\r  0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":123.9638279,"data":"\r  0%|          | 0/2 [00:00\u003c?, ?it/s]\r        1/1     0.648G      2.579       8.03      1.908          7        640:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":123.964707534,"data":"\r        1/1     0.648G      2.579       8.03      1.908          7        640:   0%|          | 0/2 [00:00\u003c?, ?it/s]\r        1/1     0.648G      2.579       8.03      1.908          7        640:  50%|█████     | 1/2 [00:00\u003c00:00,  1.35it/s]\n"}
+,{"stream_name":"stderr","time":124.17960965,"data":"\r        1/1     0.648G      2.579       8.03      1.908          7        640:  50%|█████     | 1/2 [00:00\u003c00:00,  1.35it/s]\r        1/1     0.648G      2.421      8.795       1.85          5        640:  50%|█████     | 1/2 [00:00\u003c00:00,  1.35it/s]\n"}
+,{"stream_name":"stderr","time":124.180657963,"data":"\r        1/1     0.648G      2.421      8.795       1.85          5        640:  50%|█████     | 1/2 [00:00\u003c00:00,  1.35it/s]\r        1/1     0.648G      2.421      8.795       1.85          5        640: 100%|██████████| 2/2 [00:00\u003c00:00,  2.32it/s]\n"}
+,{"stream_name":"stderr","time":124.181456481,"data":"\r        1/1     0.648G      2.421      8.795       1.85          5        640: 100%|██████████| 2/2 [00:00\u003c00:00,  2.32it/s]\r        1/1     0.648G      2.421      8.795       1.85          5        640: 100%|██████████| 2/2 [00:00\u003c00:00,  2.09it/s]\n"}
+,{"stream_name":"stderr","time":124.191511422,"data":"\r        1/1     0.648G      2.421      8.795       1.85          5        640: 100%|██████████| 2/2 [00:00\u003c00:00,  2.09it/s]\n"}
+,{"stream_name":"stderr","time":124.191535925,"data":"\n"}
+,{"stream_name":"stderr","time":124.191541519,"data":"\n"}
+,{"stream_name":"stderr","time":124.19252075,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":125.417031118,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00\u003c?, ?it/s]\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:01\u003c00:00,  1.21s/it]\n"}
+,{"stream_name":"stderr","time":125.417957681,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:01\u003c00:00,  1.21s/it]\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:01\u003c00:00,  1.21s/it]\n"}
+,{"stream_name":"stdout","time":125.418853687,"data":"                   all          4         12      0.256     0.0564     0.0583     0.0392\n"}
+,{"stream_name":"stderr","time":125.991323201,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:01\u003c00:00,  1.21s/it]\n"}
+,{"stream_name":"stderr","time":125.991367512,"data":"\n"}
+,{"stream_name":"stderr","time":125.99137453,"data":"\n"}
+,{"stream_name":"stdout","time":126.014778257,"data":"\n"}
+,{"stream_name":"stdout","time":126.014829462,"data":"1 epochs completed in 0.001 hours.\n"}
+,{"stream_name":"stdout","time":126.117027242,"data":"Optimizer stripped from /kaggle/working/yolov8s_smoke/runs/fit/weights/last.pt, 22.5MB\n"}
+,{"stream_name":"stdout","time":126.218247216,"data":"Optimizer stripped from /kaggle/working/yolov8s_smoke/runs/fit/weights/best.pt, 22.5MB\n"}
+,{"stream_name":"stdout","time":126.220697312,"data":"\n"}
+,{"stream_name":"stdout","time":126.220720646,"data":"Validating /kaggle/working/yolov8s_smoke/runs/fit/weights/best.pt...\n"}
+,{"stream_name":"stdout","time":126.221459515,"data":"Ultralytics 8.3.40 🚀 Python-3.12.13 torch-2.10.0+cu128 CUDA:0 (Tesla T4, 14912MiB)\n"}
+,{"stream_name":"stdout","time":126.479741651,"data":"Model summary (fused): 168 layers, 11,137,968 parameters, 0 gradients, 28.5 GFLOPs\n"}
+,{"stream_name":"stderr","time":126.635542232,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":126.887589312,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00\u003c?, ?it/s]\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00\u003c00:00,  3.99it/s]\n"}
+,{"stream_name":"stderr","time":126.88883359,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00\u003c00:00,  3.99it/s]\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00\u003c00:00,  3.97it/s]\n"}
+,{"stream_name":"stdout","time":126.894458544,"data":"                   all          4         12      0.257     0.0566     0.0582     0.0392\n"}
+,{"stream_name":"stdout","time":126.895291639,"data":"Speed: 0.2ms preprocess, 4.4ms inference, 0.0ms loss, 2.8ms postprocess per image\n"}
+,{"stream_name":"stderr","time":127.289423131,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00\u003c00:00,  3.97it/s]\n"}
+,{"stream_name":"stderr","time":127.289462432,"data":"\n"}
+,{"stream_name":"stderr","time":127.289467268,"data":"\n"}
+,{"stream_name":"stderr","time":129.554003278,"data":"INFO stage latency                ok (0.9s)\n"}
+,{"stream_name":"stderr","time":129.554035238,"data":"\n"}
+,{"stream_name":"stderr","time":129.554041378,"data":"INFO stage latency                ok (0.9s)\n"}
+,{"stream_name":"stderr","time":130.126600583,"data":"INFO stage training_curves        ok (0.6s)\n"}
+,{"stream_name":"stderr","time":130.126790083,"data":"\n"}
+,{"stream_name":"stderr","time":130.126810076,"data":"INFO stage training_curves        ok (0.6s)\n"}
+,{"stream_name":"stderr","time":158.57521193,"data":"INFO stage figures                ok (28.4s)\n"}
+,{"stream_name":"stderr","time":158.575244094,"data":"\n"}
+,{"stream_name":"stderr","time":158.575250017,"data":"INFO stage figures                ok (28.4s)\n"}
+,{"stream_name":"stdout","time":159.064097025,"data":"COMPLETE /kaggle/working/yolov8s_smoke\n"}
+,{"stream_name":"stdout","time":159.065855563,"data":"yolov8s PASS 3 checkpoint files\n"}
+,{"stream_name":"stderr","time":161.899537872,"data":"INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stderr","time":161.899585149,"data":"\n"}
+,{"stream_name":"stderr","time":161.899608162,"data":"INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stdout","time":162.394434855,"data":"Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/rtdetr-l.pt to 'rtdetr-l.pt'...\n"}
+,{"stream_name":"stderr","time":162.841672771,"data":"\r  0%|          | 0.00/63.4M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":162.949922987,"data":"\r  0%|          | 0.00/63.4M [00:00\u003c?, ?B/s]\r 18%|█▊        | 11.1M/63.4M [00:00\u003c00:00, 109MB/s]\n"}
+,{"stream_name":"stderr","time":163.050187883,"data":"\r 18%|█▊        | 11.1M/63.4M [00:00\u003c00:00, 109MB/s]\r 51%|█████     | 32.5M/63.4M [00:00\u003c00:00, 175MB/s]\n"}
+,{"stream_name":"stderr","time":163.150178219,"data":"\r 51%|█████     | 32.5M/63.4M [00:00\u003c00:00, 175MB/s]\r 87%|████████▋ | 55.2M/63.4M [00:00\u003c00:00, 203MB/s]\n"}
+,{"stream_name":"stderr","time":163.185857426,"data":"\r 87%|████████▋ | 55.2M/63.4M [00:00\u003c00:00, 203MB/s]\r100%|██████████| 63.4M/63.4M [00:00\u003c00:00, 194MB/s]\n"}
+,{"stream_name":"stderr","time":163.250388445,"data":"\r100%|██████████| 63.4M/63.4M [00:00\u003c00:00, 194MB/s]\n"}
+,{"stream_name":"stderr","time":163.250435659,"data":"\n"}
+,{"stream_name":"stderr","time":163.250440263,"data":"\n"}
+,{"stream_name":"stdout","time":163.405209897,"data":"New https://pypi.org/project/ultralytics/8.4.155 available 😃 Update with 'pip install -U ultralytics'\n"}
+,{"stream_name":"stdout","time":163.406179117,"data":"Ultralytics 8.3.40 🚀 Python-3.12.13 torch-2.10.0+cu128 CUDA:0 (Tesla T4, 14912MiB)\n"}
+,{"stream_name":"stdout","time":163.412121018,"data":"\u001b[34m\u001b[1mengine/trainer: \u001b[0mtask=detect, mode=train, model=rtdetr-l.pt, data=/kaggle/working/rtdetr_smoke/dataset/dataset.yaml, epochs=1, time=None, patience=0, batch=2, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=0, project=/kaggle/working/rtdetr_smoke/runs, name=fit, exist_ok=False, pretrained=True, optimizer=AdamW, verbose=False, seed=42, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=0, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=False, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.0001, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.0, hsv_s=0.0, hsv_v=0.0, degrees=0.0, translate=0.0, scale=0.0, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=0.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/kaggle/working/rtdetr_smoke/runs/fit\n"}
+,{"stream_name":"stdout","time":163.416841497,"data":"Overriding model.yaml nc=80 with nc=32\n"}
+,{"stream_name":"stdout","time":163.417917655,"data":"WARNING ⚠️ no model scale passed. Assuming scale='l'.\n"}
+,{"stream_name":"stdout","time":163.41871113,"data":"\n"}
+,{"stream_name":"stdout","time":163.418728188,"data":"                   from  n    params  module                                       arguments                     \n"}
+,{"stream_name":"stdout","time":163.421595281,"data":"  0                  -1  1     25248  ultralytics.nn.modules.block.HGStem          [3, 32, 48]                   \n"}
+,{"stream_name":"stdout","time":163.425707573,"data":"  1                  -1  6    155072  ultralytics.nn.modules.block.HGBlock         [48, 48, 128, 3, 6]           \n"}
+,{"stream_name":"stdout","time":163.426606182,"data":"  2                  -1  1      1408  ultralytics.nn.modules.conv.DWConv           [128, 128, 3, 2, 1, False]    \n"}
+,{"stream_name":"stdout","time":163.434756728,"data":"  3                  -1  6    839296  ultralytics.nn.modules.block.HGBlock         [128, 96, 512, 3, 6]          \n"}
+,{"stream_name":"stdout","time":163.43617031,"data":"  4                  -1  1      5632  ultralytics.nn.modules.conv.DWConv           [512, 512, 3, 2, 1, False]    \n"}
+,{"stream_name":"stdout","time":163.451668393,"data":"  5                  -1  6   1695360  ultralytics.nn.modules.block.HGBlock         [512, 192, 1024, 5, 6, True, False]\n"}
+,{"stream_name":"stdout","time":163.467912339,"data":"  6                  -1  6   2055808  ultralytics.nn.modules.block.HGBlock         [1024, 192, 1024, 5, 6, True, True]\n"}
+,{"stream_name":"stdout","time":163.484278594,"data":"  7                  -1  6   2055808  ultralytics.nn.modules.block.HGBlock         [1024, 192, 1024, 5, 6, True, True]\n"}
+,{"stream_name":"stdout","time":163.485487623,"data":"  8                  -1  1     11264  ultralytics.nn.modules.conv.DWConv           [1024, 1024, 3, 2, 1, False]  \n"}
+,{"stream_name":"stdout","time":163.528244589,"data":"  9                  -1  6   6708480  ultralytics.nn.modules.block.HGBlock         [1024, 384, 2048, 5, 6, True, False]\n"}
+,{"stream_name":"stdout","time":163.533191767,"data":" 10                  -1  1    524800  ultralytics.nn.modules.conv.Conv             [2048, 256, 1, 1, None, 1, 1, False]\n"}
+,{"stream_name":"stdout","time":163.540227523,"data":" 11                  -1  1    789760  ultralytics.nn.modules.transformer.AIFI      [256, 1024, 8]                \n"}
+,{"stream_name":"stdout","time":163.541744876,"data":" 12                  -1  1     66048  ultralytics.nn.modules.conv.Conv             [256, 256, 1, 1]              \n"}
+,{"stream_name":"stdout","time":163.542657284,"data":" 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          \n"}
+,{"stream_name":"stdout","time":163.545636815,"data":" 14                   7  1    262656  ultralytics.nn.modules.conv.Conv             [1024, 256, 1, 1, None, 1, 1, False]\n"}
+,{"stream_name":"stdout","time":163.546653825,"data":" 15            [-2, -1]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           \n"}
+,{"stream_name":"stdout","time":163.56269107399999,"data":" 16                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 \n"}
+,{"stream_name":"stdout","time":163.564660718,"data":" 17                  -1  1     66048  ultralytics.nn.modules.conv.Conv             [256, 256, 1, 1]              \n"}
+,{"stream_name":"stdout","time":163.565481777,"data":" 18                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          \n"}
+,{"stream_name":"stdout","time":163.567697418,"data":" 19                   3  1    131584  ultralytics.nn.modules.conv.Conv             [512, 256, 1, 1, None, 1, 1, False]\n"}
+,{"stream_name":"stdout","time":163.56888523,"data":" 20            [-2, -1]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           \n"}
+,{"stream_name":"stdout","time":163.584423049,"data":" 21                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 \n"}
+,{"stream_name":"stdout","time":163.589729221,"data":" 22                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              \n"}
+,{"stream_name":"stdout","time":163.590764811,"data":" 23            [-1, 17]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           \n"}
+,{"stream_name":"stdout","time":163.606530876,"data":" 24                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 \n"}
+,{"stream_name":"stdout","time":163.611891945,"data":" 25                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              \n"}
+,{"stream_name":"stdout","time":163.613748572,"data":" 26            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           \n"}
+,{"stream_name":"stdout","time":163.62817965,"data":" 27                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 \n"}
+,{"stream_name":"stdout","time":163.682265448,"data":" 28        [21, 24, 27]  1   7367612  ultralytics.nn.modules.head.RTDETRDecoder    [32, [256, 256, 256]]         \n"}
+,{"stream_name":"stdout","time":165.135981388,"data":"rt-detr-l summary: 681 layers, 32,871,836 parameters, 32,871,836 gradients, 110.0 GFLOPs\n"}
+,{"stream_name":"stdout","time":165.136889033,"data":"\n"}
+,{"stream_name":"stdout","time":165.187841046,"data":"Transferred 926/941 items from pretrained weights\n"}
+,{"stream_name":"stdout","time":165.269025697,"data":"\u001b[34m\u001b[1mAMP: \u001b[0mrunning Automatic Mixed Precision (AMP) checks...\n"}
+,{"stream_name":"stdout","time":165.673967411,"data":"\u001b[34m\u001b[1mAMP: \u001b[0mchecks passed ✅\n"}
+,{"stream_name":"stderr","time":165.678152476,"data":"\r\u001b[34m\u001b[1mtrain: \u001b[0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/train...:   0%|          | 0/4 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":165.68385691,"data":"\r\u001b[34m\u001b[1mtrain: \u001b[0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/train...:   0%|          | 0/4 [00:00\u003c?, ?it/s]\r\u001b[34m\u001b[1mtrain: \u001b[0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/train... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00\u003c00:00, 945.62it/s]\n"}
+,{"stream_name":"stdout","time":165.68653892,"data":"\u001b[34m\u001b[1mtrain: \u001b[0mNew cache created: /kaggle/working/rtdetr_smoke/dataset/labels/train.cache\n"}
+,{"stream_name":"stdout","time":165.690102294,"data":"\u001b[34m\u001b[1malbumentations: \u001b[0mBlur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))\n"}
+,{"stream_name":"stderr","time":165.693342901,"data":"\r\u001b[34m\u001b[1mtrain: \u001b[0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/train... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00\u003c00:00, 945.62it/s]\n"}
+,{"stream_name":"stderr","time":165.693359852,"data":"/usr/local/lib/python3.12/dist-packages/ultralytics/data/augment.py:1850: UserWarning: Argument(s) 'quality_lower' are not valid for transform ImageCompression\n"}
+,{"stream_name":"stderr","time":165.693365078,"data":"  A.ImageCompression(quality_lower=75, p=0.0),\n"}
+,{"stream_name":"stderr","time":165.693369087,"data":"\n"}
+,{"stream_name":"stderr","time":165.693373274,"data":"\n"}
+,{"stream_name":"stderr","time":165.693377485,"data":"/usr/local/lib/python3.12/dist-packages/ultralytics/data/augment.py:1850: UserWarning: Argument(s) 'quality_lower' are not valid for transform ImageCompression\n"}
+,{"stream_name":"stderr","time":165.693381732,"data":"  A.ImageCompression(quality_lower=75, p=0.0),\n"}
+,{"stream_name":"stderr","time":165.695005311,"data":"\r\u001b[34m\u001b[1mval: \u001b[0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/val...:   0%|          | 0/4 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":165.700102515,"data":"\r\u001b[34m\u001b[1mval: \u001b[0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/val...:   0%|          | 0/4 [00:00\u003c?, ?it/s]\r\u001b[34m\u001b[1mval: \u001b[0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/val... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00\u003c00:00, 1191.56it/s]\n"}
+,{"stream_name":"stdout","time":165.702331391,"data":"\u001b[34m\u001b[1mval: \u001b[0mNew cache created: /kaggle/working/rtdetr_smoke/dataset/labels/val.cache\n"}
+,{"stream_name":"stdout","time":165.838295379,"data":"\u001b[34m\u001b[1moptimizer:\u001b[0m AdamW(lr=0.0001, momentum=0.937) with parameter groups 143 weight(decay=0.0), 206 weight(decay=0.0005), 226 bias(decay=0.0)\n"}
+,{"stream_name":"stdout","time":165.842125222,"data":"Image sizes 640 train, 640 val\n"}
+,{"stream_name":"stdout","time":165.842146567,"data":"Using 0 dataloader workers\n"}
+,{"stream_name":"stdout","time":165.842152298,"data":"Logging results to \u001b[1m/kaggle/working/rtdetr_smoke/runs/fit\u001b[0m\n"}
+,{"stream_name":"stdout","time":165.842157,"data":"Starting training for 1 epochs...\n"}
+,{"stream_name":"stdout","time":165.843211398,"data":"\n"}
+,{"stream_name":"stdout","time":165.843230797,"data":"      Epoch    GPU_mem  giou_loss   cls_loss    l1_loss  Instances       Size\n"}
+,{"stream_name":"stderr","time":165.844335309,"data":"\r\u001b[34m\u001b[1mval: \u001b[0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/val... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00\u003c00:00, 1191.56it/s]\n"}
+,{"stream_name":"stderr","time":165.844356412,"data":"\n"}
+,{"stream_name":"stderr","time":165.844361387,"data":"\n"}
+,{"stream_name":"stderr","time":165.845247678,"data":"\r  0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":170.798721307,"data":"\r  0%|          | 0/2 [00:00\u003c?, ?it/s]/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":170.79876048,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":170.798766489,"data":"\r        1/1      1.99G      2.448      12.71      1.686          7        640:   0%|          | 0/2 [00:04\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":170.798771919,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":170.798778229,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":170.799735871,"data":"\r        1/1      1.99G      2.448      12.71      1.686          7        640:   0%|          | 0/2 [00:04\u003c?, ?it/s]\r        1/1      1.99G      2.448      12.71      1.686          7        640:  50%|█████     | 1/2 [00:04\u003c00:04,  4.95s/it]\n"}
+,{"stream_name":"stderr","time":171.296652156,"data":"\r        1/1      1.99G      2.448      12.71      1.686          7        640:  50%|█████     | 1/2 [00:04\u003c00:04,  4.95s/it]\r        1/1      1.99G      2.298      14.06      1.402          5        640:  50%|█████     | 1/2 [00:05\u003c00:04,  4.95s/it]\n"}
+,{"stream_name":"stderr","time":171.297864131,"data":"\r        1/1      1.99G      2.298      14.06      1.402          5        640:  50%|█████     | 1/2 [00:05\u003c00:04,  4.95s/it]\r        1/1      1.99G      2.298      14.06      1.402          5        640: 100%|██████████| 2/2 [00:05\u003c00:00,  2.33s/it]\n"}
+,{"stream_name":"stderr","time":171.298735177,"data":"\r        1/1      1.99G      2.298      14.06      1.402          5        640: 100%|██████████| 2/2 [00:05\u003c00:00,  2.33s/it]\r        1/1      1.99G      2.298      14.06      1.402          5        640: 100%|██████████| 2/2 [00:05\u003c00:00,  2.73s/it]\n"}
+,{"stream_name":"stderr","time":171.323500362,"data":"\r        1/1      1.99G      2.298      14.06      1.402          5        640: 100%|██████████| 2/2 [00:05\u003c00:00,  2.73s/it]\n"}
+,{"stream_name":"stderr","time":171.323525794,"data":"\n"}
+,{"stream_name":"stderr","time":171.323530648,"data":"\n"}
+,{"stream_name":"stderr","time":171.324711025,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":173.695379774,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00\u003c?, ?it/s]\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:02\u003c00:00,  2.37s/it]\n"}
+,{"stream_name":"stderr","time":173.696665716,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:02\u003c00:00,  2.37s/it]\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:02\u003c00:00,  2.37s/it]\n"}
+,{"stream_name":"stdout","time":173.697711413,"data":"                   all          4         12          0          0          0          0\n"}
+,{"stream_name":"stderr","time":173.9060293,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:02\u003c00:00,  2.37s/it]\n"}
+,{"stream_name":"stderr","time":173.906070491,"data":"\n"}
+,{"stream_name":"stderr","time":173.906081893,"data":"\n"}
+,{"stream_name":"stdout","time":174.772608104,"data":"\n"}
+,{"stream_name":"stdout","time":174.772673509,"data":"1 epochs completed in 0.002 hours.\n"}
+,{"stream_name":"stdout","time":175.07513649,"data":"Optimizer stripped from /kaggle/working/rtdetr_smoke/runs/fit/weights/last.pt, 66.3MB\n"}
+,{"stream_name":"stdout","time":175.327981861,"data":"Optimizer stripped from /kaggle/working/rtdetr_smoke/runs/fit/weights/best.pt, 66.3MB\n"}
+,{"stream_name":"stdout","time":175.332953951,"data":"\n"}
+,{"stream_name":"stdout","time":175.332979644,"data":"Validating /kaggle/working/rtdetr_smoke/runs/fit/weights/best.pt...\n"}
+,{"stream_name":"stdout","time":175.334340204,"data":"Ultralytics 8.3.40 🚀 Python-3.12.13 torch-2.10.0+cu128 CUDA:0 (Tesla T4, 14912MiB)\n"}
+,{"stream_name":"stdout","time":176.021822895,"data":"rt-detr-l summary: 502 layers, 32,049,500 parameters, 0 gradients, 105.5 GFLOPs\n"}
+,{"stream_name":"stderr","time":178.507147705,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":178.842817841,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00\u003c?, ?it/s]\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00\u003c00:00,  2.99it/s]\n"}
+,{"stream_name":"stderr","time":178.844131139,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00\u003c00:00,  2.99it/s]\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00\u003c00:00,  2.98it/s]\n"}
+,{"stream_name":"stdout","time":178.844854177,"data":"                   all          4         12          0          0          0          0\n"}
+,{"stream_name":"stdout","time":178.845649794,"data":"Speed: 0.2ms preprocess, 22.0ms inference, 0.0ms loss, 0.3ms postprocess per image\n"}
+,{"stream_name":"stderr","time":179.266822789,"data":"\r                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00\u003c00:00,  2.98it/s]\n"}
+,{"stream_name":"stderr","time":179.266858575,"data":"\n"}
+,{"stream_name":"stderr","time":179.266863445,"data":"\n"}
+,{"stream_name":"stderr","time":182.864548595,"data":"INFO stage latency                ok (1.5s)\n"}
+,{"stream_name":"stderr","time":182.864581507,"data":"\n"}
+,{"stream_name":"stderr","time":182.864587542,"data":"INFO stage latency                ok (1.5s)\n"}
+,{"stream_name":"stderr","time":183.793309686,"data":"INFO stage training_curves        ok (0.5s)\n"}
+,{"stream_name":"stderr","time":183.793369712,"data":"\n"}
+,{"stream_name":"stderr","time":183.793373721,"data":"INFO stage training_curves        ok (0.5s)\n"}
+,{"stream_name":"stderr","time":186.694023549,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":186.694083233,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":186.694087703,"data":"\n"}
+,{"stream_name":"stderr","time":186.69409029,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":186.694093721,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":195.251263174,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":195.251304175,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":195.25132322,"data":"\n"}
+,{"stream_name":"stderr","time":195.251329845,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":195.251339666,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":203.205801262,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":203.205863808,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":203.20587269,"data":"\n"}
+,{"stream_name":"stderr","time":203.205880677,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":203.205890609,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":211.764760226,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":211.76481127,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":211.76481718,"data":"\n"}
+,{"stream_name":"stderr","time":211.764820712,"data":"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)\n"}
+,{"stream_name":"stderr","time":211.764824892,"data":"  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":217.67065403,"data":"INFO stage figures                ok (34.3s)\n"}
+,{"stream_name":"stderr","time":217.670689853,"data":"\n"}
+,{"stream_name":"stderr","time":217.670716146,"data":"INFO stage figures                ok (34.3s)\n"}
+,{"stream_name":"stdout","time":218.34610026,"data":"COMPLETE /kaggle/working/rtdetr_smoke\n"}
+,{"stream_name":"stdout","time":218.34749518,"data":"rtdetr PASS 3 checkpoint files\n"}
+,{"stream_name":"stdout","time":218.349237572,"data":"PASS: 1-epoch/4-image runs produced checkpoints and PASS completion records for all three families\n"}
+,{"stream_name":"stderr","time":224.170183682,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":224.170214995,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":224.331498456,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":224.331527085,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":224.983591548,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":225.343951973,"data":"[NbConvertApp] Writing 159181 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":227.863961923,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":229.037067081,"data":"[NbConvertApp] Writing 824454 bytes to __results__.html\n"}
+]

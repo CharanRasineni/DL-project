@@ -1,0 +1,164 @@
+[{"stream_name":"stderr","time":7.447445946,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.447521354,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.447525502,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.447528045,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.084389243,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.084422378,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.084427465,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.084431205,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.598019791,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB 2.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.800478105,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB 2.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.689388076,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 10.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.891889462,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 10.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.947562714,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.0/18.0 MB 69.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.150324523,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.0/18.0 MB 69.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.682009456,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.0/63.0 MB 29.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.884311867,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.0/63.0 MB 29.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":23.547714483,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":23.547746489,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":23.547752973,"data":"kaggle-environments 1.29.3 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547759092,"data":"cesium 0.12.4 requires numpy\u003c3.0,\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547763983,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547768517,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547786059,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547790731,"data":"jaxlib 0.7.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547794926999998,"data":"cupy-cuda12x 14.0.1 requires numpy\u003c2.6,\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547798463,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547802207,"data":"tobler 0.14.0 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547811194,"data":"jax 0.7.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547818837,"data":"opencv-python-headless 4.13.0.92 requires numpy\u003e=2; python_version \u003e= \"3.9\", but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547821566,"data":"rasterio 1.5.0 requires numpy\u003e=2, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547823985,"data":"pytensor 2.38.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547826321,"data":"xarray-einstats 0.10.0 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547828702,"data":"tifffile 2026.4.11 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547831122,"data":"opencv-contrib-python 4.13.0.92 requires numpy\u003e=2; python_version \u003e= \"3.9\", but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.547833626,"data":"shap 0.51.0 requires numpy\u003e=2, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712214986,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":23.712256982,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":23.712263745,"data":"kaggle-environments 1.29.3 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.71226784,"data":"cesium 0.12.4 requires numpy\u003c3.0,\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712271677,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712275496,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712279087,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712282654,"data":"jaxlib 0.7.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.7122864,"data":"cupy-cuda12x 14.0.1 requires numpy\u003c2.6,\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712290304,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712294457,"data":"tobler 0.14.0 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712312868,"data":"jax 0.7.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712316815,"data":"opencv-python-headless 4.13.0.92 requires numpy\u003e=2; python_version \u003e= \"3.9\", but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712321669,"data":"rasterio 1.5.0 requires numpy\u003e=2, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712325258,"data":"pytensor 2.38.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.71232892,"data":"xarray-einstats 0.10.0 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712332394,"data":"tifffile 2026.4.11 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712336945,"data":"opencv-contrib-python 4.13.0.92 requires numpy\u003e=2; python_version \u003e= \"3.9\", but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712341373,"data":"shap 0.51.0 requires numpy\u003e=2, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712345131,"data":"\n"}
+,{"stream_name":"stderr","time":23.712348545,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":23.712354667,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":23.712358429,"data":"kaggle-environments 1.29.3 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712362206999998,"data":"cesium 0.12.4 requires numpy\u003c3.0,\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712365801,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712369337,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712372923,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712376598,"data":"jaxlib 0.7.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712380826,"data":"cupy-cuda12x 14.0.1 requires numpy\u003c2.6,\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712384662,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.71238854,"data":"tobler 0.14.0 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712392483,"data":"jax 0.7.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712396139,"data":"opencv-python-headless 4.13.0.92 requires numpy\u003e=2; python_version \u003e= \"3.9\", but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712436196,"data":"rasterio 1.5.0 requires numpy\u003e=2, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712440228,"data":"pytensor 2.38.2 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712448383999998,"data":"xarray-einstats 0.10.0 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.712452483,"data":"tifffile 2026.4.11 requires numpy\u003e=2.0, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.71245591,"data":"opencv-contrib-python 4.13.0.92 requires numpy\u003e=2; python_version \u003e= \"3.9\", but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.71245975,"data":"shap 0.51.0 requires numpy\u003e=2, but you have numpy 1.26.4 which is incompatible.\n"}
+,{"stream_name":"stdout","time":23.772131633,"data":"Writing /kaggle/working/data.py\n"}
+,{"stream_name":"stdout","time":23.807303598,"data":"Writing /kaggle/working/research_runner.py\n"}
+,{"stream_name":"stdout","time":23.821810807,"data":"{'mode': 'train', 'family': 'yolov8s', 'epochs': 30, 'imgsz': 640, 'batch': 4, 'seed': 42, 'score_thr': 0.001, 'bootstrap': 0, 'max_train_hours': 9, 'split_sha256': '232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8'}\n"}
+,{"stream_name":"stderr","time":24.335022707,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":24.335067922,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":24.335074169,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":24.335158728,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":24.335167279,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":24.335383569,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":24.335694184,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":24.335703,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":24.335707245,"data":"Exception encountered at \"In [5]\":\n"}
+,{"stream_name":"stderr","time":24.33571085,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":24.335714377,"data":"ValueError                                Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":24.335717911,"data":"/tmp/ipykernel_22/1741238926.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":24.335723882,"data":"      1 import traceback\n"}
+,{"stream_name":"stderr","time":24.335728919,"data":"----\u003e 2 import data as D\n"}
+,{"stream_name":"stderr","time":24.3357363,"data":"      3 import research_runner as R\n"}
+,{"stream_name":"stderr","time":24.335740122,"data":"      4 D.selftest()\n"}
+,{"stream_name":"stderr","time":24.335744124,"data":"      5 try:\n"}
+,{"stream_name":"stderr","time":24.335747992,"data":"\n"}
+,{"stream_name":"stderr","time":24.335751267,"data":"/kaggle/working/data.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":24.335754804,"data":"     21 \n"}
+,{"stream_name":"stderr","time":24.335758107,"data":"     22 import numpy as np\n"}
+,{"stream_name":"stderr","time":24.335761562,"data":"---\u003e 23 import pandas as pd\n"}
+,{"stream_name":"stderr","time":24.335765242,"data":"     24 import torch\n"}
+,{"stream_name":"stderr","time":24.33576855,"data":"     25 from pycocotools.coco import COCO\n"}
+,{"stream_name":"stderr","time":24.335773847,"data":"\n"}
+,{"stream_name":"stderr","time":24.335780527,"data":"/usr/local/lib/python3.12/dist-packages/pandas/__init__.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":24.335792639,"data":"     35     ) from _err\n"}
+,{"stream_name":"stderr","time":24.335795064,"data":"     36 \n"}
+,{"stream_name":"stderr","time":24.335797304,"data":"---\u003e 37 from pandas._config import (\n"}
+,{"stream_name":"stderr","time":24.335799574,"data":"     38     get_option,\n"}
+,{"stream_name":"stderr","time":24.335801842,"data":"     39     set_option,\n"}
+,{"stream_name":"stderr","time":24.335804011,"data":"\n"}
+,{"stream_name":"stderr","time":24.335806149,"data":"/usr/local/lib/python3.12/dist-packages/pandas/_config/__init__.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":24.335808527,"data":"     18     \"warn_copy_on_write\",\n"}
+,{"stream_name":"stderr","time":24.335810939,"data":"     19 ]\n"}
+,{"stream_name":"stderr","time":24.335813524,"data":"---\u003e 20 from pandas._config import config\n"}
+,{"stream_name":"stderr","time":24.335828897,"data":"     21 from pandas._config import dates  # pyright: ignore[reportUnusedImport]  # noqa: F401\n"}
+,{"stream_name":"stderr","time":24.335832852,"data":"     22 from pandas._config.config import (\n"}
+,{"stream_name":"stderr","time":24.335836782,"data":"\n"}
+,{"stream_name":"stderr","time":24.335840425,"data":"/usr/local/lib/python3.12/dist-packages/pandas/_config/config.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":24.335844644,"data":"     66 import warnings\n"}
+,{"stream_name":"stderr","time":24.33584821,"data":"     67 \n"}
+,{"stream_name":"stderr","time":24.335851404,"data":"---\u003e 68 from pandas._typing import (\n"}
+,{"stream_name":"stderr","time":24.335854755,"data":"     69     F,\n"}
+,{"stream_name":"stderr","time":24.335857996,"data":"     70     T,\n"}
+,{"stream_name":"stderr","time":24.335861234,"data":"\n"}
+,{"stream_name":"stderr","time":24.335864369,"data":"/usr/local/lib/python3.12/dist-packages/pandas/_typing.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":24.335867905,"data":"    196     int,\n"}
+,{"stream_name":"stderr","time":24.335871533,"data":"    197     np.ndarray,\n"}
+,{"stream_name":"stderr","time":24.335875207,"data":"--\u003e 198     np.random.Generator,\n"}
+,{"stream_name":"stderr","time":24.335879058,"data":"    199     np.random.BitGenerator,\n"}
+,{"stream_name":"stderr","time":24.335882681,"data":"    200     np.random.RandomState,\n"}
+,{"stream_name":"stderr","time":24.335886734,"data":"\n"}
+,{"stream_name":"stderr","time":24.335890822,"data":"/usr/local/lib/python3.12/dist-packages/numpy/__init__.py in __getattr__(attr)\n"}
+,{"stream_name":"stderr","time":24.335894989,"data":"    335 \n"}
+,{"stream_name":"stderr","time":24.335898952,"data":"    336     def __dir__():\n"}
+,{"stream_name":"stderr","time":24.335902555,"data":"--\u003e 337         public_symbols = globals().keys() | {'testing'}\n"}
+,{"stream_name":"stderr","time":24.335906301,"data":"    338         public_symbols -= {\n"}
+,{"stream_name":"stderr","time":24.335909535,"data":"    339             \"core\", \"matrixlib\",\n"}
+,{"stream_name":"stderr","time":24.33591335,"data":"\n"}
+,{"stream_name":"stderr","time":24.335917286,"data":"/usr/local/lib/python3.12/dist-packages/numpy/random/__init__.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":24.335921563,"data":"    178 \n"}
+,{"stream_name":"stderr","time":24.335925558,"data":"    179 # add these for module-freeze analysis (like PyInstaller)\n"}
+,{"stream_name":"stderr","time":24.33592914,"data":"--\u003e 180 from . import _pickle\n"}
+,{"stream_name":"stderr","time":24.335933221,"data":"    181 from . import _common\n"}
+,{"stream_name":"stderr","time":24.335942948,"data":"    182 from . import _bounded_integers\n"}
+,{"stream_name":"stderr","time":24.335946973,"data":"\n"}
+,{"stream_name":"stderr","time":24.335966845,"data":"/usr/local/lib/python3.12/dist-packages/numpy/random/_pickle.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":24.335972221,"data":"----\u003e 1 from .mtrand import RandomState\n"}
+,{"stream_name":"stderr","time":24.335976448,"data":"      2 from ._philox import Philox\n"}
+,{"stream_name":"stderr","time":24.3359809,"data":"      3 from ._pcg64 import PCG64, PCG64DXSM\n"}
+,{"stream_name":"stderr","time":24.336005812,"data":"      4 from ._sfc64 import SFC64\n"}
+,{"stream_name":"stderr","time":24.336009563,"data":"      5 \n"}
+,{"stream_name":"stderr","time":24.336013586,"data":"\n"}
+,{"stream_name":"stderr","time":24.33601711,"data":"numpy/random/mtrand.pyx in init numpy.random.mtrand()\n"}
+,{"stream_name":"stderr","time":24.33602088,"data":"\n"}
+,{"stream_name":"stderr","time":24.336024806,"data":"ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject\n"}
+,{"stream_name":"stderr","time":24.336028977,"data":"\n"}
+,{"stream_name":"stderr","time":26.480563548,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":26.480597156,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":26.640299365,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":26.640328776,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":27.256746988,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":27.563348804,"data":"[NbConvertApp] Writing 145263 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":29.974909938,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":31.145965747,"data":"[NbConvertApp] Writing 803257 bytes to __results__.html\n"}
+]

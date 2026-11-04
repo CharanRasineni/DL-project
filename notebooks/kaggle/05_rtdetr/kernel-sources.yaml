@@ -1,0 +1,9 @@
+sources:
+  split:
+    source: rscharan/fathomnet-02-split
+    type: kernel
+    destination: /kaggle/input/fathomnet-02-split
+  data:
+    source: rscharan/fathomnet-01-dataset
+    type: kernel
+    destination: /kaggle/input/fathomnet-01-dataset

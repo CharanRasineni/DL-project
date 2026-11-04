@@ -1,0 +1,20 @@
+{
+  "status": "CORE_COMPLETE_ANALYSIS_INCOMPLETE",
+  "analysis_complete": false,
+  "mode": "train",
+  "scientific_result": true,
+  "checkpoint_sha256": "5ff583a87c47ab488a5f3dace539830c7b8212f7d68e828c0b343de1fa020363",
+  "runner_sha256": "741ee918b0e8355a1211e60d49b6bef784c894a0d992a77c5631e3c3a0520e27",
+  "configuration": {
+    "mode": "train",
+    "family": "fasterrcnn",
+    "epochs": 1,
+    "batch": 1,
+    "imgsz": 64,
+    "seed": 42,
+    "score_thr": 0.001,
+    "bootstrap": 2,
+    "max_train_hours": 1,
+    "split_sha256": "368bf7f866204fe5ecd610a33ceffbb6b1480e354602dcb268a7479ac4789072"
+  }
+}

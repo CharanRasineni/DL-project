@@ -1,0 +1,419 @@
+[{"stream_name":"stderr","time":7.410787638,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.410883896,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.41088935,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.410892441,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.03071634,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.030758767,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.030764265,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.030768078,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.336954957,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 19.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.539527434,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 19.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.94644939,"data":"Writing /kaggle/working/data.py\n"}
+,{"stream_name":"stdout","time":14.980001372,"data":"Writing /kaggle/working/research_runner.py\n"}
+,{"stream_name":"stdout","time":14.99454453,"data":"/kaggle/input mounts: ['fathom-net-fasterrcnn', 'notebooks']\n"}
+,{"stream_name":"stdout","time":22.944631711,"data":"last.pt candidates: ['/kaggle/input/fathom-net-fasterrcnn/fasterrcnn_train/last.pt']\n"}
+,{"stream_name":"stdout","time":33.501800482,"data":"attached checkpoint epoch: 26 | history rows: 25\n"}
+,{"stream_name":"stdout","time":33.501844827,"data":"{'mode': 'train', 'family': 'fasterrcnn', 'epochs': 30, 'imgsz': 640, 'batch': 2, 'seed': 42, 'score_thr': 0.001, 'bootstrap': 0, 'max_train_hours': 4.5, 'resume_checkpoint': '/kaggle/input/fathom-net-fasterrcnn/fasterrcnn_train/last.pt', 'split_sha256': '232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8'}\n"}
+,{"stream_name":"stderr","time":34.729195163,"data":"INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok\n"}
+,{"stream_name":"stderr","time":34.729231163,"data":"\n"}
+,{"stream_name":"stderr","time":34.729237448,"data":"INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok\n"}
+,{"stream_name":"stderr","time":37.719989403,"data":"INFO split loaded from /kaggle/input/fathom-net-fasterrcnn/fasterrcnn_train/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stderr","time":37.72002259,"data":"\n"}
+,{"stream_name":"stderr","time":37.720027906,"data":"INFO split loaded from /kaggle/input/fathom-net-fasterrcnn/fasterrcnn_train/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stdout","time":344.340825399,"data":"Creating new Ultralytics Settings v0.0.6 file ✅ \n"}
+,{"stream_name":"stdout","time":344.340872678,"data":"View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'\n"}
+,{"stream_name":"stdout","time":344.340880722,"data":"Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n"}
+,{"stream_name":"stdout","time":345.052968664,"data":"Downloading: \"https://download.pytorch.org/models/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth\" to /root/.cache/torch/hub/checkpoints/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth\n"}
+,{"stream_name":"stderr","time":345.053951672,"data":"\r  0%|          | 0.00/160M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":345.155109817,"data":"\r  0%|          | 0.00/160M [00:00\u003c?, ?B/s]\r 10%|█         | 16.6M/160M [00:00\u003c00:00, 174MB/s]\n"}
+,{"stream_name":"stderr","time":345.254823824,"data":"\r 10%|█         | 16.6M/160M [00:00\u003c00:00, 174MB/s]\r 24%|██▍       | 39.0M/160M [00:00\u003c00:00, 209MB/s]\n"}
+,{"stream_name":"stderr","time":345.365333598,"data":"\r 24%|██▍       | 39.0M/160M [00:00\u003c00:00, 209MB/s]\r 37%|███▋      | 59.0M/160M [00:00\u003c00:00, 200MB/s]\n"}
+,{"stream_name":"stderr","time":345.467850547,"data":"\r 37%|███▋      | 59.0M/160M [00:00\u003c00:00, 200MB/s]\r 49%|████▉     | 78.1M/160M [00:00\u003c00:00, 198MB/s]\n"}
+,{"stream_name":"stderr","time":345.567761935,"data":"\r 49%|████▉     | 78.1M/160M [00:00\u003c00:00, 198MB/s]\r 63%|██████▎   | 101M/160M [00:00\u003c00:00, 212MB/s] \n"}
+,{"stream_name":"stderr","time":345.66770355,"data":"\r 63%|██████▎   | 101M/160M [00:00\u003c00:00, 212MB/s] \r 77%|███████▋  | 123M/160M [00:00\u003c00:00, 219MB/s]\n"}
+,{"stream_name":"stderr","time":345.768247328,"data":"\r 77%|███████▋  | 123M/160M [00:00\u003c00:00, 219MB/s]\r 91%|█████████ | 145M/160M [00:00\u003c00:00, 223MB/s]\n"}
+,{"stream_name":"stderr","time":345.834902643,"data":"\r 91%|█████████ | 145M/160M [00:00\u003c00:00, 223MB/s]\r100%|██████████| 160M/160M [00:00\u003c00:00, 215MB/s]\n"}
+,{"stream_name":"stderr","time":345.893548939,"data":"\r100%|██████████| 160M/160M [00:00\u003c00:00, 215MB/s]\n"}
+,{"stream_name":"stderr","time":345.893583239,"data":"\n"}
+,{"stream_name":"stderr","time":345.8935887,"data":"\n"}
+,{"stream_name":"stderr","time":346.48678209,"data":"/kaggle/working/research_runner.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\n"}
+,{"stream_name":"stderr","time":346.486829353,"data":"  scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')\n"}
+,{"stream_name":"stderr","time":346.486839498,"data":"\n"}
+,{"stream_name":"stderr","time":346.486842231,"data":"/kaggle/working/research_runner.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\n"}
+,{"stream_name":"stderr","time":346.486844949,"data":"  scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')\n"}
+,{"stream_name":"stdout","time":351.589218414,"data":"RESUMED from epoch 26; history rows 25; prior best AP 0.3291\n"}
+,{"stream_name":"stdout","time":1495.595744993,"data":"{'epoch': 27, 'loss': 0.08668679197825653, 'val_COCO_AP': 0.32776129509081176, 'seconds': 1143.971736777}\n"}
+,{"stream_name":"stdout","time":2784.441048039,"data":"{'epoch': 28, 'loss': 0.0826273851582301, 'val_COCO_AP': 0.33307117763808924, 'seconds': 1288.089987761}\n"}
+,{"stream_name":"stdout","time":4074.173745158,"data":"{'epoch': 29, 'loss': 0.08205878878753131, 'val_COCO_AP': 0.3307440758122505, 'seconds': 1289.733812306}\n"}
+,{"stream_name":"stdout","time":5370.564829769,"data":"{'epoch': 30, 'loss': 0.08157024028925203, 'val_COCO_AP': 0.3336322506695122, 'seconds': 1295.63289824}\n"}
+,{"stream_name":"stderr","time":5480.774279635,"data":"INFO stage latency                ok (1.6s)\n"}
+,{"stream_name":"stderr","time":5480.774354124,"data":"\n"}
+,{"stream_name":"stderr","time":5480.774373464,"data":"INFO stage latency                ok (1.6s)\n"}
+,{"stream_name":"stderr","time":5481.978763165,"data":"INFO stage training_curves        ok (1.2s)\n"}
+,{"stream_name":"stderr","time":5481.978803908,"data":"\n"}
+,{"stream_name":"stderr","time":5481.978808651,"data":"INFO stage training_curves        ok (1.2s)\n"}
+,{"stream_name":"stderr","time":5516.769473872,"data":"INFO stage figures                ok (34.8s)\n"}
+,{"stream_name":"stderr","time":5516.769516259,"data":"\n"}
+,{"stream_name":"stderr","time":5516.769520825,"data":"INFO stage figures                ok (34.8s)\n"}
+,{"stream_name":"stdout","time":5517.967998911,"data":"COMPLETE /kaggle/working/fasterrcnn_train\n"}
+,{"stream_name":"stdout","time":5517.969797844,"data":"{\n"}
+,{"stream_name":"stdout","time":5517.969856606,"data":"  \"mAP50-95\": 0.33324944392415284,\n"}
+,{"stream_name":"stdout","time":5517.969865956,"data":"  \"mAP50\": 0.48300959615413447,\n"}
+,{"stream_name":"stdout","time":5517.969871941,"data":"  \"mAP75\": 0.3541020824455304,\n"}
+,{"stream_name":"stdout","time":5517.969878782,"data":"  \"mAP_small\": 0.006732673267326733,\n"}
+,{"stream_name":"stdout","time":5517.969885233,"data":"  \"mAP_medium\": 0.05853676253324579,\n"}
+,{"stream_name":"stdout","time":5517.969890617,"data":"  \"mAP_large\": 0.3772765835289377,\n"}
+,{"stream_name":"stdout","time":5517.969896155,"data":"  \"per_class_AP50-95\": {\n"}
+,{"stream_name":"stdout","time":5517.969920146,"data":"    \"amphipod\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.969927009,"data":"    \"anemone\": 0.30918515152060927,\n"}
+,{"stream_name":"stdout","time":5517.969932642,"data":"    \"barnacle\": 0.45445544554455436,\n"}
+,{"stream_name":"stdout","time":5517.969938085,"data":"    \"benthic worm\": 0.0006473724295506473,\n"}
+,{"stream_name":"stdout","time":5517.969943798,"data":"    \"bivalve\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.969949519,"data":"    \"black coral\": 0.2459063743261013,\n"}
+,{"stream_name":"stdout","time":5517.969955043,"data":"    \"bony fish\": 0.46356719681462477,\n"}
+,{"stream_name":"stdout","time":5517.969961202,"data":"    \"brittle star\": 0.2973417098554081,\n"}
+,{"stream_name":"stdout","time":5517.969967052,"data":"    \"calycophoran siphonophore\": 0.2,\n"}
+,{"stream_name":"stdout","time":5517.969972779,"data":"    \"chiton\": 0.4427722772277228,\n"}
+,{"stream_name":"stdout","time":5517.969978146,"data":"    \"crab\": 0.5165331439902052,\n"}
+,{"stream_name":"stdout","time":5517.969983844,"data":"    \"feather star\": 0.35435324902194315,\n"}
+,{"stream_name":"stdout","time":5517.96999044,"data":"    \"hydroid\": 0.6534653465346535,\n"}
+,{"stream_name":"stdout","time":5517.969996207,"data":"    \"isopod\": 0.07767405311959767,\n"}
+,{"stream_name":"stdout","time":5517.970002376,"data":"    \"jelly\": 0.14016950990873736,\n"}
+,{"stream_name":"stdout","time":5517.970008359,"data":"    \"larvacean\": 0.718151815181518,\n"}
+,{"stream_name":"stdout","time":5517.970014144,"data":"    \"octopus\": 0.4259594756468128,\n"}
+,{"stream_name":"stdout","time":5517.970020159,"data":"    \"physonect siphonophore\": 0.5281363850670782,\n"}
+,{"stream_name":"stdout","time":5517.970025684,"data":"    \"pyrosome\": 0.9252475247524753,\n"}
+,{"stream_name":"stdout","time":5517.970031189,"data":"    \"sea cucumber\": 0.26838392057838917,\n"}
+,{"stream_name":"stdout","time":5517.970036796,"data":"    \"sea fan\": 0.40481324794906504,\n"}
+,{"stream_name":"stdout","time":5517.970042441,"data":"    \"sea pen\": 0.2221316249271986,\n"}
+,{"stream_name":"stdout","time":5517.970048386,"data":"    \"sea slug\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970069036,"data":"    \"sea snail\": 0.1668027187334118,\n"}
+,{"stream_name":"stdout","time":5517.970074867,"data":"    \"sea squirt\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.97007961,"data":"    \"sea star\": 0.2670594282690959,\n"}
+,{"stream_name":"stdout","time":5517.970084319,"data":"    \"shrimp\": 0.20519618319435967,\n"}
+,{"stream_name":"stdout","time":5517.970089104,"data":"    \"soft coral\": 0.5634258699904132,\n"}
+,{"stream_name":"stdout","time":5517.970093862,"data":"    \"sponge\": 0.39692548278285117,\n"}
+,{"stream_name":"stdout","time":5517.970098391,"data":"    \"squat lobster\": 0.237564734885543,\n"}
+,{"stream_name":"stdout","time":5517.970102802,"data":"    \"stony coral\": 0.5864197668307043,\n"}
+,{"stream_name":"stdout","time":5517.970107599,"data":"    \"urchin\": 0.5916931964902666\n"}
+,{"stream_name":"stdout","time":5517.970112692,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.970116889,"data":"  \"per_class_AP50\": {\n"}
+,{"stream_name":"stdout","time":5517.970120919,"data":"    \"amphipod\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970125018,"data":"    \"anemone\": 0.4675859689383522,\n"}
+,{"stream_name":"stdout","time":5517.970129117,"data":"    \"barnacle\": 0.5049504950495048,\n"}
+,{"stream_name":"stdout","time":5517.97013326,"data":"    \"benthic worm\": 0.003236862147753237,\n"}
+,{"stream_name":"stdout","time":5517.970137354,"data":"    \"bivalve\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970141397,"data":"    \"black coral\": 0.33773481203815775,\n"}
+,{"stream_name":"stdout","time":5517.970145447,"data":"    \"bony fish\": 0.7371359293951703,\n"}
+,{"stream_name":"stdout","time":5517.970149595,"data":"    \"brittle star\": 0.5920789736463357,\n"}
+,{"stream_name":"stdout","time":5517.970153634,"data":"    \"calycophoran siphonophore\": 0.5,\n"}
+,{"stream_name":"stdout","time":5517.970157808,"data":"    \"chiton\": 0.7128712871287128,\n"}
+,{"stream_name":"stdout","time":5517.970162649,"data":"    \"crab\": 0.6476454781694977,\n"}
+,{"stream_name":"stdout","time":5517.97016784,"data":"    \"feather star\": 0.5990253074885536,\n"}
+,{"stream_name":"stdout","time":5517.970173075,"data":"    \"hydroid\": 0.7524752475247525,\n"}
+,{"stream_name":"stdout","time":5517.97017762,"data":"    \"isopod\": 0.2684582743988684,\n"}
+,{"stream_name":"stdout","time":5517.970181498,"data":"    \"jelly\": 0.21397139713971403,\n"}
+,{"stream_name":"stdout","time":5517.970185494,"data":"    \"larvacean\": 0.9174917491749175,\n"}
+,{"stream_name":"stdout","time":5517.970189279,"data":"    \"octopus\": 0.6326507650765076,\n"}
+,{"stream_name":"stdout","time":5517.970193291,"data":"    \"physonect siphonophore\": 0.7371522866572371,\n"}
+,{"stream_name":"stdout","time":5517.970198947,"data":"    \"pyrosome\": 1.0,\n"}
+,{"stream_name":"stdout","time":5517.970202696,"data":"    \"sea cucumber\": 0.5135455105264807,\n"}
+,{"stream_name":"stdout","time":5517.97020659,"data":"    \"sea fan\": 0.6128035984114032,\n"}
+,{"stream_name":"stdout","time":5517.970211175,"data":"    \"sea pen\": 0.2670355270821199,\n"}
+,{"stream_name":"stdout","time":5517.970215889,"data":"    \"sea slug\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970220402,"data":"    \"sea snail\": 0.19145779962611642,\n"}
+,{"stream_name":"stdout","time":5517.970224792,"data":"    \"sea squirt\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970229239,"data":"    \"sea star\": 0.4105345894714484,\n"}
+,{"stream_name":"stdout","time":5517.970233504,"data":"    \"shrimp\": 0.4853798104462581,\n"}
+,{"stream_name":"stdout","time":5517.970237759,"data":"    \"soft coral\": 0.7189572101864276,\n"}
+,{"stream_name":"stdout","time":5517.970250016,"data":"    \"sponge\": 0.5179992021507299,\n"}
+,{"stream_name":"stdout","time":5517.970255384,"data":"    \"squat lobster\": 0.4623705908695767,\n"}
+,{"stream_name":"stdout","time":5517.970259682,"data":"    \"stony coral\": 0.7741554773896612,\n"}
+,{"stream_name":"stdout","time":5517.970264601,"data":"    \"urchin\": 0.8776029267980441\n"}
+,{"stream_name":"stdout","time":5517.970278299,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.970283201,"data":"  \"per_class_size_AP50-95\": {\n"}
+,{"stream_name":"stdout","time":5517.970288367,"data":"    \"amphipod\": {\n"}
+,{"stream_name":"stdout","time":5517.970293383,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.970297712,"data":"      \"medium\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970302259,"data":"      \"large\": 0.0\n"}
+,{"stream_name":"stdout","time":5517.970306819,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.970311479,"data":"    \"anemone\": {\n"}
+,{"stream_name":"stdout","time":5517.970316165,"data":"      \"small\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970320847,"data":"      \"medium\": 0.06841115456430313,\n"}
+,{"stream_name":"stdout","time":5517.970325225,"data":"      \"large\": 0.44914723824590963\n"}
+,{"stream_name":"stdout","time":5517.970330024,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.970334254,"data":"    \"barnacle\": {\n"}
+,{"stream_name":"stdout","time":5517.970464724,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.970493767,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.970513794,"data":"      \"large\": 0.45445544554455436\n"}
+,{"stream_name":"stdout","time":5517.970531583,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.97055423,"data":"    \"benthic worm\": {\n"}
+,{"stream_name":"stdout","time":5517.970574888,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.970589792,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.970609218,"data":"      \"large\": 0.0008858780614903595\n"}
+,{"stream_name":"stdout","time":5517.970687064,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.970737708,"data":"    \"bivalve\": {\n"}
+,{"stream_name":"stdout","time":5517.970757117,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.970789385,"data":"      \"medium\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970813982,"data":"      \"large\": 0.0\n"}
+,{"stream_name":"stdout","time":5517.970843663,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.970859749,"data":"    \"black coral\": {\n"}
+,{"stream_name":"stdout","time":5517.970881408,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.970900292,"data":"      \"medium\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.970953406,"data":"      \"large\": 0.256560813766709\n"}
+,{"stream_name":"stdout","time":5517.970977131,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971006158,"data":"    \"bony fish\": {\n"}
+,{"stream_name":"stdout","time":5517.971023373,"data":"      \"small\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.971039225,"data":"      \"medium\": 0.11646636837451942,\n"}
+,{"stream_name":"stdout","time":5517.971074282,"data":"      \"large\": 0.5243811611719804\n"}
+,{"stream_name":"stdout","time":5517.971101965,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971116416,"data":"    \"brittle star\": {\n"}
+,{"stream_name":"stdout","time":5517.971130137,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971139187,"data":"      \"medium\": 0.08218211838069549,\n"}
+,{"stream_name":"stdout","time":5517.971169595,"data":"      \"large\": 0.34365927096039167\n"}
+,{"stream_name":"stdout","time":5517.971174432,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971178165,"data":"    \"calycophoran siphonophore\": {\n"}
+,{"stream_name":"stdout","time":5517.971182117,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971185828,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.97118955,"data":"      \"large\": 0.2\n"}
+,{"stream_name":"stdout","time":5517.971192867,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.97120835,"data":"    \"chiton\": {\n"}
+,{"stream_name":"stdout","time":5517.971212084,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.97121557,"data":"      \"medium\": 0.48737623762376237,\n"}
+,{"stream_name":"stdout","time":5517.971219275,"data":"      \"large\": 0.35346534653465334\n"}
+,{"stream_name":"stdout","time":5517.971222613,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971225818,"data":"    \"crab\": {\n"}
+,{"stream_name":"stdout","time":5517.971229419,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971233102,"data":"      \"medium\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.9712368,"data":"      \"large\": 0.566846698245132\n"}
+,{"stream_name":"stdout","time":5517.971240228,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971243464,"data":"    \"feather star\": {\n"}
+,{"stream_name":"stdout","time":5517.971246826,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971250448,"data":"      \"medium\": 0.01923620933521923,\n"}
+,{"stream_name":"stdout","time":5517.971254138,"data":"      \"large\": 0.3816845639879363\n"}
+,{"stream_name":"stdout","time":5517.97125774,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971261205,"data":"    \"hydroid\": {\n"}
+,{"stream_name":"stdout","time":5517.971264888,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971268407,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.971272048,"data":"      \"large\": 0.6534653465346535\n"}
+,{"stream_name":"stdout","time":5517.971275415,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971278883,"data":"    \"isopod\": {\n"}
+,{"stream_name":"stdout","time":5517.971282438,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971286809,"data":"      \"medium\": 0.00403960396039604,\n"}
+,{"stream_name":"stdout","time":5517.971290447,"data":"      \"large\": 0.13349834983498346\n"}
+,{"stream_name":"stdout","time":5517.971293809,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971297048,"data":"    \"jelly\": {\n"}
+,{"stream_name":"stdout","time":5517.971300732,"data":"      \"small\": 0.033663366336633666,\n"}
+,{"stream_name":"stdout","time":5517.971306121,"data":"      \"medium\": 0.06732673267326733,\n"}
+,{"stream_name":"stdout","time":5517.971309805,"data":"      \"large\": 0.31472182932578974\n"}
+,{"stream_name":"stdout","time":5517.971313403,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971316981,"data":"    \"larvacean\": {\n"}
+,{"stream_name":"stdout","time":5517.971320583,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971324133,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.97132779,"data":"      \"large\": 0.718151815181518\n"}
+,{"stream_name":"stdout","time":5517.971331482,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971334832,"data":"    \"octopus\": {\n"}
+,{"stream_name":"stdout","time":5517.971344406,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971347837,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.971351321,"data":"      \"large\": 0.4262991150600209\n"}
+,{"stream_name":"stdout","time":5517.97135484,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971358307,"data":"    \"physonect siphonophore\": {\n"}
+,{"stream_name":"stdout","time":5517.971362038,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971365637,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.971369211,"data":"      \"large\": 0.5287728772877287\n"}
+,{"stream_name":"stdout","time":5517.971372841,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971376248,"data":"    \"pyrosome\": {\n"}
+,{"stream_name":"stdout","time":5517.971379574,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971382831,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.971386374,"data":"      \"large\": 0.9252475247524753\n"}
+,{"stream_name":"stdout","time":5517.971390148,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971393395,"data":"    \"sea cucumber\": {\n"}
+,{"stream_name":"stdout","time":5517.971396885,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971400589,"data":"      \"medium\": 0.10719571405338889,\n"}
+,{"stream_name":"stdout","time":5517.971404071,"data":"      \"large\": 0.5415475833297615\n"}
+,{"stream_name":"stdout","time":5517.971407757,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971411113,"data":"    \"sea fan\": {\n"}
+,{"stream_name":"stdout","time":5517.971414581,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971417978,"data":"      \"medium\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.971421335,"data":"      \"large\": 0.41183658433159354\n"}
+,{"stream_name":"stdout","time":5517.971424857,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971428202,"data":"    \"sea pen\": {\n"}
+,{"stream_name":"stdout","time":5517.971431701,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971435165,"data":"      \"medium\": 0.029411764705882353,\n"}
+,{"stream_name":"stdout","time":5517.97143862,"data":"      \"large\": 0.28217821782178215\n"}
+,{"stream_name":"stdout","time":5517.971442238,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971445677,"data":"    \"sea slug\": {\n"}
+,{"stream_name":"stdout","time":5517.971449235,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971452865,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.971456398,"data":"      \"large\": 0.0\n"}
+,{"stream_name":"stdout","time":5517.97145978,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971463267,"data":"    \"sea snail\": {\n"}
+,{"stream_name":"stdout","time":5517.971466987,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971470614,"data":"      \"medium\": 0.007268226822682268,\n"}
+,{"stream_name":"stdout","time":5517.971474357,"data":"      \"large\": 0.3722772277227723\n"}
+,{"stream_name":"stdout","time":5517.971478091,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971481553,"data":"    \"sea squirt\": {\n"}
+,{"stream_name":"stdout","time":5517.971485186,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971488845,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.971492469,"data":"      \"large\": 0.0\n"}
+,{"stream_name":"stdout","time":5517.97149606,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971499597,"data":"    \"sea star\": {\n"}
+,{"stream_name":"stdout","time":5517.971507602,"data":"      \"small\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.971511212,"data":"      \"medium\": 0.08666571282272449,\n"}
+,{"stream_name":"stdout","time":5517.971514898,"data":"      \"large\": 0.4912380643510046\n"}
+,{"stream_name":"stdout","time":5517.971518565,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971522079,"data":"    \"shrimp\": {\n"}
+,{"stream_name":"stdout","time":5517.971525713,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971529377,"data":"      \"medium\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.971532975,"data":"      \"large\": 0.22822752906298743\n"}
+,{"stream_name":"stdout","time":5517.971536641,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971540075,"data":"    \"soft coral\": {\n"}
+,{"stream_name":"stdout","time":5517.971543735,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971547267,"data":"      \"medium\": null,\n"}
+,{"stream_name":"stdout","time":5517.971550735,"data":"      \"large\": 0.5636636140552475\n"}
+,{"stream_name":"stdout","time":5517.971554347,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.97155768,"data":"    \"sponge\": {\n"}
+,{"stream_name":"stdout","time":5517.971561833,"data":"      \"small\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.971565435,"data":"      \"medium\": 0.04198019801980197,\n"}
+,{"stream_name":"stdout","time":5517.971568995,"data":"      \"large\": 0.45515260288741405\n"}
+,{"stream_name":"stdout","time":5517.971572692,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971576272,"data":"    \"squat lobster\": {\n"}
+,{"stream_name":"stdout","time":5517.971579947,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971583436,"data":"      \"medium\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.97158709,"data":"      \"large\": 0.2702644602439338\n"}
+,{"stream_name":"stdout","time":5517.97159077,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971594234,"data":"    \"stony coral\": {\n"}
+,{"stream_name":"stdout","time":5517.971625405,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971628923,"data":"      \"medium\": 0.0,\n"}
+,{"stream_name":"stdout","time":5517.971632365,"data":"      \"large\": 0.5954561134850836\n"}
+,{"stream_name":"stdout","time":5517.971635781,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.971639073,"data":"    \"urchin\": {\n"}
+,{"stream_name":"stdout","time":5517.971642472,"data":"      \"small\": null,\n"}
+,{"stream_name":"stdout","time":5517.971645908,"data":"      \"medium\": 0.11171197186151856,\n"}
+,{"stream_name":"stdout","time":5517.971649245,"data":"      \"large\": 0.6297654011385002\n"}
+,{"stream_name":"stdout","time":5517.971653176,"data":"    }\n"}
+,{"stream_name":"stdout","time":5517.971656304,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.971659622,"data":"  \"head_mid_tail_AP50-95\": {\n"}
+,{"stream_name":"stdout","time":5517.971663468,"data":"    \"head\": 0.45086736772009983,\n"}
+,{"stream_name":"stdout","time":5517.97166712,"data":"    \"mid\": 0.42433591227080747,\n"}
+,{"stream_name":"stdout","time":5517.971670349,"data":"    \"tail\": 0.3045614581331745\n"}
+,{"stream_name":"stdout","time":5517.9716736,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.971676788,"data":"  \"groups\": {\n"}
+,{"stream_name":"stdout","time":5517.971680365,"data":"    \"head\": [\n"}
+,{"stream_name":"stdout","time":5517.971685345,"data":"      \"bony fish\",\n"}
+,{"stream_name":"stdout","time":5517.97168902,"data":"      \"brittle star\",\n"}
+,{"stream_name":"stdout","time":5517.971698811,"data":"      \"urchin\"\n"}
+,{"stream_name":"stdout","time":5517.971702472,"data":"    ],\n"}
+,{"stream_name":"stdout","time":5517.971705888,"data":"    \"mid\": [\n"}
+,{"stream_name":"stdout","time":5517.971709248,"data":"      \"anemone\",\n"}
+,{"stream_name":"stdout","time":5517.971712663,"data":"      \"sea fan\",\n"}
+,{"stream_name":"stdout","time":5517.971716076,"data":"      \"sponge\",\n"}
+,{"stream_name":"stdout","time":5517.971719071,"data":"      \"stony coral\"\n"}
+,{"stream_name":"stdout","time":5517.971722489,"data":"    ],\n"}
+,{"stream_name":"stdout","time":5517.971725722,"data":"    \"tail\": [\n"}
+,{"stream_name":"stdout","time":5517.971729097,"data":"      \"amphipod\",\n"}
+,{"stream_name":"stdout","time":5517.971732505,"data":"      \"barnacle\",\n"}
+,{"stream_name":"stdout","time":5517.971738065,"data":"      \"benthic worm\",\n"}
+,{"stream_name":"stdout","time":5517.971741717,"data":"      \"bivalve\",\n"}
+,{"stream_name":"stdout","time":5517.971745226,"data":"      \"black coral\",\n"}
+,{"stream_name":"stdout","time":5517.971748811,"data":"      \"calycophoran siphonophore\",\n"}
+,{"stream_name":"stdout","time":5517.971752401,"data":"      \"chiton\",\n"}
+,{"stream_name":"stdout","time":5517.97175585,"data":"      \"crab\",\n"}
+,{"stream_name":"stdout","time":5517.971759509,"data":"      \"feather star\",\n"}
+,{"stream_name":"stdout","time":5517.971762843,"data":"      \"hydroid\",\n"}
+,{"stream_name":"stdout","time":5517.971766367,"data":"      \"isopod\",\n"}
+,{"stream_name":"stdout","time":5517.971770242,"data":"      \"jelly\",\n"}
+,{"stream_name":"stdout","time":5517.971774143,"data":"      \"larvacean\",\n"}
+,{"stream_name":"stdout","time":5517.97178675,"data":"      \"octopus\",\n"}
+,{"stream_name":"stdout","time":5517.971790575,"data":"      \"physonect siphonophore\",\n"}
+,{"stream_name":"stdout","time":5517.971794144,"data":"      \"pyrosome\",\n"}
+,{"stream_name":"stdout","time":5517.971797748,"data":"      \"sea cucumber\",\n"}
+,{"stream_name":"stdout","time":5517.971801084,"data":"      \"sea pen\",\n"}
+,{"stream_name":"stdout","time":5517.971804477,"data":"      \"sea slug\",\n"}
+,{"stream_name":"stdout","time":5517.97180811,"data":"      \"sea snail\",\n"}
+,{"stream_name":"stdout","time":5517.971811724,"data":"      \"sea squirt\",\n"}
+,{"stream_name":"stdout","time":5517.971815426,"data":"      \"sea star\",\n"}
+,{"stream_name":"stdout","time":5517.971819076,"data":"      \"shrimp\",\n"}
+,{"stream_name":"stdout","time":5517.971822604,"data":"      \"soft coral\",\n"}
+,{"stream_name":"stdout","time":5517.971826287,"data":"      \"squat lobster\"\n"}
+,{"stream_name":"stdout","time":5517.971829644,"data":"    ]\n"}
+,{"stream_name":"stdout","time":5517.97183299,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.971836494,"data":"  \"COCO_maxDets\": [\n"}
+,{"stream_name":"stdout","time":5517.97184013,"data":"    1,\n"}
+,{"stream_name":"stdout","time":5517.971843643,"data":"    10,\n"}
+,{"stream_name":"stdout","time":5517.971847019,"data":"    100\n"}
+,{"stream_name":"stdout","time":5517.971850536,"data":"  ],\n"}
+,{"stream_name":"stdout","time":5517.971853783,"data":"  \"n_dets\": 12069,\n"}
+,{"stream_name":"stdout","time":5517.971857248,"data":"  \"protocol\": {\n"}
+,{"stream_name":"stdout","time":5517.971860828,"data":"    \"score_thr\": 0.001,\n"}
+,{"stream_name":"stdout","time":5517.971864376,"data":"    \"max_det\": 300,\n"}
+,{"stream_name":"stdout","time":5517.971868083,"data":"    \"n_val_images\": 646,\n"}
+,{"stream_name":"stdout","time":5517.971876418,"data":"    \"split_fingerprint\": \"d611d16e1c9c0562\"\n"}
+,{"stream_name":"stdout","time":5517.971880198,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.971883421,"data":"  \"preds_raw\": {\n"}
+,{"stream_name":"stdout","time":5517.971887049,"data":"    \"n_dets\": 12069,\n"}
+,{"stream_name":"stdout","time":5517.971890787,"data":"    \"n_images_with_dets\": 638,\n"}
+,{"stream_name":"stdout","time":5517.971894246,"data":"    \"dets_per_image_mean\": 18.92,\n"}
+,{"stream_name":"stdout","time":5517.971897986,"data":"    \"dets_per_image_median\": 13.0,\n"}
+,{"stream_name":"stdout","time":5517.971901765,"data":"    \"dets_per_image_max\": 208,\n"}
+,{"stream_name":"stdout","time":5517.971905285,"data":"    \"score_mean\": 0.1776\n"}
+,{"stream_name":"stdout","time":5517.971908749,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.971912044,"data":"  \"preds_used\": {\n"}
+,{"stream_name":"stdout","time":5517.971915499,"data":"    \"n_dets\": 12069,\n"}
+,{"stream_name":"stdout","time":5517.971919075,"data":"    \"n_images_with_dets\": 638,\n"}
+,{"stream_name":"stdout","time":5517.971922542,"data":"    \"dets_per_image_mean\": 18.92,\n"}
+,{"stream_name":"stdout","time":5517.971926378,"data":"    \"dets_per_image_median\": 13.0,\n"}
+,{"stream_name":"stdout","time":5517.971930102,"data":"    \"dets_per_image_max\": 208,\n"}
+,{"stream_name":"stdout","time":5517.97193377,"data":"    \"score_mean\": 0.1776\n"}
+,{"stream_name":"stdout","time":5517.971937501,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.97194102,"data":"  \"config\": {\n"}
+,{"stream_name":"stdout","time":5517.971944599,"data":"    \"mode\": \"train\",\n"}
+,{"stream_name":"stdout","time":5517.971948216,"data":"    \"family\": \"fasterrcnn\",\n"}
+,{"stream_name":"stdout","time":5517.971951873,"data":"    \"epochs\": 30,\n"}
+,{"stream_name":"stdout","time":5517.971955665,"data":"    \"imgsz\": 640,\n"}
+,{"stream_name":"stdout","time":5517.971959034,"data":"    \"batch\": 2,\n"}
+,{"stream_name":"stdout","time":5517.971962587,"data":"    \"seed\": 42,\n"}
+,{"stream_name":"stdout","time":5517.971966042,"data":"    \"score_thr\": 0.001,\n"}
+,{"stream_name":"stdout","time":5517.971969719,"data":"    \"bootstrap\": 0,\n"}
+,{"stream_name":"stdout","time":5517.971973414,"data":"    \"max_train_hours\": 4.5,\n"}
+,{"stream_name":"stdout","time":5517.971977175,"data":"    \"resume_checkpoint\": \"/kaggle/input/fathom-net-fasterrcnn/fasterrcnn_train/last.pt\",\n"}
+,{"stream_name":"stdout","time":5517.971981065,"data":"    \"split_sha256\": \"232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8\"\n"}
+,{"stream_name":"stdout","time":5517.971985107,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.971988548,"data":"  \"latency\": {\n"}
+,{"stream_name":"stdout","time":5517.971992048,"data":"    \"n\": 30,\n"}
+,{"stream_name":"stdout","time":5517.971995474,"data":"    \"median_ms\": 46.39,\n"}
+,{"stream_name":"stdout","time":5517.971999164,"data":"    \"mean_ms\": 46.75,\n"}
+,{"stream_name":"stdout","time":5517.972002817,"data":"    \"p90_ms\": 48.67,\n"}
+,{"stream_name":"stdout","time":5517.972006562,"data":"    \"min_ms\": 44.56,\n"}
+,{"stream_name":"stdout","time":5517.972010049,"data":"    \"std_ms\": 1.21,\n"}
+,{"stream_name":"stdout","time":5517.972015355,"data":"    \"boundary\": \"decoded RGB uint8 to CPU detections; batch1 fp32; excludes disk/decode\"\n"}
+,{"stream_name":"stdout","time":5517.972019191,"data":"  }\n"}
+,{"stream_name":"stdout","time":5517.972022554,"data":"}\n"}
+,{"stream_name":"stdout","time":5517.972025952,"data":"{\n"}
+,{"stream_name":"stdout","time":5517.972033492,"data":"  \"core\": \"ok\",\n"}
+,{"stream_name":"stdout","time":5517.972037165,"data":"  \"mode\": \"train\",\n"}
+,{"stream_name":"stdout","time":5517.972040679,"data":"  \"stages\": {\n"}
+,{"stream_name":"stdout","time":5517.972044255,"data":"    \"latency\": {\n"}
+,{"stream_name":"stdout","time":5517.972047813,"data":"      \"status\": \"ok\",\n"}
+,{"stream_name":"stdout","time":5517.972051335,"data":"      \"seconds\": 1.6\n"}
+,{"stream_name":"stdout","time":5517.972055028,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.972058478,"data":"    \"training_curves\": {\n"}
+,{"stream_name":"stdout","time":5517.97206213,"data":"      \"status\": \"ok\",\n"}
+,{"stream_name":"stdout","time":5517.972066904,"data":"      \"seconds\": 1.21\n"}
+,{"stream_name":"stdout","time":5517.972070857,"data":"    },\n"}
+,{"stream_name":"stdout","time":5517.972074264,"data":"    \"figures\": {\n"}
+,{"stream_name":"stdout","time":5517.97207787,"data":"      \"status\": \"ok\",\n"}
+,{"stream_name":"stdout","time":5517.972081525,"data":"      \"seconds\": 34.78\n"}
+,{"stream_name":"stdout","time":5517.972085078,"data":"    }\n"}
+,{"stream_name":"stdout","time":5517.972088633,"data":"  },\n"}
+,{"stream_name":"stdout","time":5517.972092133,"data":"  \"cam_successes\": 5\n"}
+,{"stream_name":"stdout","time":5517.972095778,"data":"}\n"}
+,{"stream_name":"stderr","time":5524.013572664,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":5524.013629808,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":5524.194142798,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":5524.194198613,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":5524.834401366,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":5525.147937775,"data":"[NbConvertApp] Writing 150625 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":5527.544133529,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":5528.653740063,"data":"[NbConvertApp] Writing 818907 bytes to __results__.html\n"}
+]

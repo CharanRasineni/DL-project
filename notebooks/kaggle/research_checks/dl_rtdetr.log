@@ -1,0 +1,27 @@
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_dl_rtdetr.py", line 4
+    os.environ['KAGGLE_API_TOKEN']=json.loads((Path.home()/''.kaggle/kaggle.json'').read_text())["key"]
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+download error UnicodeEncodeError 'charmap' codec can't encode characters in position 142-145: character maps to <undefined>
+files: 501
+66.5 MB rtdetr-l.pt
+1.3 MB rtdetr_train\dataset\labels\train.cache
+0.6 MB eval_val_gt.json
+0.1 MB __pycache__\data.cpython-312.pyc
+0.1 MB data.py
+0.1 MB __pycache__\research_runner.cpython-312.pyc
+0.0 MB research_runner.py
+0.0 MB rtdetr_train\dataset\labels\train\1467.txt
+0.0 MB rtdetr_train\dataset\labels\train\1477.txt
+0.0 MB rtdetr_train\dataset\labels\train\1114.txt
+0.0 MB rtdetr_train\dataset\labels\train\1292.txt
+0.0 MB rtdetr_train\dataset\labels\train\1233.txt
+0.0 MB rtdetr_train\dataset\labels\train\1076.txt
+0.0 MB rtdetr_train\dataset\labels\train\133.txt
+0.0 MB rtdetr_train\dataset\labels\train\1487.txt
+0.0 MB rtdetr_train\dataset\dataset.yaml
+0.0 MB rtdetr_train\dataset\labels\train\1250.txt
+0.0 MB rtdetr_train\dataset\labels\train\1279.txt
+0.0 MB rtdetr_train\dataset\labels\train\140.txt
+0.0 MB rtdetr_train\dataset\labels\train\1123.txt
+DONE

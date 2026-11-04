@@ -1,0 +1,269 @@
+"""FathomNet CLEF shared data + COCO evaluation primitives.
+
+Single source of truth for:
+* Frozen 90/10 split (seed 42, image-level, coverage-pass) from 02_split
+* COCO bbox eval via pycocotools with per-class, head/mid/tail, and
+  small/medium/large AP reporting
+* Repeat-Factor Sampling (Shen & Mammone 2020) for long-tail interventions
+* YOLO-format dataset tree + fathomnet.yaml generator
+* Provenance snapshots for every run
+"""
+from __future__ import annotations
+
+import contextlib
+import io
+import json
+import os
+import random
+import time
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Sequence, Tuple
+
+import numpy as np
+import pandas as pd
+import torch
+from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
+
+# ---------------------------------------------------------------------------
+# Canonical paths (override via env on Kaggle)
+# ---------------------------------------------------------------------------
+
+HERE = Path(__file__).resolve().parent
+WORK = Path("/kaggle/working") if Path("/kaggle/working").is_dir() else HERE
+
+SPLIT_JSON = Path(
+    os.environ.get(
+        "FATHOMNET_SPLIT_JSON",
+        "/kaggle/input/fathomnet-02-split/split.json",
+    )
+)
+DATASET_JSON = Path(
+    os.environ.get(
+        "FATHOMNET_DATASET_JSON",
+        "/kaggle/input/fathomnet-01-dataset/train_dataset.json",
+    )
+)
+IMG_ROOT = Path(
+    os.environ.get(
+        "FATHOMNET_IMG_ROOT",
+        "/kaggle/input/fathomnet-01-dataset/images",
+    )
+)
+
+
+def load_split(path: Optional[Path] = None) -> Dict[str, Any]:
+    """Load the frozen split JSON produced by 02_split.
+
+    Returns dict with keys: train_ids, val_ids, split_seed, coverage_passed.
+    """
+    p = path or SPLIT_JSON
+    if not p.exists():
+        raise FileNotFoundError(f"split.json not found at {p}")
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+def load_coco_data(path: Optional[Path] = None) -> Dict[str, Any]:
+    """Load the full COCO-format annotation file (train_dataset.json)."""
+    p = path or DATASET_JSON
+    if not p.exists():
+        raise FileNotFoundError(f"train_dataset.json not found at {p}")
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+def get_cat_info(
+    coco_data: Dict[str, Any],
+    split: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    """Build category index, sorted ids, and optional train counts.
+
+    Returns:
+        cat_id_to_name: {cat_id: class_name}
+        name_to_cat_id: {class_name: cat_id}
+        cat_ids_sorted: sorted list of cat_ids
+        train_counts: {class_name: train_instance_count}  (only if split given)
+    """
+    cats = {c["id"]: c["name"] for c in coco_data["categories"]}
+    name_to_id = {v: k for k, v in cats.items()}
+    cat_ids_sorted = sorted(cats.keys())
+
+    train_counts: Dict[str, int] = {}
+    if split is not None:
+        train_set = set(split["train_ids"])
+        counts: Dict[str, int] = {}
+        for a in coco_data["annotations"]:
+            if a["image_id"] in train_set:
+                name = cats[a["category_id"]]
+                counts[name] = counts.get(name, 0) + 1
+        train_counts = counts
+
+    return {
+        "cat_id_to_name": cats,
+        "name_to_cat_id": name_to_id,
+        "cat_ids_sorted": cat_ids_sorted,
+        "train_counts": train_counts,
+    }
+
+
+def define_groups(
+    train_counts: Dict[str, int],
+    head_k: int = 3,
+    mid_k: int = 4,
+) -> Dict[str, set]:
+    """Head/mid/tail groups by train-instance frequency.
+
+    head: top-k most frequent classes
+    mid:  next-k most frequent classes
+    tail: the remaining classes
+    """
+    ordered = sorted(train_counts.keys(), key=lambda k: -train_counts[k])
+    head = set(ordered[:head_k])
+    mid = set(ordered[head_k:head_k + mid_k])
+    tail = set(ordered[head_k + mid_k:])
+    return {"head": head, "mid": mid, "tail": tail}
+
+
+def stratify_per_class(
+    per_class: Dict[str, float],
+    groups: Dict[str, set],
+) -> Dict[str, float]:
+    """Average per-class AP within each head/mid/tail group."""
+    out: Dict[str, float] = {}
+    for g, names in groups.items():
+        vals = [per_class[n] for n in names if n in per_class]
+        out[g] = float(np.mean(vals)) if vals else 0.0
+    return out
+
+
+# ---------------------------------------------------------------------------
+# COCO bbox evaluator
+# ---------------------------------------------------------------------------
+
+class Evaluator:
+    """Single COCO bbox evaluator with per-class and group reporting.
+
+    Parameters
+    ----------
+    split_json : Path or dict
+        The frozen split (used for val image list and group construction).
+    cat_info : dict
+        Output of get_cat_info().
+    score_thr : float
+        Score threshold for detections (default 0.01).
+    max_det : int
+        Maximum detections per image (default 300).
+    """
+
+    def __init__(
+        self,
+        split: Dict[str, Any],
+        cat_info: Dict[str, Any],
+        *,
+        score_thr: float = 0.01,
+        max_det: int = 300,
+    ) -> None:
+        self.split = split
+        self.cat_info = cat_info
+        self.score_thr = score_thr
+        self.max_det = max_det
+        # Build COCO ground-truth once
+        self.coco_gt = self._build_gt_coco()
+        self.groups = define_groups(cat_info["train_counts"])
+
+    def _build_gt_coco(self) -> COCO:
+        """Build a COCO object from val annotations only."""
+        coco_data = load_coco_data()
+        val_set = set(self.split["val_ids"])
+        img_by_id = {i["id"]: i for i in coco_data["images"]}
+        gt = {
+            "images": [img_by_id[i] for i in self.split["val_ids"]],
+            "annotations": [
+                a for a in coco_data["annotations"] if a["image_id"] in val_set
+            ],
+            "categories": coco_data["categories"],
+        }
+        gt_path = WORK / "eval_val_gt.json"
+        gt_path.write_text(json.dumps(gt))
+        with contextlib.redirect_stdout(io.StringIO()):
+            coco = COCO(str(gt_path))
+        return coco
+
+    def evaluate(
+        self,
+        preds: List[Dict[str, Any]],
+        *,
+        out_dir: Optional[Path] = None,
+    ) -> Dict[str, Any]:
+        """Run full COCO bbox eval and return structured results.
+
+        Parameters
+        ----------
+        preds : list of COCO detection dicts
+            Each dict must have image_id, category_id, bbox [x,y,w,h],
+            score.
+        out_dir : Path, optional
+            If given, write `preds.json` and `results.json` here.
+
+        Returns
+        -------
+        results : dict
+            {mAP50-95, mAP50, mAP75, mAP_small, mAP_medium, mAP_large,
+             per_class_AP50-95: {name: ap},
+             head_mid_tail_AP50-95: {head, mid, tail},
+             n_dets}
+        """
+        # Write predictions if requested
+        if out_dir is not None:
+            out_dir.mkdir(parents=True, exist_ok=True)
+            preds_path = out_dir / "preds.json"
+            preds_path.write_text(json.dumps(preds))
+
+        dt = self.coco_gt.loadRes(preds)
+        e = COCOeval(self.coco_gt, dt, "bbox")
+        with contextlib.redirect_stdout(io.StringIO()):
+            e.evaluate()
+            e.accumulate()
+            e.summarize()
+
+        stats = e.stats  # [mAP@.5:.95, mAP@.5, mAP@.75, mAPs, mAPm, mAPl, ...]
+
+        per_class = self._per_class_ap(e)
+
+        group_ap = stratify_per_class(per_class, self.groups)
+
+        results = {
+            "mAP50-95": round(float(stats[0]), 4),
+            "mAP50": round(float(stats[1]), 4),
+            "mAP75": round(float(stats[2]), 4),
+            "mAP_small": round(float(stats[3]), 4),
+            "mAP_medium": round(float(stats[4]), 4),
+            "mAP_large": round(float(stats[5]), 4),
+            "per_class_AP50-95": per_class,
+            "head_mid_tail_AP50-95": {
+                g: round(v, 4) for g, v in group_ap.items()
+            },
+            "n_dets": len(preds),
+        }
+
+        # Write results
+        if out_dir is not None:
+            res_path = out_dir / "results.json"
+            res_path.write_text(json.dumps(results, indent=2))
+
+        return results
+
+    def _per_class_ap(self, e: COCOeval) -> Dict[str, float]:
+        """Run per-class COCO eval (mAP@.5:.95 for each class)."""
+        per: Dict[str, float] = {}
+        name_by_id = self.cat_info["cat_id_to_name"]
+        cat_ids = self.cat_info["cat_ids_sorted"]
+        saved = e.params.catIds
+        for cid in cat_ids:
+            e.params.catIds = [cid]
+            with contextlib.redirect_stdout(io.StringIO()):
+                e.evaluate()
+                e.accumulate()
+                e.summarize()
+            per[name_by_id[cid]] = round(float(e.stats[0]), 4)
+        e.params.catIds = saved
+        return per

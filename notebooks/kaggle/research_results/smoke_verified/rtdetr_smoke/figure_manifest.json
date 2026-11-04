@@ -1,0 +1,41 @@
+{
+  "selection": "seed=42 uniform validation images, not selected by model success",
+  "images": [
+    {
+      "image_id": 40,
+      "cam_status": "ok",
+      "category_id": 8,
+      "layer": "model.7",
+      "class_index": 7,
+      "objective": "sum top-5 selected-class scores",
+      "input_transform": "square RGB resize 640x640; float32 [0,1]"
+    },
+    {
+      "image_id": 49,
+      "cam_status": "ok",
+      "category_id": 28,
+      "layer": "model.7",
+      "class_index": 21,
+      "objective": "sum top-5 selected-class scores",
+      "input_transform": "square RGB resize 640x640; float32 [0,1]"
+    },
+    {
+      "image_id": 86,
+      "cam_status": "ok",
+      "category_id": 28,
+      "layer": "model.7",
+      "class_index": 21,
+      "objective": "sum top-5 selected-class scores",
+      "input_transform": "square RGB resize 640x640; float32 [0,1]"
+    },
+    {
+      "image_id": 92,
+      "cam_status": "ok",
+      "category_id": 8,
+      "layer": "model.7",
+      "class_index": 7,
+      "objective": "sum top-5 selected-class scores",
+      "input_transform": "square RGB resize 640x640; float32 [0,1]"
+    }
+  ]
+}

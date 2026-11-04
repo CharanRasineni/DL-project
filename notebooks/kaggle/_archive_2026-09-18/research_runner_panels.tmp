@@ -1,0 +1,58 @@
+
+
+def figures(model, cfg, coco, split, root, predictions, out):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    import matplotlib.patches as patches
+    ds = DetectionDataset(coco, split['val_ids'], root)
+    by_image = defaultdict(list)
+    for p in predictions:
+        by_image[p['image_id']].append(p)
+    names = {c['id']: c['name'] for c in coco['categories']}
+    ids = sorted(random.Random(42).sample(sorted(split['val_ids']), min(6, len(split['val_ids']))))
+    manifest = {'selection': 'seed=42 uniform validation images, not selected by model success', 'images': []}
+    for iid in ids:
+        with Image.open(root / ds.images[iid]['file_name']) as im:
+            rgb = np.array(im.convert('RGB'))
+        fig, ax = plt.subplots(figsize=(8, 6))
+        ax.imshow(rgb)
+        for a in ds.anns[iid]:
+            x, y, w, h = a['bbox']
+            ax.add_patch(patches.Rectangle((x, y), w, h, fill=False, edgecolor='lime'))
+            ax.text(x, y, names[a['category_id']], fontsize=6, color='lime')
+        selected = [p for p in by_image[iid] if p['score'] >= 0.25][:20]
+        for p in selected:
+            x, y, w, h = p['bbox']
+            ax.add_patch(patches.Rectangle((x, y), w, h, fill=False, edgecolor='red', linestyle='--'))
+            ax.text(x, y+h, f"{names[p['category_id']]} {p['score']:.2f}", fontsize=6, color='red')
+        ax.set_title(f'{iid}: available annotations (green), predictions >=0.25 (red)')
+        ax.axis('off')
+        for ext in ('png', 'pdf'):
+            fig.savefig(out / f'qualitative_{iid}.{ext}', dpi=200, bbox_inches='tight')
+        plt.close(fig)
+        row = {'image_id': iid, 'cam_status': 'no_detection'}
+        # Explain the highest-score detection even if below the display threshold.
+        candidates = sorted(by_image[iid], key=lambda p: -p['score'])
+        if candidates:
+            cid = candidates[0]['category_id']
+            try:
+                heat, metadata = detection_cam(model, cfg['family'], rgb, cfg['imgsz'], ds.cat_ids.index(cid))
+                np.save(out / f'gradcam_{iid}.npy', heat)
+                fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+                axes[0].imshow(rgb)
+                axes[1].imshow(rgb)
+                resized = np.array(Image.fromarray(heat).resize((rgb.shape[1], rgb.shape[0])))
+                axes[1].imshow(resized, cmap='jet', alpha=0.45, vmin=0, vmax=1)
+                for axis in axes:
+                    axis.axis('off')
+                fig.suptitle(f"{iid}: {names[cid]} — class-score Grad-CAM (not causal evidence)")
+                for ext in ('png', 'pdf'):
+                    fig.savefig(out / f'gradcam_{iid}.{ext}', dpi=200, bbox_inches='tight')
+                plt.close(fig)
+                row.update(cam_status='ok', category_id=cid, **metadata)
+            except Exception as exc:
+                row.update(cam_status='failed', error=f'{type(exc).__name__}: {exc}')
+        manifest['images'].append(row)
+        atomic_json(out / 'figure_manifest.json', manifest)
+    return manifest

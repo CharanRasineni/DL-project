@@ -1,0 +1,23 @@
+{
+  "core": "ok",
+  "mode": "train",
+  "stages": {
+    "latency": {
+      "status": "ok",
+      "seconds": 9.56
+    },
+    "training_curves": {
+      "status": "ok",
+      "seconds": 1.67
+    },
+    "figures": {
+      "status": "ok",
+      "seconds": 5.0
+    },
+    "bootstrap": {
+      "status": "ok",
+      "seconds": 0.03
+    }
+  },
+  "cam_successes": 0
+}

@@ -1,0 +1,7 @@
+OVERRIDES: CPU guard, synthetic paths, 64px, random init; production file unchanged.
+Traceback (most recent call last):
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_cpu_integration.py", line 53, in <module>
+    result_dir = R.run(config)
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\research_runner.py[CPU-only in-memory overrides]", line 476, in run
+    if (out / 'provenance.json').exists():
+RuntimeError: Output already exists; use a fresh working session to avoid overwriting a run

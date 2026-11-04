@@ -1,0 +1,340 @@
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 17.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 17.6 MB/s eta 0:00:00
+Writing /kaggle/working/data.py
+Writing /kaggle/working/research_runner.py
+INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok
+
+INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok
+INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)
+
+INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+Downloading: "https://download.pytorch.org/models/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth" to /root/.cache/torch/hub/checkpoints/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth
+  0%|          | 0.00/160M [00:00<?, ?B/s]
+  0%|          | 0.00/160M [00:00<?, ?B/s]  5%|▌         | 8.25M/160M [00:00<00:01, 86.1MB/s]
+  5%|▌         | 8.25M/160M [00:00<00:01, 86.1MB/s] 17%|█▋        | 26.8M/160M [00:00<00:00, 149MB/s] 
+ 17%|█▋        | 26.8M/160M [00:00<00:00, 149MB/s]  27%|██▋       | 43.2M/160M [00:00<00:00, 160MB/s]
+ 27%|██▋       | 43.2M/160M [00:00<00:00, 160MB/s] 37%|███▋      | 59.8M/160M [00:00<00:00, 165MB/s]
+ 37%|███▋      | 59.8M/160M [00:00<00:00, 165MB/s] 48%|████▊     | 76.4M/160M [00:00<00:00, 168MB/s]
+ 48%|████▊     | 76.4M/160M [00:00<00:00, 168MB/s] 58%|█████▊    | 92.5M/160M [00:00<00:00, 167MB/s]
+ 58%|█████▊    | 92.5M/160M [00:00<00:00, 167MB/s] 68%|██████▊   | 109M/160M [00:00<00:00, 168MB/s] 
+ 68%|██████▊   | 109M/160M [00:00<00:00, 168MB/s]  78%|███████▊  | 125M/160M [00:00<00:00, 169MB/s]
+ 78%|███████▊  | 125M/160M [00:00<00:00, 169MB/s] 89%|████████▉ | 142M/160M [00:00<00:00, 170MB/s]
+ 89%|████████▉ | 142M/160M [00:00<00:00, 170MB/s] 99%|█████████▉| 159M/160M [00:01<00:00, 172MB/s]
+ 99%|█████████▉| 159M/160M [00:01<00:00, 172MB/s]100%|██████████| 160M/160M [00:01<00:00, 165MB/s]
+100%|██████████| 160M/160M [00:01<00:00, 165MB/s]
+
+
+/kaggle/working/research_runner.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')
+
+/kaggle/working/research_runner.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')
+/kaggle/working/research_runner.py:192: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+
+/kaggle/working/research_runner.py:192: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+{'epoch': 1, 'loss': 4.621152639389038, 'val_COCO_AP': 0.0004896489648964896, 'seconds': 5.847674656999999}
+INFO stage latency                ok (1.7s)
+
+INFO stage latency                ok (1.7s)
+INFO stage training_curves        ok (1.2s)
+
+INFO stage training_curves        ok (1.2s)
+INFO stage figures                ok (34.7s)
+
+INFO stage figures                ok (34.7s)
+COMPLETE /kaggle/working/fasterrcnn_smoke
+fasterrcnn PASS 2 checkpoint files
+INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)
+
+INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)
+Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s.pt to 'yolov8s.pt'...
+  0%|          | 0.00/21.5M [00:00<?, ?B/s]
+  0%|          | 0.00/21.5M [00:00<?, ?B/s]  3%|▎         | 640k/21.5M [00:00<00:03, 6.22MB/s]
+  3%|▎         | 640k/21.5M [00:00<00:03, 6.22MB/s] 30%|██▉       | 6.38M/21.5M [00:00<00:00, 37.2MB/s]
+ 30%|██▉       | 6.38M/21.5M [00:00<00:00, 37.2MB/s] 57%|█████▋    | 12.2M/21.5M [00:00<00:00, 47.7MB/s]
+ 57%|█████▋    | 12.2M/21.5M [00:00<00:00, 47.7MB/s] 87%|████████▋ | 18.8M/21.5M [00:00<00:00, 55.2MB/s]
+ 87%|████████▋ | 18.8M/21.5M [00:00<00:00, 55.2MB/s]100%|██████████| 21.5M/21.5M [00:00<00:00, 49.7MB/s]
+100%|██████████| 21.5M/21.5M [00:00<00:00, 49.7MB/s]
+
+
+New https://pypi.org/project/ultralytics/8.4.155 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.40 🚀 Python-3.12.13 torch-2.10.0+cu128 CUDA:0 (Tesla T4, 14912MiB)
+[34m[1mengine/trainer: [0mtask=detect, mode=train, model=yolov8s.pt, data=/kaggle/working/yolov8s_smoke/dataset/dataset.yaml, epochs=1, time=None, patience=0, batch=2, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=0, project=/kaggle/working/yolov8s_smoke/runs, name=fit, exist_ok=False, pretrained=True, optimizer=AdamW, verbose=False, seed=42, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=0, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=False, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.0001, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.0, hsv_s=0.0, hsv_v=0.0, degrees=0.0, translate=0.0, scale=0.0, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=0.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/kaggle/working/yolov8s_smoke/runs/fit
+Downloading https://ultralytics.com/assets/Arial.ttf to '/root/.config/Ultralytics/Arial.ttf'...
+  0%|          | 0.00/755k [00:00<?, ?B/s]
+  0%|          | 0.00/755k [00:00<?, ?B/s]100%|██████████| 755k/755k [00:00<00:00, 10.7MB/s]
+100%|██████████| 755k/755k [00:00<00:00, 10.7MB/s]
+
+
+Overriding model.yaml nc=80 with nc=32
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       928  ultralytics.nn.modules.conv.Conv             [3, 32, 3, 2]                 
+  1                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]                
+  2                  -1  1     29056  ultralytics.nn.modules.block.C2f             [64, 64, 1, True]             
+  3                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  4                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]           
+  5                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  6                  -1  2    788480  ultralytics.nn.modules.block.C2f             [256, 256, 2, True]           
+  7                  -1  1   1180672  ultralytics.nn.modules.conv.Conv             [256, 512, 3, 2]              
+  8                  -1  1   1838080  ultralytics.nn.modules.block.C2f             [512, 512, 1, True]           
+  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]                 
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 12                  -1  1    591360  ultralytics.nn.modules.block.C2f             [768, 256, 1]                 
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 15                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]                 
+ 16                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]                 
+ 19                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  1   1969152  ultralytics.nn.modules.block.C2f             [768, 512, 1]                 
+ 22        [15, 18, 21]  1   2128432  ultralytics.nn.modules.head.Detect           [32, [128, 256, 512]]         
+Model summary: 225 layers, 11,147,984 parameters, 11,147,968 gradients, 28.7 GFLOPs
+
+Transferred 349/355 items from pretrained weights
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt to 'yolo11n.pt'...
+  0%|          | 0.00/5.35M [00:00<?, ?B/s]
+  0%|          | 0.00/5.35M [00:00<?, ?B/s]100%|██████████| 5.35M/5.35M [00:00<00:00, 73.4MB/s]
+100%|██████████| 5.35M/5.35M [00:00<00:00, 73.4MB/s]
+
+
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/train...:   0%|          | 0/4 [00:00<?, ?it/s]
+[34m[1mtrain: [0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/train...:   0%|          | 0/4 [00:00<?, ?it/s][34m[1mtrain: [0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/train... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00<00:00, 668.87it/s]
+[34m[1mtrain: [0mNew cache created: /kaggle/working/yolov8s_smoke/dataset/labels/train.cache
+[34m[1mtrain: [0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/train... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00<00:00, 668.87it/s]
+
+
+[34m[1malbumentations: [0mBlur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+/usr/local/lib/python3.12/dist-packages/ultralytics/data/augment.py:1850: UserWarning: Argument(s) 'quality_lower' are not valid for transform ImageCompression
+  A.ImageCompression(quality_lower=75, p=0.0),
+
+/usr/local/lib/python3.12/dist-packages/ultralytics/data/augment.py:1850: UserWarning: Argument(s) 'quality_lower' are not valid for transform ImageCompression
+  A.ImageCompression(quality_lower=75, p=0.0),
+[34m[1mval: [0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/val...:   0%|          | 0/4 [00:00<?, ?it/s]
+[34m[1mval: [0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/val...:   0%|          | 0/4 [00:00<?, ?it/s][34m[1mval: [0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/val... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00<00:00, 807.61it/s]
+[34m[1mval: [0mNew cache created: /kaggle/working/yolov8s_smoke/dataset/labels/val.cache
+[34m[1moptimizer:[0m AdamW(lr=0.0001, momentum=0.937) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.0005), 63 bias(decay=0.0)
+Image sizes 640 train, 640 val
+Using 0 dataloader workers
+Logging results to [1m/kaggle/working/yolov8s_smoke/runs/fit[0m
+Starting training for 1 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+[34m[1mval: [0mScanning /kaggle/working/yolov8s_smoke/dataset/labels/val... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00<00:00, 807.61it/s]
+
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]        1/1     0.648G      2.579       8.03      1.908          7        640:   0%|          | 0/2 [00:00<?, ?it/s]
+        1/1     0.648G      2.579       8.03      1.908          7        640:   0%|          | 0/2 [00:00<?, ?it/s]        1/1     0.648G      2.579       8.03      1.908          7        640:  50%|█████     | 1/2 [00:00<00:00,  1.35it/s]
+        1/1     0.648G      2.579       8.03      1.908          7        640:  50%|█████     | 1/2 [00:00<00:00,  1.35it/s]        1/1     0.648G      2.421      8.795       1.85          5        640:  50%|█████     | 1/2 [00:00<00:00,  1.35it/s]
+        1/1     0.648G      2.421      8.795       1.85          5        640:  50%|█████     | 1/2 [00:00<00:00,  1.35it/s]        1/1     0.648G      2.421      8.795       1.85          5        640: 100%|██████████| 2/2 [00:00<00:00,  2.32it/s]
+        1/1     0.648G      2.421      8.795       1.85          5        640: 100%|██████████| 2/2 [00:00<00:00,  2.32it/s]        1/1     0.648G      2.421      8.795       1.85          5        640: 100%|██████████| 2/2 [00:00<00:00,  2.09it/s]
+        1/1     0.648G      2.421      8.795       1.85          5        640: 100%|██████████| 2/2 [00:00<00:00,  2.09it/s]
+
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00<?, ?it/s]                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:01<00:00,  1.21s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:01<00:00,  1.21s/it]                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:01<00:00,  1.21s/it]
+                   all          4         12      0.256     0.0564     0.0583     0.0392
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:01<00:00,  1.21s/it]
+
+
+
+1 epochs completed in 0.001 hours.
+Optimizer stripped from /kaggle/working/yolov8s_smoke/runs/fit/weights/last.pt, 22.5MB
+Optimizer stripped from /kaggle/working/yolov8s_smoke/runs/fit/weights/best.pt, 22.5MB
+
+Validating /kaggle/working/yolov8s_smoke/runs/fit/weights/best.pt...
+Ultralytics 8.3.40 🚀 Python-3.12.13 torch-2.10.0+cu128 CUDA:0 (Tesla T4, 14912MiB)
+Model summary (fused): 168 layers, 11,137,968 parameters, 0 gradients, 28.5 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00<?, ?it/s]                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  3.99it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  3.99it/s]                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  3.97it/s]
+                   all          4         12      0.257     0.0566     0.0582     0.0392
+Speed: 0.2ms preprocess, 4.4ms inference, 0.0ms loss, 2.8ms postprocess per image
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  3.97it/s]
+
+
+INFO stage latency                ok (0.9s)
+
+INFO stage latency                ok (0.9s)
+INFO stage training_curves        ok (0.6s)
+
+INFO stage training_curves        ok (0.6s)
+INFO stage figures                ok (28.4s)
+
+INFO stage figures                ok (28.4s)
+COMPLETE /kaggle/working/yolov8s_smoke
+yolov8s PASS 3 checkpoint files
+INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)
+
+INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)
+Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/rtdetr-l.pt to 'rtdetr-l.pt'...
+  0%|          | 0.00/63.4M [00:00<?, ?B/s]
+  0%|          | 0.00/63.4M [00:00<?, ?B/s] 18%|█▊        | 11.1M/63.4M [00:00<00:00, 109MB/s]
+ 18%|█▊        | 11.1M/63.4M [00:00<00:00, 109MB/s] 51%|█████     | 32.5M/63.4M [00:00<00:00, 175MB/s]
+ 51%|█████     | 32.5M/63.4M [00:00<00:00, 175MB/s] 87%|████████▋ | 55.2M/63.4M [00:00<00:00, 203MB/s]
+ 87%|████████▋ | 55.2M/63.4M [00:00<00:00, 203MB/s]100%|██████████| 63.4M/63.4M [00:00<00:00, 194MB/s]
+100%|██████████| 63.4M/63.4M [00:00<00:00, 194MB/s]
+
+
+New https://pypi.org/project/ultralytics/8.4.155 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.40 🚀 Python-3.12.13 torch-2.10.0+cu128 CUDA:0 (Tesla T4, 14912MiB)
+[34m[1mengine/trainer: [0mtask=detect, mode=train, model=rtdetr-l.pt, data=/kaggle/working/rtdetr_smoke/dataset/dataset.yaml, epochs=1, time=None, patience=0, batch=2, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=0, project=/kaggle/working/rtdetr_smoke/runs, name=fit, exist_ok=False, pretrained=True, optimizer=AdamW, verbose=False, seed=42, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=0, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=False, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.0001, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.0, hsv_s=0.0, hsv_v=0.0, degrees=0.0, translate=0.0, scale=0.0, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=0.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/kaggle/working/rtdetr_smoke/runs/fit
+Overriding model.yaml nc=80 with nc=32
+WARNING ⚠️ no model scale passed. Assuming scale='l'.
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1     25248  ultralytics.nn.modules.block.HGStem          [3, 32, 48]                   
+  1                  -1  6    155072  ultralytics.nn.modules.block.HGBlock         [48, 48, 128, 3, 6]           
+  2                  -1  1      1408  ultralytics.nn.modules.conv.DWConv           [128, 128, 3, 2, 1, False]    
+  3                  -1  6    839296  ultralytics.nn.modules.block.HGBlock         [128, 96, 512, 3, 6]          
+  4                  -1  1      5632  ultralytics.nn.modules.conv.DWConv           [512, 512, 3, 2, 1, False]    
+  5                  -1  6   1695360  ultralytics.nn.modules.block.HGBlock         [512, 192, 1024, 5, 6, True, False]
+  6                  -1  6   2055808  ultralytics.nn.modules.block.HGBlock         [1024, 192, 1024, 5, 6, True, True]
+  7                  -1  6   2055808  ultralytics.nn.modules.block.HGBlock         [1024, 192, 1024, 5, 6, True, True]
+  8                  -1  1     11264  ultralytics.nn.modules.conv.DWConv           [1024, 1024, 3, 2, 1, False]  
+  9                  -1  6   6708480  ultralytics.nn.modules.block.HGBlock         [1024, 384, 2048, 5, 6, True, False]
+ 10                  -1  1    524800  ultralytics.nn.modules.conv.Conv             [2048, 256, 1, 1, None, 1, 1, False]
+ 11                  -1  1    789760  ultralytics.nn.modules.transformer.AIFI      [256, 1024, 8]                
+ 12                  -1  1     66048  ultralytics.nn.modules.conv.Conv             [256, 256, 1, 1]              
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14                   7  1    262656  ultralytics.nn.modules.conv.Conv             [1024, 256, 1, 1, None, 1, 1, False]
+ 15            [-2, -1]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 17                  -1  1     66048  ultralytics.nn.modules.conv.Conv             [256, 256, 1, 1]              
+ 18                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 19                   3  1    131584  ultralytics.nn.modules.conv.Conv             [512, 256, 1, 1, None, 1, 1, False]
+ 20            [-2, -1]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 22                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 23            [-1, 17]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 24                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 25                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 26            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 27                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 28        [21, 24, 27]  1   7367612  ultralytics.nn.modules.head.RTDETRDecoder    [32, [256, 256, 256]]         
+rt-detr-l summary: 681 layers, 32,871,836 parameters, 32,871,836 gradients, 110.0 GFLOPs
+
+Transferred 926/941 items from pretrained weights
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/train...:   0%|          | 0/4 [00:00<?, ?it/s]
+[34m[1mtrain: [0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/train...:   0%|          | 0/4 [00:00<?, ?it/s][34m[1mtrain: [0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/train... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00<00:00, 945.62it/s]
+[34m[1mtrain: [0mNew cache created: /kaggle/working/rtdetr_smoke/dataset/labels/train.cache
+[34m[1malbumentations: [0mBlur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+[34m[1mtrain: [0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/train... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00<00:00, 945.62it/s]
+/usr/local/lib/python3.12/dist-packages/ultralytics/data/augment.py:1850: UserWarning: Argument(s) 'quality_lower' are not valid for transform ImageCompression
+  A.ImageCompression(quality_lower=75, p=0.0),
+
+
+/usr/local/lib/python3.12/dist-packages/ultralytics/data/augment.py:1850: UserWarning: Argument(s) 'quality_lower' are not valid for transform ImageCompression
+  A.ImageCompression(quality_lower=75, p=0.0),
+[34m[1mval: [0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/val...:   0%|          | 0/4 [00:00<?, ?it/s]
+[34m[1mval: [0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/val...:   0%|          | 0/4 [00:00<?, ?it/s][34m[1mval: [0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/val... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00<00:00, 1191.56it/s]
+[34m[1mval: [0mNew cache created: /kaggle/working/rtdetr_smoke/dataset/labels/val.cache
+[34m[1moptimizer:[0m AdamW(lr=0.0001, momentum=0.937) with parameter groups 143 weight(decay=0.0), 206 weight(decay=0.0005), 226 bias(decay=0.0)
+Image sizes 640 train, 640 val
+Using 0 dataloader workers
+Logging results to [1m/kaggle/working/rtdetr_smoke/runs/fit[0m
+Starting training for 1 epochs...
+
+      Epoch    GPU_mem  giou_loss   cls_loss    l1_loss  Instances       Size
+[34m[1mval: [0mScanning /kaggle/working/rtdetr_smoke/dataset/labels/val... 4 images, 0 backgrounds, 0 corrupt: 100%|██████████| 4/4 [00:00<00:00, 1191.56it/s]
+
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+        1/1      1.99G      2.448      12.71      1.686          7        640:   0%|          | 0/2 [00:04<?, ?it/s]
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+        1/1      1.99G      2.448      12.71      1.686          7        640:   0%|          | 0/2 [00:04<?, ?it/s]        1/1      1.99G      2.448      12.71      1.686          7        640:  50%|█████     | 1/2 [00:04<00:04,  4.95s/it]
+        1/1      1.99G      2.448      12.71      1.686          7        640:  50%|█████     | 1/2 [00:04<00:04,  4.95s/it]        1/1      1.99G      2.298      14.06      1.402          5        640:  50%|█████     | 1/2 [00:05<00:04,  4.95s/it]
+        1/1      1.99G      2.298      14.06      1.402          5        640:  50%|█████     | 1/2 [00:05<00:04,  4.95s/it]        1/1      1.99G      2.298      14.06      1.402          5        640: 100%|██████████| 2/2 [00:05<00:00,  2.33s/it]
+        1/1      1.99G      2.298      14.06      1.402          5        640: 100%|██████████| 2/2 [00:05<00:00,  2.33s/it]        1/1      1.99G      2.298      14.06      1.402          5        640: 100%|██████████| 2/2 [00:05<00:00,  2.73s/it]
+        1/1      1.99G      2.298      14.06      1.402          5        640: 100%|██████████| 2/2 [00:05<00:00,  2.73s/it]
+
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00<?, ?it/s]                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:02<00:00,  2.37s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:02<00:00,  2.37s/it]                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:02<00:00,  2.37s/it]
+                   all          4         12          0          0          0          0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:02<00:00,  2.37s/it]
+
+
+
+1 epochs completed in 0.002 hours.
+Optimizer stripped from /kaggle/working/rtdetr_smoke/runs/fit/weights/last.pt, 66.3MB
+Optimizer stripped from /kaggle/working/rtdetr_smoke/runs/fit/weights/best.pt, 66.3MB
+
+Validating /kaggle/working/rtdetr_smoke/runs/fit/weights/best.pt...
+Ultralytics 8.3.40 🚀 Python-3.12.13 torch-2.10.0+cu128 CUDA:0 (Tesla T4, 14912MiB)
+rt-detr-l summary: 502 layers, 32,049,500 parameters, 0 gradients, 105.5 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/1 [00:00<?, ?it/s]                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  2.98it/s]
+                   all          4         12          0          0          0          0
+Speed: 0.2ms preprocess, 22.0ms inference, 0.0ms loss, 0.3ms postprocess per image
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 1/1 [00:00<00:00,  2.98it/s]
+
+
+INFO stage latency                ok (1.5s)
+
+INFO stage latency                ok (1.5s)
+INFO stage training_curves        ok (0.5s)
+
+INFO stage training_curves        ok (0.5s)
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+INFO stage figures                ok (34.3s)
+
+INFO stage figures                ok (34.3s)
+COMPLETE /kaggle/working/rtdetr_smoke
+rtdetr PASS 3 checkpoint files
+PASS: 1-epoch/4-image runs produced checkpoints and PASS completion records for all three families
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+[NbConvertApp] Writing 159181 bytes to __notebook__.ipynb
+[NbConvertApp] Converting notebook __notebook__.ipynb to html
+[NbConvertApp] Writing 824454 bytes to __results__.html

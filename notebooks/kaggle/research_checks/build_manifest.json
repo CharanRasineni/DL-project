@@ -1,0 +1,53 @@
+[
+  {
+    "path": "C:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\03_fasterrcnn\\03_fasterrcnn.ipynb",
+    "kernel": "rscharan/fathomnet-research-fasterrcnn",
+    "sha256": "144a2c26ccba7d8189111503b3cae273d78ea9e96f795c9e3fcb6d785b7e1995",
+    "config": {
+      "mode": "train",
+      "family": "fasterrcnn",
+      "epochs": 30,
+      "imgsz": 640,
+      "batch": 2,
+      "seed": 42,
+      "score_thr": 0.001,
+      "bootstrap": 0,
+      "max_train_hours": 9,
+      "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+    }
+  },
+  {
+    "path": "C:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\04_yolov8s\\04_yolov8s.ipynb",
+    "kernel": "rscharan/fathomnet-research-yolov8s",
+    "sha256": "a1af60fe753758b13fa6934b97eab0b92a6a04c40c0ced07c653f39832f6c9f0",
+    "config": {
+      "mode": "train",
+      "family": "yolov8s",
+      "epochs": 30,
+      "imgsz": 640,
+      "batch": 4,
+      "seed": 42,
+      "score_thr": 0.001,
+      "bootstrap": 0,
+      "max_train_hours": 9,
+      "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+    }
+  },
+  {
+    "path": "C:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\05_rtdetr\\05_rtdetr.ipynb",
+    "kernel": "rscharan/fathomnet-research-rtdetr",
+    "sha256": "c0297505c4e2a3cd1eb66b49d3b440495c71e375a2b5e4a419187bec2d514684",
+    "config": {
+      "mode": "train",
+      "family": "rtdetr",
+      "epochs": 30,
+      "imgsz": 640,
+      "batch": 4,
+      "seed": 42,
+      "score_thr": 0.001,
+      "bootstrap": 0,
+      "max_train_hours": 9,
+      "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+    }
+  }
+]

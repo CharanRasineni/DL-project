@@ -1,0 +1,20 @@
+{
+  "id": "rscharan/fathomnet-research-smoke-minimal",
+  "id_no": 134758204,
+  "title": "FathomNet research smoke minimal",
+  "code_file": "fathomnet-research-smoke-minimal.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [],
+  "kernel_sources": [
+    "rscharan/00-setup-data-download-fathomnetclef2026",
+    "rscharan/fathomnet-02-split"
+  ],
+  "competition_sources": [],
+  "model_sources": []
+}

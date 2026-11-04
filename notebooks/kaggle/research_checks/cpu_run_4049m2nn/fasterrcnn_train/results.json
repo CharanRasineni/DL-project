@@ -1,0 +1,102 @@
+{
+  "mAP50-95": 0.004677141627206198,
+  "mAP50": 0.04677141627206199,
+  "mAP75": 0.0,
+  "mAP_small": 0.00482730831222657,
+  "mAP_medium": null,
+  "mAP_large": null,
+  "per_class_AP50-95": {
+    "synthetic": 0.004677141627206198
+  },
+  "per_class_AP50": {
+    "synthetic": 0.04677141627206199
+  },
+  "per_class_size_AP50-95": {
+    "synthetic": {
+      "small": 0.00482730831222657,
+      "medium": null,
+      "large": null
+    }
+  },
+  "head_mid_tail_AP50-95": {
+    "head": 0.004677141627206198,
+    "mid": null,
+    "tail": null
+  },
+  "groups": {
+    "head": [
+      "synthetic"
+    ],
+    "mid": [],
+    "tail": []
+  },
+  "COCO_maxDets": [
+    1,
+    10,
+    100
+  ],
+  "n_dets": 86,
+  "protocol": {
+    "score_thr": 0.001,
+    "max_det": 300,
+    "n_val_images": 2,
+    "split_fingerprint": "f9b78882a0a38c12"
+  },
+  "preds_raw": {
+    "n_dets": 86,
+    "n_images_with_dets": 2,
+    "dets_per_image_mean": 43.0,
+    "dets_per_image_median": 43.0,
+    "dets_per_image_max": 45,
+    "score_mean": 0.4734
+  },
+  "preds_used": {
+    "n_dets": 86,
+    "n_images_with_dets": 2,
+    "dets_per_image_mean": 43.0,
+    "dets_per_image_median": 43.0,
+    "dets_per_image_max": 45,
+    "score_mean": 0.4734
+  },
+  "config": {
+    "mode": "train",
+    "family": "fasterrcnn",
+    "epochs": 1,
+    "batch": 1,
+    "imgsz": 64,
+    "seed": 42,
+    "score_thr": 0.001,
+    "bootstrap": 2,
+    "max_train_hours": 1,
+    "split_sha256": "368bf7f866204fe5ecd610a33ceffbb6b1480e354602dcb268a7479ac4789072"
+  },
+  "latency": {
+    "n": 30,
+    "median_ms": 340.92,
+    "mean_ms": 351.5,
+    "p90_ms": 413.66,
+    "min_ms": 276.35,
+    "std_ms": 62.29,
+    "boundary": "decoded RGB uint8 to CPU detections; batch1 fp32; excludes disk/decode"
+  },
+  "bootstrap": {
+    "n": 2,
+    "seed": 42,
+    "intervals": {
+      "mAP50-95": {
+        "n_valid": 2,
+        "lo": 0.004677141627206198,
+        "hi": 0.004677141627206198
+      },
+      "head": {
+        "n_valid": 2,
+        "lo": 0.004677141627206198,
+        "hi": 0.004677141627206198
+      },
+      "mid": null,
+      "tail": null
+    },
+    "method": "image percentile bootstrap, 95%; same resampling seed across models",
+    "limitation": "Absent classes excluded per draw; rare-class composition varies. Not training-seed uncertainty."
+  }
+}

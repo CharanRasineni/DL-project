@@ -1,0 +1,58 @@
+
+
+def detection_cam(model, family, rgb, size, class_index):
+    """Grad-CAM for one declared class, no silent fallback to another class.
+
+    FRCNN: selected post-NMS class scores. YOLO: raw class probabilities over
+    anchors. RT-DETR: raw query class probabilities. Not causal explanations.
+    The square visualisation transform is recorded and is not the AP input.
+    """
+    x = torch.from_numpy(np.array(Image.fromarray(rgb).resize((size, size)), copy=True))
+    net = model if family == 'fasterrcnn' else model.model
+    device = next(net.parameters()).device
+    x = (x.permute(2, 0, 1).float() / 255).unsqueeze(0).to(device).requires_grad_(True)
+    net.eval().float()
+    # Spatial convolution output, not transformer tokens or tuple decoder output.
+    layer_name = {'fasterrcnn': 'backbone.body.layer4',
+                  'yolov8s': 'model.9.cv2', 'rtdetr': 'model.7'}[family]
+    layer = dict(net.named_modules())[layer_name]
+    capture = {}
+    def hook(module, inputs, output):
+        if not torch.is_tensor(output) or output.ndim != 4:
+            raise RuntimeError('CAM target must be a spatial BCHW tensor')
+        capture['activation'] = output
+        output.retain_grad()
+    handle = layer.register_forward_hook(hook)
+    try:
+        net.zero_grad(set_to_none=True)
+        with torch.enable_grad():
+            if family == 'fasterrcnn':
+                pred = net([x[0]])[0]
+                scores = pred['scores'][pred['labels'] == class_index + 1]
+            else:
+                raw = net(x)
+                pred = raw[0] if isinstance(raw, tuple) else raw
+                if family == 'yolov8s':
+                    assert pred.ndim == 3 and pred.shape[1] == 4 + net.model[-1].nc
+                    scores = pred[0, 4 + class_index, :]
+                else:
+                    assert pred.ndim == 3 and pred.shape[-1] == 4 + net.model[-1].nc
+                    scores = pred[0, :, 4 + class_index]
+            if scores.numel() == 0:
+                raise ValueError('No prediction for requested class; no CAM fabricated')
+            score = scores.topk(min(5, scores.numel())).values.sum()
+            score.backward()
+            act = capture['activation']
+            if act.grad is None:
+                raise RuntimeError('Target activation has no gradient')
+            heat = torch.relu((act.grad.mean((2, 3), keepdim=True) * act).sum(1))[0]
+            heat = heat.detach().cpu().numpy()
+            if not np.isfinite(heat).all() or float(heat.max()) <= float(heat.min()):
+                raise ValueError('Zero/nonfinite CAM; not exported as an explanation')
+            heat = (heat - heat.min()) / (heat.max() - heat.min())
+        return heat, {'layer': layer_name, 'class_index': class_index,
+                      'objective': 'sum top-5 selected-class scores',
+                      'input_transform': f'square RGB resize {size}x{size}; float32 [0,1]'}
+    finally:
+        handle.remove()
+        net.zero_grad(set_to_none=True)

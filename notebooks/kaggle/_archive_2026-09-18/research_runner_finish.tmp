@@ -1,0 +1,42 @@
+    report = {'core': 'ok', 'mode': cfg['mode']}
+    # Same boundary: decoded RGB uint8 -> CPU output, includes transfer/pre/post,
+    # excludes image decode and disk I/O. Batch=1, float32, synchronized CUDA.
+    iid = sorted(split['val_ids'])[0]
+    info = next(i for i in coco['images'] if i['id'] == iid)
+    with Image.open(root / info['file_name']) as im:
+        rgb = np.array(im.convert('RGB'), copy=True)
+    def inference():
+        with torch.no_grad():
+            if cfg['family'] == 'fasterrcnn':
+                x = torch.from_numpy(rgb).permute(2, 0, 1).float().to(device) / 255
+                return {k: v.cpu() for k, v in model([x])[0].items()}
+            return model.predict(source=rgb[:, :, ::-1].copy(), imgsz=cfg['imgsz'],
+                conf=cfg['score_thr'], max_det=300, device=0, half=False, verbose=False)[0].cpu()
+    with D.stage('latency', report):
+        model.eval() if cfg['family'] == 'fasterrcnn' else model.model.eval()
+        result['latency'] = D.bench_latency(inference, warmup=3, iters=10 if cfg['mode']=='smoke' else 30)
+        result['latency']['boundary'] = 'decoded RGB uint8 to CPU detections; batch1 fp32; excludes disk/decode'
+        atomic_json(out / 'results.json', result)
+    with D.stage('figures', report):
+        manifest = figures(model, cfg, coco, split, root, predictions, out)
+        report['cam_successes'] = sum(r['cam_status'] == 'ok' for r in manifest['images'])
+    atomic_json(out / 'stage_report.json', report)
+    if cfg['mode'] == 'smoke':
+        # Optional full-run plots cannot lose training, but smoke gate demands CAM.
+        if report.get('cam_successes', 0) < 1:
+            raise RuntimeError('Smoke CAM gate failed; inspect figure_manifest.json; do not launch full run')
+        if any(s['status'] != 'ok' for s in report.get('stages', {}).values()):
+            raise RuntimeError('Smoke analysis gate failed')
+    del model
+    gc.collect()
+    torch.cuda.empty_cache()
+    if cfg.get('bootstrap', 0):
+        with D.stage('bootstrap', report):
+            result['bootstrap'] = ev.bootstrap_research(D.filter_preds(predictions, score_thr=cfg['score_thr'], max_det=300), cfg['bootstrap'])
+            atomic_json(out / 'results.json', result)
+    atomic_json(out / 'stage_report.json', report)
+    atomic_json(out / 'completed.json', {'status': 'PASS', 'mode': cfg['mode'],
+        'scientific_result': cfg['mode'] != 'smoke', 'checkpoint_sha256': sha256(checkpoint),
+        'runner_sha256': sha256(__file__), 'configuration': cfg})
+    print('COMPLETE', out, flush=True)
+    return out

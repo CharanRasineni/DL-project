@@ -1,0 +1,222 @@
+########## MD CELL 00 ##########
+# 03 — Training: Faster R-CNN R50-FPN (baseline, two-stage)
+#
+# Model 1/3 for the paper's comparison. Protocol shared with 04/05:
+# - **Same split**: 90/10 train/val from `fathomnet-02-split` (seed 42, image-level)
+# - **Same eval**: COCO mAP@[.5:.95] / mAP50 / per-class AP via `data.Evaluator`
+#   (pycocotools, score thr 0.01, max 300 dets)
+# - **Same metric cuts**: head/mid/tail AP by train instance share (3/4/25 classes)
+# - **Provenance**: every run writes `provenance.json` via `data.write_provenance`
+# - COCO-pretrained, fine-tuned. Input policy (native for this model): min 800 / max 1333 px
+#
+# Outputs: `results_fasterrcnn.json`, `preds_fasterrcnn.json`,
+# `curve_fasterrcnn.csv/png/pdf`, weights, `provenance.json`. ~1-1.5 h on T4.
+#
+# Note: this is the 8-epoch Faster R-CNN pilot (see paper § Limitations).
+# Full 30-epoch budget not run for this model due to compute; eval pipeline
+# is identical to 04/05 and uses the shared `data.py` module.
+
+########## CODE CELL 01 ##########
+# --- 1. Setup: import shared data.py module, load split + categories ---
+import os, json, glob, time, random, io, contextlib
+from pathlib import Path
+import numpy as np, pandas as pd
+import torch, torchvision
+import torchvision.transforms.functional as TF
+from PIL import Image
+import matplotlib as mpl, matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_theme(style='whitegrid', font_scale=1.1)
+
+# ── shared module: split loading, COCO eval, provenance ──
+import sys
+sys.path.insert(0, str(Path('/kaggle/working')))
+import data as D
+
+SEED = 42
+random.seed(SEED); np.random.seed(SEED); torch.manual_seed(SEED)
+torch.backends.cudnn.benchmark = True
+DEV = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+OUT = Path('/kaggle/working')
+
+# ── load frozen split + COCO annotations via data.py ──
+S = D.load_split()
+coco_data = D.load_coco_data()
+cat_info = D.get_cat_info(coco_data, S)
+CAT_IDS = cat_info['cat_ids_sorted']
+cats = cat_info['cat_id_to_name']
+groups = D.define_groups(cat_info['train_counts'])
+train_ids = set(S['train_ids'])
+val_ids = S['val_ids']
+val_list = sorted(val_ids)
+img_by_id = {i['id']: i for i in coco_data['images']}
+anns_by_img = {}
+for a in coco_data['annotations']:
+    anns_by_img.setdefault(a['image_id'], []).append(a)
+
+print(f'device: {DEV} | torch {torch.__version__} | val: {len(val_list)} imgs')
+print(f'groups: head={sorted(groups["head"])}')
+print(f'cat_ids: {CAT_IDS}')
+
+
+########## CODE CELL 02 ##########
+# --- 2. Dataset & transforms ---
+from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
+
+def mrcnn(n_cls):
+    m = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights='COCO_V1')
+    m.roi_heads.box_predictor = FastRCNNPredictor(1024, n_cls)
+    return m
+
+# labels: 0 = background; category_id + 1 (must fit within COCO-trained head dims)
+MAX_CAT = max(CAT_IDS)
+
+class DS(torch.utils.data.Dataset):
+    def __init__(self, ids, train=True):
+        self.ids, self.train = ids, train
+    def __len__(self):
+        return len(self.ids)
+    def __getitem__(self, i):
+        iid = self.ids[i]
+        info = img_by_id[iid]
+        p = IMG / info['file_name']
+        im = Image.open(p).convert('RGB')
+        w, h = im.size
+        anns = anns_by_img.get(iid, [])
+        boxes, labels, areas = [], [], []
+        for a in anns:
+            x, y, bw, bh = a['bbox']
+            if bw <= 1 or bh <= 1:
+                continue
+            boxes.append([x, y, x + bw, min(y + bh, h - 0.01)])
+            labels.append(a['category_id'] + 1)
+            areas.append(a.get('area', bw * bh))
+        if not boxes:  # never expected (split contains annotated ids only)
+            boxes = [[0, 0, 1, 1]]; labels = [1]; areas = [1.0]
+        t = {'boxes': torch.as_tensor(boxes, dtype=torch.float32),
+             'labels': torch.as_tensor(labels, dtype=torch.int64),
+             'image_id': torch.tensor([iid]),
+             'area': torch.as_tensor(areas, dtype=torch.float32),
+             'iscrowd': torch.zeros(len(boxes), dtype=torch.int64)}
+        if self.train:
+            if random.random() < 0.5:  # horizontal flip
+                im = TF.hflip(im)
+                t['boxes'][:, [0, 2]] = w - t['boxes'][:, [2, 0]]
+        im = TF.to_tensor(im)
+        return im, t
+
+def collate(b):
+    return tuple(zip(*b))
+
+dl_tr = torch.utils.data.DataLoader(
+    DS(sorted(train_ids), True), batch_size=2, shuffle=True,
+    num_workers=2, collate_fn=collate, pin_memory=True, drop_last=True)
+dl_val = torch.utils.data.DataLoader(
+    DS(val_list, False), batch_size=4, shuffle=False,
+    num_workers=2, collate_fn=collate, pin_memory=True)
+
+model = mrcnn(MAX_CAT + 2).to(DEV)
+params = [p for p in model.parameters() if p.requires_grad]
+N_PARAMS = sum(p.numel() for p in params)
+opt = torch.optim.SGD(params, lr=0.0025, momentum=0.9, weight_decay=1e-4)
+sch = torch.optim.lr_scheduler.MultiStepLR(opt, milestones=[8], gamma=0.1)
+print(f'Faster R-CNN R50-FPN | params: {N_PARAMS/1e6:.2f}M | {len(dl_tr)} train steps/epoch')
+########## CODE CELL 03 ##########
+# --- 3. Train (8 epochs, ~10-12 min/epoch on T4) ---
+EPOCHS, HIST = 8, []
+model.train()
+for ep in range(1, EPOCHS + 1):
+    t0, tot, nb = time.time(), 0.0, 0
+    for ims, ts in dl_tr:
+        ims = [x.to(DEV) for x in ims]
+        ts = [{k: (v.to(DEV) if torch.is_tensor(v) else v) for k, v in t.items()} for t in ts]
+        losses = model(ims, ts)
+        loss = sum(losses.values())
+        opt.zero_grad(); loss.backward()
+        torch.nn.utils.clip_grad_norm_(params, 10.0)
+        opt.step()
+        tot += float(loss); nb += 1
+    sch.step()
+    torch.save({'model': model.state_dict(), 'epoch': ep}, OUT / 'fasterrcnn_last.pt')
+    HIST.append({'epoch': ep, 'loss': tot / nb, 'sec': time.time() - t0})
+    print(f"epoch {ep}: loss {tot/nb:.4f} ({HIST[-1]['sec']/60:.1f} min)")
+pd.DataFrame(HIST).to_csv(OUT / 'curve_fasterrcnn.csv', index=False)
+########## CODE CELL 04 ##########
+# --- 4. Inference + COCO evaluation + artifacts ---
+model.eval()
+preds = []
+with torch.no_grad():
+    for ims, ts in dl_val:
+        out = model([x.to(DEV) for x in ims])
+        for o, t in zip(out, ts):
+            iid = int(t['image_id'][0])
+            keep = o['scores'] > 0.01
+            b = o['boxes'][keep][:300].cpu().numpy()
+            s = o['scores'][keep][:300].cpu().numpy()
+            l = o['labels'][keep][:300].cpu().numpy()
+            for (x1, y1, x2, y2), sc, lb in zip(b, s, l):
+                preds.append({'image_id': iid, 'category_id': int(lb) - 1,
+                              'bbox': [float(x1), float(y1), float(x2 - x1), float(y2 - y1)],
+                              'score': float(sc)})
+json.dump(preds, open(OUT / 'preds_fasterrcnn.json', 'w'))
+print('detections:', len(preds))
+
+# ── unified COCO eval via data.py Evaluator ──
+evaluator = D.Evaluator(S, cat_info, score_thr=0.01, max_det=300)
+results = evaluator.evaluate(preds, out_dir=OUT / 'eval_frcnn')
+
+# latency (median of 30 single-image forwards, 800px input)
+model.eval()
+with torch.no_grad():
+    x = torch.rand(3, 800, 1280).to(DEV)
+    for _ in range(5):
+        model([x])
+    torch.cuda.synchronize()
+    ts = []
+    for _ in range(30):
+        t0 = time.time(); model([x]); torch.cuda.synchronize()
+        ts.append(time.time() - t0)
+
+R = {
+    'model': 'faster_rcnn_r50_fpn',
+    'protocol': {'seed': SEED, 'val_split': S['val_fraction'],
+                 'epochs': EPOCHS, 'input': 'min800/max1333',
+                 'score_thr': 0.01, 'max_det': 300},
+    'params_million': round(N_PARAMS / 1e6, 2),
+    'mAP50-95': results['mAP50-95'],
+    'mAP50': results['mAP50'],
+    'per_class_AP50-95': results['per_class_AP50-95'],
+    'head_mid_tail_AP50-95': results['head_mid_tail_AP50-95'],
+    'latency_ms_per_image': round(float(np.median(ts)) * 1000, 2),
+}
+
+# ── provenance ──
+proto = D.provenance(
+    model='Faster R-CNN R50-FPN',
+    model_family='two-stage',
+    framework='torchvision',
+    framework_version=torchvision.__version__,
+    epochs=EPOCHS,
+    batch_size=2,
+    input='min800/max1333',
+    score_thr=0.01,
+    max_det=300,
+    seed=SEED,
+    extra={'note': '8-epoch pilot; full 30-epoch budget not run for this model'}
+)
+D.write_provenance(OUT / 'provenance_frcnn.json', proto, R)
+
+json.dump(R, open(OUT / 'results_fasterrcnn.json', 'w'), indent=2)
+print(json.dumps({k: R[k] for k in ['mAP50-95', 'mAP50', 'head_mid_tail_AP50-95',
+      'latency_ms_per_image']}, indent=2))
+
+# training curve
+h = pd.read_csv(OUT / 'curve_fasterrcnn.csv')
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(h.epoch, h.loss, marker='o')
+ax.set(xlabel='epoch', ylabel='total loss', title='Faster R-CNN training loss')
+fig.tight_layout()
+for ext in ['png', 'pdf']:
+    fig.savefig(OUT / f'curve_fasterrcnn.{ext}', dpi=200)
+plt.show()
+

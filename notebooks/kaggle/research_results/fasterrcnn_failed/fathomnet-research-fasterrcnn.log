@@ -1,0 +1,109 @@
+[{"stream_name":"stderr","time":10.169086657,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.169147139,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.169154621,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.169158503,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.885240439,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.885269517,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.885274251,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.885278099,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":16.036041172,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 29.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.238031774,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 898.5/898.5 kB 29.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.639778606,"data":"Writing /kaggle/working/data.py\n"}
+,{"stream_name":"stdout","time":18.673760925,"data":"Writing /kaggle/working/research_runner.py\n"}
+,{"stream_name":"stdout","time":18.68799252,"data":"{'mode': 'train', 'family': 'fasterrcnn', 'epochs': 30, 'imgsz': 640, 'batch': 2, 'seed': 42, 'score_thr': 0.001, 'bootstrap': 0, 'max_train_hours': 9, 'split_sha256': '232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8'}\n"}
+,{"stream_name":"stderr","time":27.907001446,"data":"INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok\n"}
+,{"stream_name":"stderr","time":27.90704416,"data":"\n"}
+,{"stream_name":"stderr","time":27.907048621,"data":"INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok\n"}
+,{"stream_name":"stderr","time":41.001538942,"data":"INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stderr","time":41.001569925,"data":"\n"}
+,{"stream_name":"stderr","time":41.001575135,"data":"INFO split loaded from /kaggle/input/notebooks/rscharan/fathomnet-02-split/split.json (fingerprint d611d16e1c9c0562)\n"}
+,{"stream_name":"stdout","time":293.74722788,"data":"Creating new Ultralytics Settings v0.0.6 file ✅ \n"}
+,{"stream_name":"stdout","time":293.747271681,"data":"View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'\n"}
+,{"stream_name":"stdout","time":293.747278713,"data":"Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n"}
+,{"stream_name":"stdout","time":294.538122498,"data":"Downloading: \"https://download.pytorch.org/models/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth\" to /root/.cache/torch/hub/checkpoints/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth\n"}
+,{"stream_name":"stderr","time":294.538913849,"data":"\r  0%|          | 0.00/160M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":294.63932962,"data":"\r  0%|          | 0.00/160M [00:00\u003c?, ?B/s]\r 10%|▉         | 15.9M/160M [00:00\u003c00:00, 166MB/s]\n"}
+,{"stream_name":"stderr","time":294.740218362,"data":"\r 10%|▉         | 15.9M/160M [00:00\u003c00:00, 166MB/s]\r 25%|██▍       | 39.4M/160M [00:00\u003c00:00, 213MB/s]\n"}
+,{"stream_name":"stderr","time":294.840266727,"data":"\r 25%|██▍       | 39.4M/160M [00:00\u003c00:00, 213MB/s]\r 40%|███▉      | 63.1M/160M [00:00\u003c00:00, 229MB/s]\n"}
+,{"stream_name":"stderr","time":294.940517192,"data":"\r 40%|███▉      | 63.1M/160M [00:00\u003c00:00, 229MB/s]\r 54%|█████▍    | 86.9M/160M [00:00\u003c00:00, 237MB/s]\n"}
+,{"stream_name":"stderr","time":295.040904891,"data":"\r 54%|█████▍    | 86.9M/160M [00:00\u003c00:00, 237MB/s]\r 69%|██████▉   | 111M/160M [00:00\u003c00:00, 241MB/s] \n"}
+,{"stream_name":"stderr","time":295.141301857,"data":"\r 69%|██████▉   | 111M/160M [00:00\u003c00:00, 241MB/s] \r 84%|████████▍ | 135M/160M [00:00\u003c00:00, 245MB/s]\n"}
+,{"stream_name":"stderr","time":295.241442313,"data":"\r 84%|████████▍ | 135M/160M [00:00\u003c00:00, 245MB/s]\r 99%|█████████▉| 159M/160M [00:00\u003c00:00, 246MB/s]\n"}
+,{"stream_name":"stderr","time":295.246749072,"data":"\r 99%|█████████▉| 159M/160M [00:00\u003c00:00, 246MB/s]\r100%|██████████| 160M/160M [00:00\u003c00:00, 237MB/s]\n"}
+,{"stream_name":"stderr","time":295.363554589,"data":"\r100%|██████████| 160M/160M [00:00\u003c00:00, 237MB/s]\n"}
+,{"stream_name":"stderr","time":295.363589015,"data":"\n"}
+,{"stream_name":"stderr","time":295.363593598,"data":"\n"}
+,{"stream_name":"stderr","time":295.910738936,"data":"/kaggle/working/research_runner.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\n"}
+,{"stream_name":"stderr","time":295.910781503,"data":"  scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')\n"}
+,{"stream_name":"stderr","time":295.91078718,"data":"\n"}
+,{"stream_name":"stderr","time":295.910791808,"data":"/kaggle/working/research_runner.py:171: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\n"}
+,{"stream_name":"stderr","time":295.91079695,"data":"  scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')\n"}
+,{"stream_name":"stdout","time":1457.51196153,"data":"{'epoch': 1, 'loss': 0.49698367907485425, 'val_COCO_AP': 0.1014801417162477, 'seconds': 1161.3209951110002}\n"}
+,{"stream_name":"stdout","time":2682.997493763,"data":"{'epoch': 2, 'loss': 0.38298444848555024, 'val_COCO_AP': 0.1661773107703021, 'seconds': 1224.770691356}\n"}
+,{"stream_name":"stdout","time":3910.223527991,"data":"{'epoch': 3, 'loss': 0.34230896607604827, 'val_COCO_AP': 0.20105028813026485, 'seconds': 1226.515047339}\n"}
+,{"stream_name":"stdout","time":5144.308664815,"data":"{'epoch': 4, 'loss': 0.3104062763613579, 'val_COCO_AP': 0.21900762670087653, 'seconds': 1233.3700140310002}\n"}
+,{"stream_name":"stdout","time":6325.806872999,"data":"{'epoch': 5, 'loss': 0.29002832269552814, 'val_COCO_AP': 0.2262573345303459, 'seconds': 1180.8226583369997}\n"}
+,{"stream_name":"stdout","time":7506.46759866,"data":"{'epoch': 6, 'loss': 0.2704928206435468, 'val_COCO_AP': 0.2572909459580431, 'seconds': 1179.9856486790004}\n"}
+,{"stream_name":"stdout","time":8690.809335828,"data":"{'epoch': 7, 'loss': 0.2540178200900401, 'val_COCO_AP': 0.2584245648763401, 'seconds': 1183.661899113}\n"}
+,{"stream_name":"stdout","time":9877.82087891,"data":"{'epoch': 8, 'loss': 0.24032448386999494, 'val_COCO_AP': 0.2839397488921424, 'seconds': 1186.3310028489996}\n"}
+,{"stream_name":"stdout","time":11070.555534021,"data":"{'epoch': 9, 'loss': 0.22607085006628486, 'val_COCO_AP': 0.261803763723189, 'seconds': 1192.731900445}\n"}
+,{"stream_name":"stdout","time":12303.997415868,"data":"{'epoch': 10, 'loss': 0.2168525199390802, 'val_COCO_AP': 0.2688916383366643, 'seconds': 1233.4401032679998}\n"}
+,{"stream_name":"stdout","time":13529.17782415,"data":"{'epoch': 11, 'loss': 0.20738103625935433, 'val_COCO_AP': 0.2828347076464468, 'seconds': 1225.1774942329994}\n"}
+,{"stream_name":"stdout","time":14759.118936745,"data":"{'epoch': 12, 'loss': 0.19944581470105524, 'val_COCO_AP': 0.2689838343164422, 'seconds': 1229.9391364920011}\n"}
+,{"stream_name":"stdout","time":15982.588029735,"data":"{'epoch': 13, 'loss': 0.18815490751165156, 'val_COCO_AP': 0.27507395220653463, 'seconds': 1223.465782070998}\n"}
+,{"stream_name":"stdout","time":17204.684726503,"data":"{'epoch': 14, 'loss': 0.1774636128070214, 'val_COCO_AP': 0.303143164509804, 'seconds': 1221.3546021729999}\n"}
+,{"stream_name":"stdout","time":18429.48280362,"data":"{'epoch': 15, 'loss': 0.17181452545960074, 'val_COCO_AP': 0.30153221459489454, 'seconds': 1224.7972448770015}\n"}
+,{"stream_name":"stdout","time":19652.095549902,"data":"{'epoch': 16, 'loss': 0.1665647607392751, 'val_COCO_AP': 0.2960162271117286, 'seconds': 1222.612372863001}\n"}
+,{"stream_name":"stdout","time":20863.543495719,"data":"{'epoch': 17, 'loss': 0.15970137327059145, 'val_COCO_AP': 0.30902493169491213, 'seconds': 1210.7362883059977}\n"}
+,{"stream_name":"stdout","time":22088.57043591,"data":"{'epoch': 18, 'loss': 0.1513234847518188, 'val_COCO_AP': 0.2883029538518901, 'seconds': 1225.025285456999}\n"}
+,{"stream_name":"stdout","time":23305.769993356,"data":"{'epoch': 19, 'loss': 0.15006088756982733, 'val_COCO_AP': 0.29428220413838774, 'seconds': 1217.1976382630019}\n"}
+,{"stream_name":"stdout","time":24533.642781062,"data":"{'epoch': 20, 'loss': 0.1422736152786289, 'val_COCO_AP': 0.30058861075541315, 'seconds': 1227.8647184060028}\n"}
+,{"stream_name":"stdout","time":25756.177090459,"data":"{'epoch': 21, 'loss': 0.11320807120127904, 'val_COCO_AP': 0.3270609672646906, 'seconds': 1221.8279350259982}\n"}
+,{"stream_name":"stdout","time":26975.919810076,"data":"{'epoch': 22, 'loss': 0.10143329917836452, 'val_COCO_AP': 0.32508119764222754, 'seconds': 1219.740382674001}\n"}
+,{"stream_name":"stdout","time":28198.856189008,"data":"{'epoch': 23, 'loss': 0.0972142272496621, 'val_COCO_AP': 0.32482252618607843, 'seconds': 1222.9282021539984}\n"}
+,{"stream_name":"stdout","time":29413.834210339,"data":"{'epoch': 24, 'loss': 0.09409372696199032, 'val_COCO_AP': 0.3290525139073527, 'seconds': 1214.2978657880012}\n"}
+,{"stream_name":"stdout","time":30634.495413245,"data":"{'epoch': 25, 'loss': 0.09063143240100291, 'val_COCO_AP': 0.3258532708613277, 'seconds': 1220.6544675500008}\n"}
+,{"stream_name":"stdout","time":31848.23742764,"data":"{'epoch': 26, 'loss': 0.08844050325372603, 'val_COCO_AP': 0.3274054289984566, 'seconds': 1213.7401759379973}\n"}
+,{"stream_name":"stderr","time":31851.849638404,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":31851.849663722,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":31851.849671007,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":31851.849856462,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":31851.84990213,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":31851.850100132,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":31851.850401105,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":31851.850411377,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":31851.850426937,"data":"Exception encountered at \"In [5]\":\n"}
+,{"stream_name":"stderr","time":31851.850430905,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":31851.850434535,"data":"RuntimeError                              Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":31851.850438214,"data":"/tmp/ipykernel_23/1741238926.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":31851.850441941,"data":"      4 D.selftest()\n"}
+,{"stream_name":"stderr","time":31851.850446279,"data":"      5 try:\n"}
+,{"stream_name":"stderr","time":31851.850450849,"data":"----\u003e 6     OUTPUT = R.run(CONFIG)\n"}
+,{"stream_name":"stderr","time":31851.850454987,"data":"      7 except Exception:\n"}
+,{"stream_name":"stderr","time":31851.85045903,"data":"      8     error_dir = WORK / (CONFIG['family'] + '_' + CONFIG['mode'])\n"}
+,{"stream_name":"stderr","time":31851.850463065,"data":"\n"}
+,{"stream_name":"stderr","time":31851.850466425,"data":"/kaggle/working/research_runner.py in run(cfg)\n"}
+,{"stream_name":"stderr","time":31851.85046998,"data":"    509         assert checkpoint.is_file(), 'Explicit attached checkpoint required'\n"}
+,{"stream_name":"stderr","time":31851.850473617,"data":"    510     elif cfg['family'] == 'fasterrcnn':\n"}
+,{"stream_name":"stderr","time":31851.850477125,"data":"--\u003e 511         checkpoint = train_frcnn(cfg, coco, split, root, out, device)\n"}
+,{"stream_name":"stderr","time":31851.850480835,"data":"    512     else:\n"}
+,{"stream_name":"stderr","time":31851.850484317,"data":"    513         checkpoint = train_ultra(cfg, yaml, out)\n"}
+,{"stream_name":"stderr","time":31851.850487987,"data":"\n"}
+,{"stream_name":"stderr","time":31851.850491379,"data":"/kaggle/working/research_runner.py in train_frcnn(cfg, coco, split, root, out, device)\n"}
+,{"stream_name":"stderr","time":31851.85049511,"data":"    212         if epoch + 1 \u003c cfg['epochs'] and elapsed + (elapsed / (epoch + 1)) \u003e cfg['max_train_hours'] * 3600:\n"}
+,{"stream_name":"stderr","time":31851.850499106,"data":"    213             atomic_json(out / 'budget_stop.json', {'completed_epochs': epoch + 1, 'requested': cfg['epochs']})\n"}
+,{"stream_name":"stderr","time":31851.850502843,"data":"--\u003e 214             raise RuntimeError('Budget stop: checkpoints saved; incomplete run, not a matched-budget result')\n"}
+,{"stream_name":"stderr","time":31851.850506633,"data":"    215     del optimizer, scaler, model\n"}
+,{"stream_name":"stderr","time":31851.85051018,"data":"    216     gc.collect()\n"}
+,{"stream_name":"stderr","time":31851.850513759,"data":"\n"}
+,{"stream_name":"stderr","time":31851.850518786,"data":"RuntimeError: Budget stop: checkpoints saved; incomplete run, not a matched-budget result\n"}
+,{"stream_name":"stderr","time":31851.850525506,"data":"\n"}
+,{"stream_name":"stderr","time":31854.236489215,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":31854.236533328,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":31854.448870289,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":31854.448908947,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":31855.115062188,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":31855.412740362,"data":"[NbConvertApp] Writing 144968 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":31857.727594317,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":31858.816764934,"data":"[NbConvertApp] Writing 806566 bytes to __results__.html\n"}
+]

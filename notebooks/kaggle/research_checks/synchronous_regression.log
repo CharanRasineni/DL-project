@@ -1,0 +1,5 @@
+TIMEOUT after 20 seconds; subprocess killed and waited for
+=== STDOUT ===
+
+=== STDERR ===
+INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok

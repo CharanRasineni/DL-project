@@ -1,0 +1,4 @@
+{
+  "status": "FAIL",
+  "traceback": "Traceback (most recent call last):\n  File \"c:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\_cpu_integration.py\", line 53, in <module>\n    result_dir = R.run(config)\n  File \"c:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\research_runner.py[CPU-only in-memory overrides]\", line 476, in run\n    if (out / 'provenance.json').exists():\nRuntimeError: Output already exists; use a fresh working session to avoid overwriting a run\n"
+}

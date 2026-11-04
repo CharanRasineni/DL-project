@@ -1,0 +1,65 @@
+[{"stream_name":"stderr","time":11.497454693,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.497507562,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.497514927,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.497518764,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.291239102,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.291271875,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.29127557,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.291278176,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":65.547400735,"data":"device: cuda | torch 2.10.0+cu128 | val: 646 imgs\n"}
+,{"stream_name":"stdout","time":65.547435691,"data":"groups: head=['bony fish', 'sea fan', 'urchin']\n"}
+,{"stream_name":"stdout","time":66.268452907,"data":"Downloading: \"https://download.pytorch.org/models/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth\" to /root/.cache/torch/hub/checkpoints/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth\n"}
+,{"stream_name":"stderr","time":66.269301722,"data":"\r  0%|          | 0.00/160M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":66.369930885,"data":"\r  0%|          | 0.00/160M [00:00\u003c?, ?B/s]\r 11%|█▏        | 18.1M/160M [00:00\u003c00:00, 190MB/s]\n"}
+,{"stream_name":"stderr","time":66.470646748,"data":"\r 11%|█▏        | 18.1M/160M [00:00\u003c00:00, 190MB/s]\r 25%|██▌       | 40.5M/160M [00:00\u003c00:00, 216MB/s]\n"}
+,{"stream_name":"stderr","time":66.571127131,"data":"\r 25%|██▌       | 40.5M/160M [00:00\u003c00:00, 216MB/s]\r 40%|████      | 64.1M/160M [00:00\u003c00:00, 230MB/s]\n"}
+,{"stream_name":"stderr","time":66.671537172,"data":"\r 40%|████      | 64.1M/160M [00:00\u003c00:00, 230MB/s]\r 55%|█████▌    | 87.9M/160M [00:00\u003c00:00, 237MB/s]\n"}
+,{"stream_name":"stderr","time":66.774200644,"data":"\r 55%|█████▌    | 87.9M/160M [00:00\u003c00:00, 237MB/s]\r 69%|██████▉   | 110M/160M [00:00\u003c00:00, 235MB/s] \n"}
+,{"stream_name":"stderr","time":66.874299091,"data":"\r 69%|██████▉   | 110M/160M [00:00\u003c00:00, 235MB/s] \r 84%|████████▍ | 134M/160M [00:00\u003c00:00, 239MB/s]\n"}
+,{"stream_name":"stderr","time":66.974560347,"data":"\r 84%|████████▍ | 134M/160M [00:00\u003c00:00, 239MB/s]\r 99%|█████████▉| 158M/160M [00:00\u003c00:00, 243MB/s]\n"}
+,{"stream_name":"stderr","time":66.98216689,"data":"\r 99%|█████████▉| 158M/160M [00:00\u003c00:00, 243MB/s]\r100%|██████████| 160M/160M [00:00\u003c00:00, 235MB/s]\n"}
+,{"stream_name":"stderr","time":67.097832976,"data":"\r100%|██████████| 160M/160M [00:00\u003c00:00, 235MB/s]\n"}
+,{"stream_name":"stderr","time":67.097874703,"data":"\n"}
+,{"stream_name":"stderr","time":67.097878892,"data":"\n"}
+,{"stream_name":"stdout","time":67.512823806,"data":"Faster R-CNN R50-FPN | params: 41.29M | 2908 train steps/epoch\n"}
+,{"stream_name":"stderr","time":85.566560212,"data":"/tmp/ipykernel_22/3335944362.py:14: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":85.56661697,"data":"Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":85.566651075,"data":"  tot += float(loss); nb += 1\n"}
+,{"stream_name":"stderr","time":85.566656756,"data":"\n"}
+,{"stream_name":"stderr","time":85.566661765,"data":"/tmp/ipykernel_22/3335944362.py:14: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":85.566667162,"data":"Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":85.5666726,"data":"  tot += float(loss); nb += 1\n"}
+,{"stream_name":"stdout","time":2022.608645702,"data":"epoch 1: loss 0.4566 (32.6 min)\n"}
+,{"stream_name":"stdout","time":3976.975815281,"data":"epoch 2: loss 0.3499 (32.6 min)\n"}
+,{"stream_name":"stdout","time":5931.923965373,"data":"epoch 3: loss 0.3077 (32.6 min)\n"}
+,{"stream_name":"stdout","time":7884.385246717,"data":"epoch 4: loss 0.2826 (32.5 min)\n"}
+,{"stream_name":"stdout","time":9845.841284245,"data":"epoch 5: loss 0.2630 (32.7 min)\n"}
+,{"stream_name":"stdout","time":11807.867494603,"data":"epoch 6: loss 0.2437 (32.7 min)\n"}
+,{"stream_name":"stdout","time":13770.848729593,"data":"epoch 7: loss 0.2319 (32.7 min)\n"}
+,{"stream_name":"stdout","time":15729.848400445,"data":"epoch 8: loss 0.2185 (32.6 min)\n"}
+,{"stream_name":"stdout","time":15839.809147451,"data":"detections: 9435\n"}
+,{"stream_name":"stdout","time":15839.80920235,"data":"Loading and preparing results...\n"}
+,{"stream_name":"stdout","time":15839.809219099,"data":"DONE (t=0.01s)\n"}
+,{"stream_name":"stdout","time":15839.80922477,"data":"creating index...\n"}
+,{"stream_name":"stdout","time":15839.809229698,"data":"index created!\n"}
+,{"stream_name":"stdout","time":15849.777413349,"data":"{\n"}
+,{"stream_name":"stdout","time":15849.777460577,"data":"  \"mAP50-95\": 0.308,\n"}
+,{"stream_name":"stdout","time":15849.777465223,"data":"  \"mAP50\": 0.4584,\n"}
+,{"stream_name":"stdout","time":15849.777468473,"data":"  \"head_mid_tail_AP50-95\": {\n"}
+,{"stream_name":"stdout","time":15849.777471651,"data":"    \"head\": 0.5032,\n"}
+,{"stream_name":"stdout","time":15849.777475156,"data":"    \"mid\": 0.409,\n"}
+,{"stream_name":"stdout","time":15849.777478371,"data":"    \"tail\": 0.2684\n"}
+,{"stream_name":"stdout","time":15849.777481345,"data":"  },\n"}
+,{"stream_name":"stdout","time":15849.777484316,"data":"  \"latency_ms_per_image\": 141.39\n"}
+,{"stream_name":"stdout","time":15849.777488335,"data":"}\n"}
+,{"stream_name":"stderr","time":15857.017213341,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":15857.01724809,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":15857.229372034,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":15857.229400343,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":15857.934835485,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":15858.230886159,"data":"[NbConvertApp] Writing 51804 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":15860.513682485,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15861.360634993,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":15861.360667128,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":15861.360858726,"data":"[NbConvertApp] Writing 333489 bytes to __results__.html\n"}
+]

@@ -1,0 +1,5 @@
+START fasterrcnn
+PASS fasterrcnn {'layer': 'backbone.body.layer4', 'class_index': 25, 'objective': 'sum top-5 selected-class scores', 'input_transform': 'square RGB resize 64x64; float32 [0,1]'}
+START yolov8s
+PASS yolov8s {'layer': 'model.9.cv2', 'class_index': 0, 'objective': 'sum top-5 selected-class scores', 'input_transform': 'square RGB resize 64x64; float32 [0,1]'}
+FINAL PASS

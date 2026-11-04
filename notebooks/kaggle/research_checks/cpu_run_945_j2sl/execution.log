@@ -1,0 +1,2 @@
+OVERRIDES: CPU guard, synthetic paths, 64px, random init; production file unchanged.
+{'epoch': 1, 'loss': 1.3347209095954895, 'val_COCO_AP': 0.004677141627206198, 'seconds': 4.2189999999827705}

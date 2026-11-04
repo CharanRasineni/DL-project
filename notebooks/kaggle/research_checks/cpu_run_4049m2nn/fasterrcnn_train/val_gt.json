@@ -1,0 +1,50 @@
+{
+  "images": [
+    {
+      "id": 2,
+      "file_name": "2.png",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": 3,
+      "file_name": "3.png",
+      "width": 64,
+      "height": 64
+    }
+  ],
+  "annotations": [
+    {
+      "id": 1,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        12,
+        12,
+        24,
+        24
+      ],
+      "area": 576,
+      "iscrowd": 0
+    },
+    {
+      "id": 2,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        12,
+        12,
+        24,
+        24
+      ],
+      "area": 576,
+      "iscrowd": 0
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "name": "synthetic"
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+
+############################## CELL 0 (markdown) ##############################
+# 05 — Training: RT-DETR-L (transformer-based, end-to-end)
+
+Model 3/3. Protocol shared with 03/04: same split (`fathomnet-02-split`, seed 42), same unified COCO evaluation (pycocotools, score thr 0.01, max 300 dets), same head/mid/tail cuts. Native input policy: imgsz 640 (RT-DETR's default; higher would exceed T4 memory/time budget). COCO-pretrained (coco weights), 30 epochs. Reuses the YOLO-format dataset builder.
+
+Outputs: `results_rtdetr.json`, `preds_rtdetr.json`, curves, weights.
+
+GPU-SAFE SETTINGS (T4 15 GB): train batch=4, workers=1, cache=disk, amp on; val batch=4 streamed from folder. Same 30-epoch/imgsz-640 protocol, only micro-batch is smaller.
+############################## CELL 1 (code) ##############################
+%pip install -q ultralytics
+############################## CELL 2 (code) ##############################
+# --- 1. Setup, data, shared eval helpers (kept identical across 03/04/05) ---
+import os, json, glob, time, random, io, contextlib
+from pathlib import Path
+import numpy as np, pandas as pd
+import torch
+import matplotlib as mpl, matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_theme(style='whitegrid', font_scale=1.1)
+from ultralytics import RTDETR
+
+SEED = 42
+random.seed(SEED); np.random.seed(SEED); torch.manual_seed(SEED)
+DEV = 'cuda' if torch.cuda.is_available() else 'cpu'
+OUT = Path('/kaggle/working')
+
+anns_path = Path(glob.glob('/kaggle/input/**/train_dataset.json', recursive=True)[0])
+ANN = anns_path.parent
+IMG = ANN.parent / 'images' if (ANN.parent / 'images').exists() else ANN / 'images'
+S = json.load(open(Path(glob.glob('/kaggle/input/**/split.json', recursive=True)[0])))
+data = json.load(open(anns_path))
+cats = {c['id']: c['name'] for c in data['categories']}
+CAT_IDS = sorted(cats)
+img_by_id = {i['id']: i for i in data['images']}
+anns_by_img = {}
+for a in data['annotations']:
+    anns_by_img.setdefault(a['image_id'], []).append(a)
+val_ids = S['val_ids']; train_ids = set(S['train_ids'])
+val_list = sorted(val_ids)
+
+from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
+
+GT = {'images': [img_by_id[i] for i in val_ids],
+      'annotations': [a for a in data['annotations'] if a['image_id'] in set(val_ids)],
+      'categories': data['categories']}
+json.dump(GT, open(OUT / 'val_gt.json', 'w'))
+_coco_sil = io.StringIO()
+with contextlib.redirect_stdout(_coco_sil):
+    GT_COCO = COCO(str(OUT / 'val_gt.json'))
+
+def coco_eval(preds, tag):
+    'Unified COCO bbox eval used by 03/04/05. Returns mAP, mAP50, per-class AP.'
+    dt = GT_COCO.loadRes(preds)
+    E = COCOeval(GT_COCO, dt, 'bbox')
+    with contextlib.redirect_stdout(io.StringIO()):
+        E.evaluate(); E.accumulate(); E.summarize()
+    mAP, mAP50 = float(E.stats[0]), float(E.stats[1])
+    per = {}
+    for cid in CAT_IDS:
+        E.params.catIds = [cid]
+        with contextlib.redirect_stdout(io.StringIO()):
+            E.evaluate(); E.accumulate(); E.summarize()
+        per[cats[cid]] = round(float(E.stats[0]), 4)
+    E.params.catIds = []
+    return {'mAP50-95': round(mAP, 4), 'mAP50': round(mAP50, 4), 'per_class_AP50-95': per}
+
+_counts = pd.Series([a['category_id'] for a in data['annotations']]).map(cats).value_counts()
+GROUPS = {'head': set(_counts.index[:3]), 'mid': set(_counts.index[3:7]), 'tail': set(_counts.index[7:])}
+
+def group_ap(per_class):
+    return {g: round(float(np.mean([per_class[c] for c in ids if c in per_class])), 4)
+            for g, ids in GROUPS.items()}
+
+print(f'device: {DEV} | torch {torch.__version__} | val: {len(val_list)} imgs')
+############################## CELL 3 (code) ##############################
+# --- 2. Build YOLO-format dataset (identical builder to 04) ---
+from PIL import Image
+BASE = Path('/kaggle/working/dataset')
+IDX = {cid: k for k, cid in enumerate(CAT_IDS)}
+
+def img_size(info):
+    if info.get('width'):
+        return info['width'], info['height']
+    with Image.open(IMG / info['file_name']) as im:
+        return im.size
+
+for sp, ids in [('train', sorted(train_ids)), ('val', val_list)]:
+    (BASE / 'images' / sp).mkdir(parents=True, exist_ok=True)
+    (BASE / 'labels' / sp).mkdir(parents=True, exist_ok=True)
+    for iid in ids:
+        info = img_by_id[iid]
+        src = IMG / info['file_name']
+        dst = BASE / 'images' / sp / Path(info['file_name'])
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        if not dst.exists():
+            os.symlink(src, dst)
+        w, h = img_size(info)
+        lines = []
+        for a in anns_by_img.get(iid, []):
+            x, y, bw, bh = a['bbox']
+            cx, cy = (x + bw / 2) / w, (y + bh / 2) / h
+            nw, nh = min(bw / w, 1.0), min(bh / h, 1.0)
+            if nw <= 0 or nh <= 0:
+                continue
+            lines.append(f'{IDX[a["category_id"]]} {cx:.6f} {cy:.6f} {nw:.6f} {nh:.6f}')
+        lp = Path(str(dst).replace('/images/', '/labels/')).with_suffix('.txt')
+        lp.write_text('\n'.join(lines))
+
+names = {IDX[cid]: cats[cid] for cid in CAT_IDS}
+yaml_p = BASE / 'fathomnet.yaml'
+yaml_p.write_text(
+    f'path: {BASE}\ntrain: images/train\nval: images/val\nnc: {len(CAT_IDS)}\n'
+    'names:\n' + '\n'.join(f'  {k}: {v}' for k, v in names.items()))
+print('dataset built:', yaml_p)
+############################## CELL 4 (code) ##############################
+# --- 3. Train RT-DETR-L (GPU-safe for T4 15GB) ---
+# batch=4 + workers=1 + cache=disk keeps peak well under 14.6 GiB.
+# Same 30-epoch / imgsz-640 protocol, only the micro-batch is smaller.
+import gc; gc.collect()
+if torch.cuda.is_available():
+    torch.cuda.empty_cache()
+model = RTDETR('rtdetr-l.pt')
+model.train(data=str(yaml_p), epochs=30, imgsz=640, batch=4, seed=SEED,
+            workers=1, cache='disk', amp=True, project=str(OUT / 'runs'), name='rtdetr',
+            patience=50, exist_ok=True)
+############################## CELL 5 (code) ##############################
+# --- 4. Predict on val + unified COCO evaluation ---
+import gc; gc.collect()
+if torch.cuda.is_available():
+    torch.cuda.empty_cache()
+best = RTDETR(str(OUT / 'runs' / 'rtdetr' / 'weights' / 'best.pt'))
+N_PARAMS = sum(p.numel() for p in best.model.parameters())
+
+path2id = {str(BASE / 'images' / 'val' / Path(img_by_id[i]['file_name'])): i for i in val_list}
+preds = []
+# NOTE: source must be the val FOLDER (streamed), never a Python list of all
+# paths. With a list source the ultralytics dataloader stacks every image into
+# one warmup batch (7.9 GiB at imgsz 640 on top of resident memory > T4 14.6 GiB)
+# and OOMs. With a folder source the warmup batch is one image and per-image
+# predictions are identical.
+for r in best.predict(source=str(BASE / 'images' / 'val'), conf=0.001, iou=0.7,
+                      max_det=300, imgsz=640, batch=4, stream=True, verbose=False):
+    iid = path2id[str(r.path)]
+    xyxy = r.boxes.xyxy.cpu().numpy(); sc = r.boxes.conf.cpu().numpy(); cl = r.boxes.cls.cpu().numpy()
+    for (x1, y1, x2, y2), s, c in zip(xyxy, sc, cl):
+        preds.append({'image_id': iid, 'category_id': CAT_IDS[int(c)],
+                      'bbox': [float(x1), float(y1), float(x2 - x1), float(y2 - y1)],
+                      'score': float(s)})
+    torch.cuda.empty_cache()
+json.dump(preds, open(OUT / 'preds_rtdetr.json', 'w'))
+print('detections:', len(preds))
+
+R = {'model': 'rtdetr_l', 'protocol': {'seed': SEED, 'val_split': S['val_fraction'], 'epochs': 30,
+     'input': 'imgsz=640', 'score_thr': 0.001, 'max_det': 300},
+     'params_million': round(N_PARAMS / 1e6, 2), **coco_eval(preds, 'rtdetr')}
+R['head_mid_tail_AP50-95'] = group_ap(R['per_class_AP50-95'])
+
+# latency (median of 30 single-image inferences)
+import cv2
+x0 = cv2.imread(str(BASE / 'images' / 'val' / Path(img_by_id[val_list[0]]['file_name'])))
+for _ in range(5):
+    best.predict(x0, imgsz=640, verbose=False)
+ts = []
+for _ in range(30):
+    t0 = time.time(); best.predict(x0, imgsz=640, verbose=False); ts.append(time.time() - t0)
+R['latency_ms_per_image'] = round(float(np.median(ts)) * 1000, 2)
+
+json.dump(R, open(OUT / 'results_rtdetr.json', 'w'), indent=2)
+print(json.dumps({k: R[k] for k in ['mAP50-95', 'mAP50', 'head_mid_tail_AP50-95',
+      'latency_ms_per_image']}, indent=2))
+############################## CELL 6 (code) ##############################
+# --- 5. Artifacts: curves ---
+src_csv = OUT / 'runs' / 'rtdetr' / 'results.csv'
+if src_csv.exists():
+    h = pd.read_csv(src_csv); h.columns = [c.strip() for c in h.columns]
+    h.to_csv(OUT / 'curve_rtdetr.csv', index=False)
+    mcols = [c for c in h.columns if 'mAP50-95' in c]
+    lcols = [c for c in h.columns if c.endswith('loss') and 'box_loss' in c]
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4))
+    if lcols:
+        axes[0].plot(h.epoch, h[lcols[0]], marker='o', color='#4c72b0')
+        axes[0].set(title='RT-DETR box_loss', xlabel='epoch')
+    if mcols:
+        axes[1].plot(h.epoch, h[mcols[0]], marker='o', color='#55a868')
+        axes[1].set(title='RT-DETR mAP50-95 (val)', xlabel='epoch')
+    fig.tight_layout()
+    for ext in ['png', 'pdf']:
+        fig.savefig(OUT / f'curve_rtdetr.{ext}', dpi=200)
+    plt.show()
+print('done')

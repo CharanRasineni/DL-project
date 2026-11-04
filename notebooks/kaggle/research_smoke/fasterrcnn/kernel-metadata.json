@@ -1,0 +1,17 @@
+{
+  "id": "rscharan/fathomnet-research-smoke-frcnn",
+  "title": "FathomNet research smoke FRCNN",
+  "code_file": "smoke.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "kernel_sources": [
+    "rscharan/00-setup-data-download-fathomnetclef2026",
+    "rscharan/fathomnet-02-split"
+  ],
+  "dataset_data": {},
+  "competition_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,37 @@
+{
+  "selection": "seed=42 uniform validation images, not selected by model success",
+  "images": [
+    {
+      "image_id": 40,
+      "cam_status": "ok",
+      "category_id": 13,
+      "layer": "model.9.cv2",
+      "class_index": 11,
+      "objective": "sum top-5 selected-class scores",
+      "input_transform": "square RGB resize 640x640; float32 [0,1]"
+    },
+    {
+      "image_id": 49,
+      "cam_status": "failed",
+      "error": "ValueError: Zero/nonfinite CAM; not exported as an explanation"
+    },
+    {
+      "image_id": 86,
+      "cam_status": "ok",
+      "category_id": 41,
+      "layer": "model.9.cv2",
+      "class_index": 31,
+      "objective": "sum top-5 selected-class scores",
+      "input_transform": "square RGB resize 640x640; float32 [0,1]"
+    },
+    {
+      "image_id": 92,
+      "cam_status": "ok",
+      "category_id": 6,
+      "layer": "model.9.cv2",
+      "class_index": 5,
+      "objective": "sum top-5 selected-class scores",
+      "input_transform": "square RGB resize 640x640; float32 [0,1]"
+    }
+  ]
+}

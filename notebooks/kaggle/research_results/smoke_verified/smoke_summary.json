@@ -1,0 +1,17 @@
+{
+  "fasterrcnn": {
+    "status": "PASS",
+    "dir": "/kaggle/working/fasterrcnn_smoke",
+    "weights": 2
+  },
+  "yolov8s": {
+    "status": "PASS",
+    "dir": "/kaggle/working/yolov8s_smoke",
+    "weights": 3
+  },
+  "rtdetr": {
+    "status": "PASS",
+    "dir": "/kaggle/working/rtdetr_smoke",
+    "weights": 3
+  }
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "kernel": "rscharan/fathomnet-research-fasterrcnn",
+    "notebook_sha256": "79dab9b31e86ca536fad74587665938eb2fe43c38902e7659130f5e43e3a38f7",
+    "status": "SUBMITTED",
+    "response": "{\"ref\": \"/code/rscharan/fathomnet-research-fasterrcnn\", \"url\": \"https://www.kaggle.com/code/rscharan/fathomnet-research-fasterrcnn\", \"versionNumber\": 1, \"error\": \"\", \"invalidTags\": [], \"invalidDatasetSources\": [], \"invalidCompetitionSources\": [], \"invalidKernelSources\": [], \"invalidModelSources\": []}",
+    "remote_status": "KernelWorkerStatus.RUNNING",
+    "failure_message": ""
+  },
+  {
+    "kernel": "rscharan/fathomnet-research-yolov8s",
+    "notebook_sha256": "90d8aed57216980c11c3d137e4f2db756c50960ec18b4ec1357d44449eeb9f2a",
+    "status": "SUBMITTED",
+    "response": "{\"ref\": \"/code/rscharan/fathomnet-research-yolov8s\", \"url\": \"https://www.kaggle.com/code/rscharan/fathomnet-research-yolov8s\", \"versionNumber\": 1, \"error\": \"\", \"invalidTags\": [], \"invalidDatasetSources\": [], \"invalidCompetitionSources\": [], \"invalidKernelSources\": [], \"invalidModelSources\": []}",
+    "remote_status": "KernelWorkerStatus.RUNNING",
+    "failure_message": ""
+  },
+  {
+    "kernel": "rscharan/fathomnet-research-rtdetr",
+    "notebook_sha256": "c4a92c9a37ed0907a8d8d471a16c5a18e6918cca5f140c9c23cb4832905e60b0",
+    "status": "SUBMISSION_OR_STATUS_ERROR",
+    "response": "{\"ref\": \"\", \"url\": \"\", \"versionNumber\": 0, \"error\": \"Maximum batch GPU session count of 2 reached.\", \"invalidTags\": [], \"invalidDatasetSources\": [], \"invalidCompetitionSources\": [], \"invalidKernelSources\": [], \"invalidModelSources\": []}",
+    "error": "HTTPError: 404 Client Error: Not Found for url: https://www.kaggle.com/api/v1/kernels/status?username=rscharan&kernelslug=fathomnet-research-rtdetr"
+  }
+]

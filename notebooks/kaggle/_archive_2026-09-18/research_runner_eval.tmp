@@ -1,0 +1,71 @@
+
+
+class ResearchEvaluator(D.FullEvaluator):
+    """COCO default AP@100, with explicit unavailable classes/areas."""
+    def _eval_once(self, gt_dict, preds):
+        import contextlib
+        import io
+        from pycocotools.coco import COCO
+        from pycocotools.cocoeval import COCOeval
+        with contextlib.redirect_stdout(io.StringIO()):
+            gt = COCO()
+            gt.dataset = copy.deepcopy(gt_dict)
+            gt.createIndex()
+            if preds:
+                dt = gt.loadRes(copy.deepcopy(preds))
+            else:
+                dt = COCO()
+                dt.dataset = {'images': copy.deepcopy(gt_dict['images']),
+                              'categories': copy.deepcopy(gt_dict['categories']), 'annotations': []}
+                dt.createIndex()
+            ev = COCOeval(gt, dt, 'bbox')
+            ev.params.maxDets = [1, 10, 100]
+            ev.evaluate()
+            ev.accumulate()
+            ev.summarize()
+        return ev
+
+    def _collect(self, ev, used):
+        precision = ev.eval['precision']
+        def mean_valid(values):
+            values = values[values > -1]
+            return float(values.mean()) if values.size else None
+        per, per50, size = {}, {}, {}
+        for k, cid in enumerate(ev.params.catIds):
+            name = self.cat_info['cat_id_to_name'][cid]
+            per[name] = mean_valid(precision[:, :, k, 0, -1])
+            per50[name] = mean_valid(precision[0, :, k, 0, -1])
+            size[name] = {label: mean_valid(precision[:, :, k, i, -1])
+                          for i, label in enumerate(ev.params.areaRngLbl) if label != 'all'}
+        groups = {}
+        for group, names in self.groups.items():
+            vals = [per[n] for n in names if per.get(n) is not None]
+            groups[group] = float(np.mean(vals)) if vals else None
+        result = {key: float(ev.stats[i]) if ev.stats[i] >= 0 else None
+                  for i, key in enumerate(['mAP50-95', 'mAP50', 'mAP75', 'mAP_small', 'mAP_medium', 'mAP_large'])}
+        result.update({'per_class_AP50-95': per, 'per_class_AP50': per50,
+            'per_class_size_AP50-95': size, 'head_mid_tail_AP50-95': groups,
+            'groups': {g: sorted(v) for g, v in self.groups.items()},
+            'COCO_maxDets': [1, 10, 100], 'n_dets': len(used)})
+        return result
+
+    def bootstrap_research(self, predictions, n=200, seed=42):
+        rng = np.random.default_rng(seed)
+        ids = self.split['val_ids']
+        rows = []
+        by_image = defaultdict(list)
+        for p in predictions:
+            by_image[p['image_id']].append(p)
+        for _ in range(n):
+            pairs = [(int(orig), i+1) for i, orig in enumerate(rng.choice(ids, len(ids), replace=True))]
+            draw = [dict(p, image_id=new) for orig, new in pairs for p in by_image[orig]]
+            result = self._collect(self._eval_once(self._gt_dict_from_pairs(pairs), draw), draw)
+            rows.append({'mAP50-95': result['mAP50-95'], **result['head_mid_tail_AP50-95']})
+        intervals = {}
+        for key in rows[0]:
+            values = [r[key] for r in rows if r[key] is not None]
+            intervals[key] = {'n_valid': len(values), 'lo': float(np.percentile(values, 2.5)),
+                              'hi': float(np.percentile(values, 97.5))} if values else None
+        return {'n': n, 'seed': seed, 'intervals': intervals,
+                'method': 'image percentile bootstrap, 95%; same resampling seed across models',
+                'limitation': 'Absent classes excluded per draw; rare-class composition varies. Not training-seed uncertainty.'}

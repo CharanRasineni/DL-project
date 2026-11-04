@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_selftest_eval.py", line 72, in <module>
+    res = ev.evaluate(preds, bootstrap=0)
+  File "C:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\data.py", line 953, in evaluate
+    results = self._collect(e, used)
+  File "C:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\data.py", line 993, in _collect
+    "mAP50-95": round(float(stats[0]), 4),
+IndexError: list index out of range

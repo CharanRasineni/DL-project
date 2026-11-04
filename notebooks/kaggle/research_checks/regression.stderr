@@ -1,0 +1,25 @@
+INFO selftest passed: iou=ok, filter_preds=ok, define_groups=ok, stratify=ok, _ci=ok, split_fingerprint=ok, match_predictions=ok, preds_summary=ok
+Traceback (most recent call last):
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_test_research_runner.py", line 58, in <module>
+    main()
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_test_research_runner.py", line 48, in main
+    heat, meta = R.detection_cam(model, family, rgb, 64, class_index)
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\research_runner.py", line 290, in detection_cam
+    raw = net(x)
+  File "C:\Users\rshit\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\rshit\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\rshit\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\nn\tasks.py", line 112, in forward
+    return self.predict(x, *args, **kwargs)
+  File "C:\Users\rshit\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\nn\tasks.py", line 596, in predict
+    x = head([y[j] for j in head.f], batch)  # head inference
+  File "C:\Users\rshit\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\rshit\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\rshit\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\nn\modules\head.py", line 465, in forward
+    embed, refer_bbox, enc_bboxes, enc_scores = self._get_decoder_input(feats, shapes, dn_embed, dn_bbox)
+  File "C:\Users\rshit\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\nn\modules\head.py", line 534, in _get_decoder_input
+    topk_ind = torch.topk(enc_outputs_scores.max(-1).values, self.num_queries, dim=1).indices.view(-1)
+RuntimeError: selected index k out of range

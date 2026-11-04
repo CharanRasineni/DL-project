@@ -1,0 +1,12 @@
+2026-09-17 23:21:32 rscharan/fathomnet-research-fasterrcnn RUNNING
+2026-09-17 23:21:33 rscharan/fathomnet-research-yolov8s RUNNING
+2026-09-17 23:23:33 rscharan/fathomnet-research-fasterrcnn RUNNING
+2026-09-17 23:23:34 rscharan/fathomnet-research-yolov8s RUNNING
+Traceback (most recent call last):
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_watch_research.py", line 122, in <module>
+    main()
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_watch_research.py", line 110, in main
+    save(state_path, state)
+  File "c:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\_watch_research.py", line 32, in save
+    os.replace(temp, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\research_checks\\watch_state.json.6jdltlu5.tmp' -> 'C:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\research_checks\\watch_state.json'

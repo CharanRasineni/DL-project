@@ -1,0 +1,103 @@
+########## MD CELL 00 ##########
+# 05b — RT-DETR-L evaluation (recovery run)
+
+The RT-DETR **training completed** (30 epochs, `best.pt` saved), but the eval cell of the training kernel died with OutOfMemoryError. This kernel attaches the trained weights (`fathomnet-05-rtdetr` output) + data (`00`) + split (`02`) and re-runs **only** the unified COCO evaluation, with chunked prediction and cache clearing to avoid the OOM.
+########## CODE CELL 01 ##########
+%pip install -q ultralytics
+########## CODE CELL 02 ##########
+# --- setup, data, unified eval (same block as 03/04/05) ---
+import os, json, glob, time, random, io, contextlib
+from pathlib import Path
+import numpy as np, pandas as pd
+import torch
+import matplotlib as mpl, matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_theme(style='whitegrid', font_scale=1.1)
+from ultralytics import RTDETR
+
+SEED = 42
+random.seed(SEED); np.random.seed(SEED); torch.manual_seed(SEED)
+OUT = Path('/kaggle/working')
+
+anns_path = Path(glob.glob('/kaggle/input/**/train_dataset.json', recursive=True)[0])
+ANN = anns_path.parent
+IMG = ANN.parent / 'images' if (ANN.parent / 'images').exists() else ANN / 'images'
+S = json.load(open(Path(glob.glob('/kaggle/input/**/split.json', recursive=True)[0])))
+data = json.load(open(anns_path))
+cats = {c['id']: c['name'] for c in data['categories']}
+CAT_IDS = sorted(cats)
+img_by_id = {i['id']: i for i in data['images']}
+val_list = S['val_ids']
+
+from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
+
+GT = {'images': [img_by_id[i] for i in val_list],
+      'annotations': [a for a in data['annotations'] if a['image_id'] in set(val_list)],
+      'categories': data['categories']}
+json.dump(GT, open(OUT / 'val_gt.json', 'w'))
+with contextlib.redirect_stdout(io.StringIO()):
+    GT_COCO = COCO(str(OUT / 'val_gt.json'))
+
+def coco_eval(preds):
+    dt = GT_COCO.loadRes(preds)
+    E = COCOeval(GT_COCO, dt, 'bbox')
+    with contextlib.redirect_stdout(io.StringIO()):
+        E.evaluate(); E.accumulate(); E.summarize()
+    mAP, mAP50 = float(E.stats[0]), float(E.stats[1])
+    per = {}
+    for cid in CAT_IDS:
+        E.params.catIds = [cid]
+        with contextlib.redirect_stdout(io.StringIO()):
+            E.evaluate(); E.accumulate(); E.summarize()
+        per[cats[cid]] = round(float(E.stats[0]), 4)
+    E.params.catIds = []
+    return {'mAP50-95': round(mAP, 4), 'mAP50': round(mAP50, 4), 'per_class_AP50-95': per}
+
+_counts = pd.Series([a['category_id'] for a in data['annotations']]).map(cats).value_counts()
+GROUPS = {'head': set(_counts.index[:3]), 'mid': set(_counts.index[3:7]), 'tail': set(_counts.index[7:])}
+def group_ap(per_class):
+    return {g: round(float(np.mean([per_class[c] for c in ids if c in per_class])), 4)
+            for g, ids in GROUPS.items()}
+
+w = Path(glob.glob('/kaggle/input/fathomnet-05-rtdetr/**/best.pt', recursive=True)[0])
+best = RTDETR(str(w))
+N_PARAMS = sum(p.numel() for p in best.model.parameters())
+print(f'loaded {w} | params {N_PARAMS/1e6:.2f}M | val {len(val_list)} imgs')
+########## CODE CELL 03 ##########
+# --- chunked prediction (OOM-safe) + unified COCO evaluation ---
+preds = []
+CH = 48
+fname2id = {img_by_id[i]['file_name']: i for i in val_list}
+for s in range(0, len(val_list), CH):
+    chunk = val_list[s:s + CH]
+    for r in best.predict(source=[str(IMG / img_by_id[i]['file_name']) for i in chunk],
+                          conf=0.001, iou=0.7, max_det=300, imgsz=640, stream=True, verbose=False):
+        iid = fname2id[Path(r.path).name]
+        xyxy = r.boxes.xyxy.cpu().numpy(); sc = r.boxes.conf.cpu().numpy(); cl = r.boxes.cls.cpu().numpy()
+        for (x1, y1, x2, y2), sc_, c in zip(xyxy, sc, cl):
+            preds.append({'image_id': iid, 'category_id': CAT_IDS[int(c)],
+                          'bbox': [float(x1), float(y1), float(x2 - x1), float(y2 - y1)],
+                          'score': float(sc_)})
+    torch.cuda.empty_cache()
+    print(f'{s + len(chunk)}/{len(val_list)} predicted', flush=True)
+json.dump(preds, open(OUT / 'preds_rtdetr.json', 'w'))
+
+R = {'model': 'rtdetr_l', 'protocol': {'seed': SEED, 'val_split': S['val_fraction'], 'epochs': 30,
+     'input': 'imgsz=640', 'score_thr': 0.001, 'max_det': 300, 'note': 'eval-only recovery run; weights from fathomnet-05-rtdetr v1'},
+     'params_million': round(N_PARAMS / 1e6, 2), **coco_eval(preds)}
+R['head_mid_tail_AP50-95'] = group_ap(R['per_class_AP50-95'])
+
+import cv2
+x0 = cv2.imread(str(IMG / img_by_id[val_list[0]]['file_name']))
+for _ in range(5):
+    best.predict(x0, imgsz=640, verbose=False)
+torch.cuda.empty_cache()
+ts = []
+for _ in range(30):
+    t0 = time.time(); best.predict(x0, imgsz=640, verbose=False); torch.cuda.empty_cache(); ts.append(time.time() - t0)
+R['latency_ms_per_image'] = round(float(np.median(ts)) * 1000, 2)
+
+json.dump(R, open(OUT / 'results_rtdetr.json', 'w'), indent=2)
+print(json.dumps({k: R[k] for k in ['mAP50-95', 'mAP50', 'head_mid_tail_AP50-95',
+      'latency_ms_per_image']}, indent=2))

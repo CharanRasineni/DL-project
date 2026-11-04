@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "purpose": "integration only, not paper results",
+  "train_images": 2,
+  "val_images": 2,
+  "epochs": 1,
+  "checkpoint_roundtrip": true,
+  "gpu": "Tesla T4",
+  "peak_allocated_gib": 0.8770489692687988,
+  "data_sha256": "24f8f26b2758d30e6e8333490b1a2f1d7ab1b0ae8a7e99c535d8af69f0ec020e"
+}

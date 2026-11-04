@@ -1,0 +1,14 @@
+{
+  "jobs": {
+    "rscharan/fathomnet-research-fasterrcnn": {
+      "status": "3",
+      "failure_message": ""
+    },
+    "rscharan/fathomnet-research-yolov8s": {
+      "status": "3",
+      "failure_message": ""
+    }
+  },
+  "rtdetr_attempted": false,
+  "updated_at": "2026-09-17 22:38:00"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "FAILED",
+  "config": {
+    "mode": "train",
+    "family": "fasterrcnn",
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 2,
+    "seed": 42,
+    "score_thr": 0.001,
+    "bootstrap": 0,
+    "max_train_hours": 9,
+    "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+  },
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_23/1741238926.py\", line 6, in <cell line: 0>\n    OUTPUT = R.run(CONFIG)\n             ^^^^^^^^^^^^^\n  File \"/kaggle/working/research_runner.py\", line 511, in run\n    checkpoint = train_frcnn(cfg, coco, split, root, out, device)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/kaggle/working/research_runner.py\", line 214, in train_frcnn\n    raise RuntimeError('Budget stop: checkpoints saved; incomplete run, not a matched-budget result')\nRuntimeError: Budget stop: checkpoints saved; incomplete run, not a matched-budget result\n",
+  "automatic_retry": false
+}

@@ -1,0 +1,33 @@
+class,train_instances,AP50-95,AP50,group
+amphipod,54,0.0,0.0,tail
+anemone,1026,0.0,0.0,mid
+barnacle,29,0.0,0.0,tail
+benthic worm,54,0.0,0.0,tail
+bivalve,49,0.0,0.0,tail
+black coral,280,0.0,0.0,tail
+bony fish,2768,0.0,0.0,head
+brittle star,2761,0.0,0.0,head
+calycophoran siphonophore,45,0.0,0.0,tail
+chiton,29,0.0,0.0,tail
+crab,353,0.0,0.0,tail
+feather star,628,0.0,0.0,tail
+hydroid,39,0.0,0.0,tail
+isopod,23,0.0,0.0,tail
+jelly,104,0.0,0.0,tail
+larvacean,43,0.0,0.0,tail
+octopus,111,0.0,0.0,tail
+physonect siphonophore,91,0.0,0.0,tail
+pyrosome,32,0.0,0.0,tail
+sea cucumber,346,0.0,0.0,tail
+sea fan,2715,0.0,0.0,mid
+sea pen,46,0.0,0.0,tail
+sea slug,6,0.0,0.0,tail
+sea snail,41,0.0,0.0,tail
+sea squirt,14,0.0,0.0,tail
+sea star,558,0.0,0.0,tail
+shrimp,483,0.0,0.0,tail
+soft coral,265,0.0,0.0,tail
+sponge,1101,0.0,0.0,mid
+squat lobster,171,0.0,0.0,tail
+stony coral,646,0.0,0.0,mid
+urchin,5212,0.0,0.0,head

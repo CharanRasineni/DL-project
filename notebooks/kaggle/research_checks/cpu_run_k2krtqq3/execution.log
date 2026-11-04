@@ -1,0 +1,8 @@
+OVERRIDES: CPU guard, synthetic paths, 64px, random init; production file unchanged.
+{'epoch': 1, 'loss': 1.3347209095954895, 'val_COCO_AP': 0.004677141627206198, 'seconds': 6.35899999999674}
+INFO stage latency                ok (14.6s)
+INFO stage training_curves        ok (2.5s)
+INFO stage figures                ok (6.6s)
+INFO stage bootstrap              ok (0.1s)
+COMPLETE C:\Users\rshit\OneDrive\Documents\Charan DL project\notebooks\kaggle\research_checks\cpu_run_k2krtqq3\fasterrcnn_train
+END-TO-END CPU PASS

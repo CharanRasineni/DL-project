@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "analysis_complete": true,
+  "mode": "smoke",
+  "scientific_result": false,
+  "checkpoint_sha256": "f60157485e574e3bfdd574888aee0a1b511bfa4671a1362f753acbcd4ef502e7",
+  "runner_sha256": "fd36e7d49dfafee85d274e28194f087772aa2b54d9812786768daf67cb86d375",
+  "configuration": {
+    "mode": "smoke",
+    "family": "yolov8s",
+    "epochs": 1,
+    "batch": 2,
+    "imgsz": 640,
+    "seed": 42,
+    "score_thr": 0.001,
+    "bootstrap": 0,
+    "max_train_hours": 1,
+    "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+  }
+}

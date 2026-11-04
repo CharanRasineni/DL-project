@@ -1,0 +1,14 @@
+{
+  "id": "eternalsorcerer/fathomnet-05b-rtdetr-eval",
+  "title": "fathomnet-05b-rtdetr-eval",
+  "code_file": "05b_eval.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "kernel_sources": ["rscharan/00-setup-data-download-fathomnetclef2026", "eternalsorcerer/fathomnet-02-split", "eternalsorcerer/fathomnet-05-rtdetr"],
+  "dataset_data": {},
+  "competition_sources": [],
+  "model_sources": []
+}

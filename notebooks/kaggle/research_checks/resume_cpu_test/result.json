@@ -1,0 +1,4 @@
+{
+  "status": "FAIL",
+  "traceback": "Traceback (most recent call last):\n  File \"c:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\_test_resume_cpu.py\", line 38, in <module>\n    assert state1['epoch'] == 1 and len(state1['history']) == 1\nAssertionError\n"
+}

@@ -1,0 +1,10 @@
+{
+  "mAP50-95": 0.45,
+  "mAP50": 0.5906,
+  "head_mid_tail_AP50-95": {
+    "head": 0.6025,
+    "mid": 0.4855,
+    "tail": 0.426
+  },
+  "latency_ms_per_image": 51.65
+}

@@ -1,0 +1,28 @@
+{
+  "n": 2,
+  "seed": 42,
+  "intervals": {
+    "mAP50-95": {
+      "n_valid": 2,
+      "lo": 0.0004987165383204986,
+      "hi": 0.0004987165383204986
+    },
+    "head": {
+      "n_valid": 2,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    "mid": {
+      "n_valid": 2,
+      "lo": 0.0024935826916024934,
+      "hi": 0.0024935826916024934
+    },
+    "tail": {
+      "n_valid": 2,
+      "lo": 0.0,
+      "hi": 0.0
+    }
+  },
+  "method": "image percentile bootstrap, 95%; same resampling seed across models",
+  "limitation": "Absent classes excluded per draw; rare-class composition varies. Not training-seed uncertainty."
+}

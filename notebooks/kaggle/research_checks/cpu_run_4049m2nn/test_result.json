@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "scientific_result": false,
+  "production_gpu_validated": false,
+  "output": "C:\\Users\\rshit\\OneDrive\\Documents\\Charan DL project\\notebooks\\kaggle\\research_checks\\cpu_run_4049m2nn\\fasterrcnn_train",
+  "completed_status": "CORE_COMPLETE_ANALYSIS_INCOMPLETE",
+  "stages": {
+    "core": "ok",
+    "mode": "train",
+    "stages": {
+      "latency": {
+        "status": "ok",
+        "seconds": 11.9
+      },
+      "training_curves": {
+        "status": "ok",
+        "seconds": 2.49
+      },
+      "figures": {
+        "status": "ok",
+        "seconds": 6.62
+      },
+      "bootstrap": {
+        "status": "ok",
+        "seconds": 0.07
+      }
+    },
+    "cam_successes": 0
+  },
+  "overrides": [
+    "CPU guard",
+    "synthetic paths",
+    "64px",
+    "random initialization"
+  ]
+}

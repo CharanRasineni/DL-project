@@ -1,0 +1,15 @@
+{
+  "selection": "seed=42 uniform validation images, not selected by model success",
+  "images": [
+    {
+      "image_id": 2,
+      "cam_status": "failed",
+      "error": "ValueError: Zero/nonfinite CAM; not exported as an explanation"
+    },
+    {
+      "image_id": 3,
+      "cam_status": "failed",
+      "error": "ValueError: Zero/nonfinite CAM; not exported as an explanation"
+    }
+  ]
+}

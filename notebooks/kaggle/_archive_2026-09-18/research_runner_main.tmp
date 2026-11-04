@@ -1,0 +1,92 @@
+
+
+def run(cfg):
+    cfg = dict(cfg)
+    assert cfg['mode'] in ('smoke', 'train', 'evaluate')
+    assert cfg['family'] in ('fasterrcnn', 'yolov8s', 'rtdetr')
+    assert cfg['batch'] > 0 and cfg['imgsz'] == 640
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    if device != 'cuda':
+        raise RuntimeError('GPU required for real-image run; no silent CPU training')
+    D.set_seed(cfg['seed'])
+    torch.backends.cudnn.benchmark = False
+    ann, root = D.resolve_dataset_paths()
+    D.DATASET_JSON, D.IMG_ROOT = ann, root
+    coco = D.load_coco_data()
+    split = D.load_frozen_split()
+    # Exact expected split identity (both train and validation memberships).
+    split_hash = hashlib.sha256(json.dumps({k: sorted(split[k]) for k in ('train_ids', 'val_ids')}, sort_keys=True).encode()).hexdigest()
+    assert split_hash == cfg['split_sha256'], 'Unexpected frozen split'
+    out = Path('/kaggle/working') / (cfg['family'] + '_' + cfg['mode'])
+    out.mkdir(parents=True, exist_ok=True)
+    if (out / 'provenance.json').exists():
+        raise RuntimeError('Output already exists; use a fresh working session to avoid overwriting a run')
+    full_counts = D.get_cat_info(coco, split)['train_counts']
+    if cfg['mode'] == 'smoke':
+        # Include the largest image-area instances, not only convenient tiny images.
+        info = {im['id']: im for im in coco['images']}
+        choose = lambda ids: sorted(ids, key=lambda i: -(info[i]['width'] * info[i]['height']))[:4]
+        split = dict(split, train_ids=choose(split['train_ids']), val_ids=choose(split['val_ids']))
+        cfg['epochs'] = 1
+    checks = validate_dataset(coco, split, root, decode=True)
+    atomic_json(out / 'config.json', cfg)
+    atomic_json(out / 'split.json', split)
+    atomic_json(out / 'train_counts.json', full_counts)
+    provenance = {'config': cfg, 'system': D.system_info(), 'checks': checks,
+                  'annotation_sha256': sha256(ann), 'full_split_sha256': split_hash,
+                  'runner_sha256': sha256(__file__), 'data_sha256': sha256(D.__file__),
+                  'task': 'positive-unlabeled marine object detection',
+                  'scientific_result': cfg['mode'] != 'smoke',
+                  'limitations': ['single training seed', 'partial validation annotations',
+                    'same 30 epochs and nominal 640px setting is NOT equal compute',
+                    'framework resizing, optimizers and checkpoint selection differ']}
+    atomic_json(out / 'provenance.json', provenance)
+    yaml = None
+    if cfg['family'] != 'fasterrcnn':
+        yaml = build_yolo(coco, split, root, out / 'dataset')
+    if cfg['mode'] == 'evaluate':
+        checkpoint = Path(cfg['checkpoint'])
+        assert checkpoint.is_file(), 'Explicit attached checkpoint required'
+    elif cfg['family'] == 'fasterrcnn':
+        checkpoint = train_frcnn(cfg, coco, split, root, out, device)
+    else:
+        checkpoint = train_ultra(cfg, yaml, out)
+    assert checkpoint.is_file()
+    provenance['checkpoint'] = {'path': str(checkpoint), 'sha256': sha256(checkpoint)}
+    atomic_json(out / 'provenance.json', provenance)
+    if cfg['family'] == 'fasterrcnn':
+        state = load_checkpoint(checkpoint)
+        model = make_frcnn(len(coco['categories']), cfg['imgsz'], pretrained=False).to(device)
+        model.load_state_dict(state['model'], strict=True)
+        del state
+        predictions = predict_frcnn(model, coco, split, root, device)
+    else:
+        model = ultra_class(cfg['family'])(str(checkpoint))
+        cats = sorted(c['id'] for c in coco['categories'])
+        predictions = []
+        # Folder source + explicit batch=1 avoids all-validation warmup OOM.
+        for r in model.predict(source=str(out / 'dataset' / 'images' / 'val'),
+                               stream=True, batch=1, imgsz=cfg['imgsz'], conf=cfg['score_thr'],
+                               max_det=300, device=0, half=False, verbose=False):
+            iid = int(Path(r.path).stem)
+            for box, label, score in zip(r.boxes.xyxy.cpu().tolist(), r.boxes.cls.cpu().tolist(), r.boxes.conf.cpu().tolist()):
+                x1, y1, x2, y2 = box
+                predictions.append({'image_id': iid, 'category_id': cats[int(label)],
+                    'score': score, 'bbox': [x1, y1, x2-x1, y2-y1]})
+    atomic_json(out / 'preds.json', predictions)
+    cat_info = D.get_cat_info(coco, split)
+    cat_info['train_counts'] = full_counts
+    ev = ResearchEvaluator(split, cat_info, score_thr=cfg['score_thr'], max_det=300)
+    result = ev.evaluate(predictions)
+    result['config'] = cfg
+    atomic_json(out / 'results.json', result)
+    atomic_json(out / 'val_gt.json', ev._gt_dict_for(split['val_ids']))
+    counts = defaultdict(int)
+    for a in coco['annotations']:
+        if a['image_id'] in set(split['val_ids']):
+            counts[cat_info['cat_id_to_name'][a['category_id']]] += 1
+    pd.DataFrame([{'class': name, 'train_instances': full_counts.get(name, 0),
+                   'val_instances': counts[name], 'AP50-95': ap,
+                   'AP50': result['per_class_AP50'][name],
+                   **result['per_class_size_AP50-95'][name]}
+                  for name, ap in result['per_class_AP50-95'].items()]).to_csv(out / 'per_class.csv', index=False)

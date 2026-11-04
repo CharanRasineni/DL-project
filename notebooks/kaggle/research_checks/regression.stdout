@@ -1,0 +1,4 @@
+WARNING ⚠️ no model scale passed. Assuming scale='l'.
+Testing CAM: fasterrcnn
+Testing CAM: yolov8s
+Testing CAM: rtdetr

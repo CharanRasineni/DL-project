@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "analysis_complete": true,
+  "mode": "smoke",
+  "scientific_result": false,
+  "checkpoint_sha256": "171ba588f05bf8c182a196e0989d5a1a17a91970cb1c657e3a588dd6a8cd3beb",
+  "runner_sha256": "c8629d2ca4e9adb0d37d75f09289170c6c25d775c888e5c55379b84e988b0dfe",
+  "configuration": {
+    "mode": "smoke",
+    "family": "rtdetr",
+    "epochs": 1,
+    "batch": 2,
+    "imgsz": 640,
+    "seed": 42,
+    "score_thr": 0.001,
+    "bootstrap": 0,
+    "max_train_hours": 1,
+    "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+  }
+}

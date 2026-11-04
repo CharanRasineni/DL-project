@@ -1,0 +1,20 @@
+{
+  "id": "rscharan/fathomnet-research-frcnn-resume",
+  "title": "FathomNet research FRCNN resume",
+  "code_file": "resume.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "kernel_sources": [
+    "rscharan/00-setup-data-download-fathomnetclef2026",
+    "rscharan/fathomnet-02-split"
+  ],
+  "dataset_sources": [
+    "rscharan/fathom-net-fasterrcnn"
+  ],
+  "dataset_data": {},
+  "competition_sources": [],
+  "model_sources": []
+}

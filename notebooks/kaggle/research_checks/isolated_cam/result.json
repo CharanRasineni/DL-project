@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "synthetic_only": true,
+  "training_validated": false,
+  "rtdetr": "SKIPPED; not tested or stubbed",
+  "checks": [
+    {
+      "family": "fasterrcnn",
+      "status": "PASS",
+      "shape": [
+        2,
+        2
+      ],
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "metadata": {
+        "layer": "backbone.body.layer4",
+        "class_index": 25,
+        "objective": "sum top-5 selected-class scores",
+        "input_transform": "square RGB resize 64x64; float32 [0,1]"
+      }
+    },
+    {
+      "family": "yolov8s",
+      "status": "PASS",
+      "shape": [
+        2,
+        2
+      ],
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "metadata": {
+        "layer": "model.9.cv2",
+        "class_index": 0,
+        "objective": "sum top-5 selected-class scores",
+        "input_transform": "square RGB resize 64x64; float32 [0,1]"
+      }
+    }
+  ],
+  "versions": {
+    "torch": "2.2.2+cpu",
+    "torchvision": "0.17.2+cpu",
+    "ultralytics": "8.3.40"
+  },
+  "script_sha256": "0be4010e6251f85a45ba98448151e1a37d0935181961434be5db811dddcfebfe",
+  "runner_sha256": "e3e52212f45b14b35d081e08e5b40f3b64604537ed16ab15aac5b7a666ac25fb"
+}

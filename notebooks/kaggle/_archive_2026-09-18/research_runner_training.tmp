@@ -1,0 +1,118 @@
+
+
+def make_frcnn(nclasses, size=640, pretrained=True):
+    from torchvision.models.detection import fasterrcnn_resnet50_fpn
+    from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
+    model = fasterrcnn_resnet50_fpn(
+        weights='COCO_V1' if pretrained else None, weights_backbone=None,
+        min_size=size, max_size=size, box_score_thresh=0.001, box_detections_per_img=300)
+    model.roi_heads.box_predictor = FastRCNNPredictor(
+        model.roi_heads.box_predictor.cls_score.in_features, nclasses + 1)
+    return model
+
+
+def save_checkpoint(path, value):
+    tmp = Path(str(path) + '.tmp')
+    torch.save(value, tmp)
+    os.replace(tmp, path)
+
+
+def load_checkpoint(path, device='cpu'):
+    # Only locally created / explicitly attached trusted checkpoints are accepted.
+    return torch.load(path, map_location=device, weights_only=False)
+
+
+def train_frcnn(cfg, coco, split, root, out, device):
+    train = DetectionDataset(coco, split['train_ids'], root, train=True)
+    loader = torch.utils.data.DataLoader(train, batch_size=cfg['batch'], shuffle=True,
+        num_workers=0, collate_fn=collate, generator=torch.Generator().manual_seed(cfg['seed']))
+    model = make_frcnn(len(train.cat_ids), cfg['imgsz']).to(device)
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.0025, momentum=0.9, weight_decay=0.0001)
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[20, 27], gamma=0.1)
+    scaler = torch.cuda.amp.GradScaler(enabled=device == 'cuda')
+    history, best_ap = [], -1.
+    start = time.monotonic()
+    for epoch in range(cfg['epochs']):
+        epoch_start = time.monotonic()
+        model.train()
+        losses = []
+        for images, targets in loader:
+            images = [x.to(device) for x in images]
+            targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
+            optimizer.zero_grad(set_to_none=True)
+            with torch.autocast(device_type=device, enabled=device == 'cuda'):
+                loss = sum(model(images, targets).values())
+            if not torch.isfinite(loss):
+                raise RuntimeError('Non-finite training loss; no automatic retry')
+            scaler.scale(loss).backward()
+            scaler.unscale_(optimizer)
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 10)
+            scaler.step(optimizer)
+            scaler.update()
+            losses.append(float(loss.detach()))
+        scheduler.step()
+        # Save before validation. Optimizer/scaler/RNG are retained for recovery.
+        state = {'model': model.state_dict(), 'optimizer': optimizer.state_dict(),
+                 'scheduler': scheduler.state_dict(), 'scaler': scaler.state_dict(),
+                 'epoch': epoch + 1, 'config': cfg, 'cat_ids': train.cat_ids,
+                 'torch_rng': torch.get_rng_state(), 'numpy_rng': np.random.get_state(),
+                 'python_rng': random.getstate(), 'history': history,
+                 'cuda_rng': torch.cuda.get_rng_state_all() if device == 'cuda' else []}
+        save_checkpoint(out / 'last.pt', state)
+        predictions = predict_frcnn(model, coco, split, root, device)
+        evaluator = D.FullEvaluator(split, D.get_cat_info(coco, split), score_thr=cfg['score_thr'], max_det=300)
+        metric = evaluator.evaluate(predictions)['mAP50-95']
+        history.append({'epoch': epoch + 1, 'loss': float(np.mean(losses)),
+                        'val_COCO_AP': metric, 'seconds': time.monotonic() - epoch_start})
+        pd.DataFrame(history).to_csv(out / 'training.csv', index=False)
+        if metric > best_ap:
+            best_ap = metric
+            save_checkpoint(out / 'best.pt', state)
+        print(history[-1], flush=True)
+        elapsed = time.monotonic() - start
+        if epoch + 1 < cfg['epochs'] and elapsed + (elapsed / (epoch + 1)) > cfg['max_train_hours'] * 3600:
+            atomic_json(out / 'budget_stop.json', {'completed_epochs': epoch + 1, 'requested': cfg['epochs']})
+            raise RuntimeError('Budget stop: checkpoints saved; incomplete run, not a matched-budget result')
+    del optimizer, scaler, model
+    gc.collect()
+    if device == 'cuda':
+        torch.cuda.empty_cache()
+    return out / 'best.pt'
+
+
+def predict_frcnn(model, coco, split, root, device):
+    model.eval()
+    dataset = DetectionDataset(coco, split['val_ids'], root)
+    predictions = []
+    with torch.no_grad():
+        for image, target in dataset:
+            output = model([image.to(device)])[0]
+            for box, label, score in zip(output['boxes'].cpu().tolist(), output['labels'].cpu().tolist(), output['scores'].cpu().tolist()):
+                x1, y1, x2, y2 = box
+                predictions.append({'image_id': int(target['image_id'][0]),
+                    'category_id': dataset.cat_ids[label - 1], 'score': score,
+                    'bbox': [x1, y1, x2-x1, y2-y1]})
+    return predictions
+
+
+def ultra_class(family):
+    from ultralytics import YOLO, RTDETR
+    return YOLO if family == 'yolov8s' else RTDETR
+
+
+def train_ultra(cfg, yaml, out):
+    cls = ultra_class(cfg['family'])
+    model = cls('yolov8s.pt' if cfg['family'] == 'yolov8s' else 'rtdetr-l.pt')
+    # All defaults are archived by Ultralytics in args.yaml, in addition to cfg.
+    model.train(data=str(yaml), epochs=cfg['epochs'], imgsz=cfg['imgsz'], batch=cfg['batch'],
+        workers=0, cache=False, device=0, seed=cfg['seed'], deterministic=True,
+        amp=True, patience=0, save=True, save_period=1, plots=False,
+        project=str(out / 'runs'), name='fit', exist_ok=False, verbose=False,
+        optimizer='AdamW', lr0=0.0001, weight_decay=0.0005, close_mosaic=0,
+        mosaic=0.0, mixup=0.0, degrees=0.0, translate=0.0, scale=0.0,
+        fliplr=0.5, flipud=0.0, hsv_h=0.0, hsv_s=0.0, hsv_v=0.0)
+    checkpoint = Path(model.trainer.best)
+    del model
+    gc.collect()
+    torch.cuda.empty_cache()
+    return checkpoint
