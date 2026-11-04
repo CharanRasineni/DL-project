@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "analysis_complete": true,
+  "mode": "train",
+  "scientific_result": true,
+  "checkpoint_sha256": "c114142ae3bb536607745364df4ab23484e58eee260fefef9028a86f14c52324",
+  "runner_sha256": "9901d798f2772342228aeb904103399f680e7049f60129c53cb17464219352d0",
+  "configuration": {
+    "mode": "train",
+    "family": "fasterrcnn",
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 2,
+    "seed": 42,
+    "score_thr": 0.001,
+    "bootstrap": 0,
+    "max_train_hours": 4.5,
+    "resume_checkpoint": "/kaggle/input/fathom-net-fasterrcnn/fasterrcnn_train/last.pt",
+    "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+  }
+}

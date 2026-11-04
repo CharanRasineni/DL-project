@@ -1,0 +1,12 @@
+{
+  "mode": "train",
+  "family": "rtdetr",
+  "epochs": 30,
+  "imgsz": 640,
+  "batch": 4,
+  "seed": 42,
+  "score_thr": 0.001,
+  "bootstrap": 0,
+  "max_train_hours": 9,
+  "split_sha256": "232eb5647757077a3019d2b495fb0417c59402dad310845caf15578a0bc3b4f8"
+}

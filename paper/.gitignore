@@ -1,0 +1,20 @@
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.synctex(busy)
+*.pdf
+
+# scratch logs from manual pdflatex/bibtex runs
+build*.out
+bib.out
+
+# keep directories in git
+!images/.gitkeep
+!json/.gitkeep
+!assets/.gitkeep
